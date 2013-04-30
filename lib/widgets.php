@@ -7,19 +7,19 @@ function roots_widgets_init() {
   register_sidebar(array(
     'name'          => __('Primary Sidebar', 'roots'),
     'id'            => 'sidebar-primary',
-    'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
+    'before_widget' => '<section class=" %1$s %2$s"><div class="widget-inner">',
     'after_widget'  => '</div></section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>',
+    'before_title'  => '<h5>',
+    'after_title'   => '</h5>',
   ));
 
   register_sidebar(array(
     'name'          => __('Footer', 'roots'),
     'id'            => 'sidebar-footer',
-    'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
+    'before_widget' => '<section class="%1$s %2$s span3"><div class="widget">',
     'after_widget'  => '</div></section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>',
+    'before_title'  => '<h5>',
+    'after_title'   => '</h5>',
   ));
 
   // Widgets
