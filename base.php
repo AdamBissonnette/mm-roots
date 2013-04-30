@@ -11,8 +11,14 @@
     } else {
       get_template_part('templates/header');
     }
+    
+    if (is_front_page())
+    {
+    	include roots_template_path();
+    }
+    else
+    {
   ?>
-
   <div class="wrap container" role="document">
     <div class="content row">
       <div class="main <?php echo roots_main_class(); ?>" role="main">
@@ -26,7 +32,7 @@
     </div><!-- /.content -->
   </div><!-- /.wrap -->
 
-  <?php get_template_part('templates/footer'); ?>
+  <?php } get_template_part('templates/footer'); ?>
 
 </body>
 </html>
