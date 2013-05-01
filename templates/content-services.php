@@ -3,11 +3,15 @@
 	  <div class="row">
 		<div class="span3">
 		  <h2 class="section-title">
-			Services
-			<small>Qui labore quae consequuntur animi natus recusandae molestias</small>
+		  	<?php $page = get_page(34);
+		  		echo $page->post_title;
+		  		
+		  		$description = get_post_meta($page->ID, "tagline", true);
+		  	?>	
+		  	<small><?php echo $description; ?></small>
 		  </h2>
 		  <p>
-			<a class="btn btn-small btn-primary" href="services.html">
+			<a class="btn btn-small btn-primary" href="<?php echo get_permalink($page->ID); ?>">
 			  <i class="icon-search"></i>
 			  View all
 			</a>
@@ -15,45 +19,32 @@
 		</div>
 		<div class="span9">
 		  <div class="row">
+		  <?php $services = get_posts( "category_name=Service&numberposts=3" );
+		  foreach ($services as $post) :  setup_postdata($post);  {
+		  
+		  	$icon = get_post_meta($post->ID, "icon", true);
+		  	
+		  	if (!$icon)
+		  	{
+		  		$icon = "cloud";
+		  	}
+		  ?>
+		  
 			<div class="span3">
 			  <div class="text-center">
 				<figure>
 				  <a href="#">
-					<i class="icon-cloud icon-8x icon-border"></i>
+					<i class="icon-<?php echo $icon; ?> icon-8x icon-border"></i>
 				  </a>
 				</figure>
 				<h4>
-				  <a href="#">Cumque voluptate</a>
+				  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</h4>
-				<p>Necessitatibus reprehenderit illum perspiciatis dolor ut delectus pariatur vero illo magni</p>
+				<p><?php echo the_excerpt(); ?></p>
 			  </div>
 			</div>
-			<div class="span3">
-			  <div class="text-center">
-				<figure>
-				  <a href="#">
-					<i class="icon-bolt icon-8x icon-border"></i>
-				  </a>
-				</figure>
-				<h4>
-				  <a href="#">Eligendi labore</a>
-				</h4>
-				<p>Possimus sit quaerat voluptatum sequi nisi eligendi rem nobis ex aut</p>
-			  </div>
-			</div>
-			<div class="span3">
-			  <div class="text-center">
-				<figure>
-				  <a href="#">
-					<i class="icon-dashboard icon-8x icon-border"></i>
-				  </a>
-				</figure>
-				<h4>
-				  <a href="#">Quia repellat</a>
-				</h4>
-				<p>Quas tempore tenetur ex id sunt cum beatae nobis nam odio</p>
-			  </div>
-			</div>
+			<?php } endforeach; ?>
+
 		  </div>
 		</div>
 	  </div>

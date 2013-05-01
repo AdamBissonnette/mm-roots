@@ -1,5 +1,9 @@
 <div class="page-header">
-  <h1>
+  <h2 class="section-title">
     <?php echo roots_title(); ?>
-  </h1>
+	<?php
+		$description = get_post_meta(get_the_ID(), "tagline", true);
+	?>	
+  	<small><?php echo $description; ?></small>
+  </h2>
 </div>

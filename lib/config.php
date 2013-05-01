@@ -17,12 +17,18 @@ define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y
 define('POST_EXCERPT_LENGTH', 40);
 
 /**
+ * Theme Variables
+ */
+
+define('SERVICES_PAGE_ID', 6);
+
+/**
  * .main classes
  */
 function roots_main_class() {
   if (roots_display_sidebar()) {
     // Classes on pages with the sidebar
-    $class = 'span8';
+    $class = 'span9';
   } else {
     // Classes on full width pages
     $class = 'span12';
@@ -35,7 +41,7 @@ function roots_main_class() {
  * .sidebar classes
  */
 function roots_sidebar_class() {
-  return 'span4';
+  return 'span3';
 }
 
 /**
