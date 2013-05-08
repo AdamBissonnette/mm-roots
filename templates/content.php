@@ -1,12 +1,11 @@
 <article <?php post_class(); ?>>
-  <header>
+  <div class="post-header">
     <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-    <?php get_template_part('templates/entry-meta'); ?>
-  </header>
+  </div>
   <div class="entry-summary">
     <?php the_excerpt(); ?>
   </div>
-  <footer>
+  <div class="post-footer">
     <?php the_tags('<ul class="entry-tags"><li>','</li><li>','</li></ul>'); ?>
-  </footer>
+  </div>
 </article>
