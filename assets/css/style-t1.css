@@ -1012,9 +1012,9 @@ h4 small {
   font-size: 1em;
 }
 .page-header {
-  padding-bottom: -0.25em;
-  margin: 1.5em 0 2.25em;
-  border-bottom: 1px solid #eeeeee;
+	line-height: 1.25em;
+	margin-bottom: 1em;
+	font-weight: normal;
 }
 ul,
 ol {
