@@ -19,7 +19,10 @@
 		</div>
 		<div class="span9">
 		  <div class="row">
-		  <?php $services = get_posts( "category_name=Service&numberposts=3" );
+		  <?php
+		  global $MM_Roots_Optical;
+		  	
+		  $services = get_posts( "category=" . $MM_Roots_Optical->_settings["mm_op_service_category"] . "&numberposts=3" );
 		  foreach ($services as $post) :  setup_postdata($post);  {
 		  
 		  	$icon = get_post_meta($post->ID, "icon", true);
