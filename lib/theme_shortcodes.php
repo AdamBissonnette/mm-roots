@@ -22,7 +22,7 @@ function section_block ( $atts, $content="" ) {
      $output .= "</div></div></div>"; //break out of the current span
      $output .= '<section class="section-content' . $sectionColor . '" id="section-' . $titleSlug . '">
 					<div class="container">
-					  <h2 class="section-' . $titleSlug . '">' .
+					  <h2 class="section-title">' .
 						$title .
 						$taglineOutput .
 					  '</h2>
