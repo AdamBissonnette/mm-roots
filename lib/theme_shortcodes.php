@@ -19,6 +19,16 @@ function section_block ( $atts, $content="" ) {
      if ($color != '') {
 	     $sectionColor = sprintf(" section-color-%s", $color);
      }
+     
+     /* 
+     Load content "blurb" from a given post or page
+     $postFormat = '%s <a href="%s">Read More</a>';
+     
+     if ($postid != '')
+     {
+     	$content = sprintf($postFormat, get_post_meta($postid, "blurb", true), get_permalink($postid));
+     } */
+     
      $output .= "</div></div></div>"; //break out of the current span
      $output .= '<section class="section-content' . $sectionColor . '" id="section-' . $titleSlug . '">
 					<div class="container">
