@@ -3,7 +3,10 @@
 	  <div class="row">
 		<div class="span3">
 		  <h2 class="section-title">
-		  	<?php $page = get_page(34);
+		  	<?php
+		  		global $MM_Roots_Optical;		  	
+		  	
+		  		$page = get_page($MM_Roots_Optical->_settings["mm_op_service_page"]);
 		  		echo $page->post_title;
 		  		
 		  		$description = get_post_meta($page->ID, "tagline", true);

@@ -19,7 +19,7 @@
 
 				<?php
 					echo createFormField($this, null, '_contact_email', 'Contact Email', 'text');
-					echo createFormField($this, null, '_confirmation_message_subject', 'Confirmation Message', 'text');
+					echo createFormField($this, null, '_confirmation_message_subject', 'Confirmation Message Subject', 'text');
 					echo createFormField($this, null, '_confirmation_message', 'Confirmation Message Body', 'textarea');
 				?>
 				
