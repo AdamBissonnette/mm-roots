@@ -53,7 +53,7 @@ function getFormattedPostContent($postid, $linktext)
 {
 	//Load content "blurb" from a given post or page
      $output = '';
-     $postFormat = '%s <a href="%s">%s</a>';
+     $postFormat = '<p class="post-content">%s</p><a class="btn btn-small btn-primary" href="%s"><i class="icon-search"></i>%s</a>';
      $postContent = '';
      
      if ($postid != '')
