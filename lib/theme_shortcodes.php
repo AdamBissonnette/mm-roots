@@ -5,7 +5,8 @@ function section_block ( $atts, $content="" ) {
 	      'color' => '',
 	      'title' => '',
 	      'tagline' => '',
-	      'postid' => ''
+	      'postid' => '',
+	      'linktext' => 'Read More'
      ), $atts ) );
      
      $titleSlug = str_replace(" ", "-", strtolower($title));
@@ -20,14 +21,11 @@ function section_block ( $atts, $content="" ) {
 	     $sectionColor = sprintf(" section-color-%s", $color);
      }
      
-     /* 
-     Load content "blurb" from a given post or page
-     $postFormat = '%s <a href="%s">Read More</a>';
-     
      if ($postid != '')
      {
-     	$content = sprintf($postFormat, get_post_meta($postid, "blurb", true), get_permalink($postid));
-     } */
+     	$postContent = getFormattedPostContent($postid, $linktext);
+     }
+     
      
      $output .= "</div></div></div>"; //break out of the current span
      $output .= '<section class="section-content' . $sectionColor . '" id="section-' . $titleSlug . '">
@@ -37,8 +35,8 @@ function section_block ( $atts, $content="" ) {
 						$taglineOutput .
 					  '</h2>
 					  <div class="row block-content"><div class="span12">' .
-						$content
-					  .'</div>
+						do_shortcode($content) . ' ' . $postContent .
+					  '</div>
 					</div></div>
 				</section>';
 	 $output .= '<div class="container">
@@ -48,6 +46,72 @@ function section_block ( $atts, $content="" ) {
      
      return $output;
 }
+
 add_shortcode( 'section_block', 'section_block' );
+
+function getFormattedPostContent($postid, $linktext)
+{
+	//Load content "blurb" from a given post or page
+     $output = '';
+     $postFormat = '%s <a href="%s">%s</a>';
+     $postContent = '';
+     
+     if ($postid != '')
+     {
+    	if (has_excerpt($postid))
+    	{
+    		$postContent = get_post($postid)->post_excerpt;
+    	}
+    	else
+    	{
+     		$postContent = get_post_meta($postid, "blurb", true);
+     	}
+     	
+        $output = sprintf($postFormat, $postContent, get_permalink($postid), $linktext);
+     }
+     
+     return $output;
+}
+
+function row($atts, $content="")
+{
+	extract( shortcode_atts( array(
+	      'cssClass' => ''
+     ), $atts ) );
+
+	$output = '';
+	$spanFormat = '<div class="row%s">%s</div>';
+	
+	if ($cssClass != '')
+	{
+		$cssClass = ' ' . $cssClass;
+	}
+	
+	$output = sprintf($spanFormat, $cssClass, do_shortcode($content));
+	
+	return $output;
+}
+add_shortcode( 'row', 'row' );
+
+function span($atts, $content="")
+{
+	extract( shortcode_atts( array(
+	      'size' => '3',
+	      'cssClass' => ''
+     ), $atts ) );
+
+	$output = '';
+	$spanFormat = '<div class="span%s">%s</div>';
+	
+	if ($cssClass != '')
+	{
+		$size .= ' ' . $cssClass;
+	}
+	
+	$output = sprintf($spanFormat, $size, do_shortcode($content));
+	
+	return $output;
+}
+add_shortcode( 'span', 'span' );
 
 ?>
