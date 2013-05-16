@@ -8,28 +8,20 @@
 			<form id="<?php echo $this->_setting_prefix . '_settings_form'; ?>" name="<?php echo $this->_setting_prefix . '_settings_form'; ?>" onsubmit="javascript: SaveOptions(this);" class="form-horizontal" method="post">
 			<fieldset>
 				<legend>Homepage / General Options</legend>
-				<div class="control-group">
-					<label class="control-label" for="<?php echo $this->_setting_prefix . '_service_page'; ?>">Service Page</label>
-					<div class="controls">
-						<?php echo createSelectOptionsFromArray(getPagesSelectArray(), $this->_setting_prefix . '_service_page', $this->_settings[$this->_setting_prefix . '_service_page']); ?>
-					</div>
-				</div>
 				
-				<div class="control-group">
-					<label class="control-label" for="<?php echo $this->_setting_prefix . '_service_category'; ?>">Service Category</label>
-					<div class="controls">
-						<?php echo createSelectOptionsFromArray(getCategorySelectArray(), $this->_setting_prefix . '_service_category', $this->_settings[$this->_setting_prefix . '_service_category']); ?>
-					</div>
-				</div>
+				<?php
+					echo createFormField($this, getPagesSelectArray(), '_service_page', 'Service Page', 'select');
+					echo createFormField($this, getCategorySelectArray(), '_service_category', 'Service Category', 'select');
+					echo createFormField($this, getCategorySelectArray(), '_jumbotron_category', 'Jumbotron Category', 'select');
+				?>
 				
-				<div class="control-group">
-					<label class="control-label" for="<?php echo $this->_setting_prefix . '_jumbotron_category'; ?>">Jumbotron Category</label>
-					<div class="controls">
-						<?php echo createSelectOptionsFromArray(getCategorySelectArray(), $this->_setting_prefix . '_jumbotron_category', $this->_settings[$this->_setting_prefix . '_jumbotron_category']); ?>
-					</div>
-				</div>
-				
-				<legend>Contact Page Options</legend>
+				<legend>Contact Form Options</legend>
+
+				<?php
+					echo createFormField($this, null, '_contact_email', 'Contact Email', 'text');
+					echo createFormField($this, null, '_confirmation_message_subject', 'Confirmation Message', 'text');
+					echo createFormField($this, null, '_confirmation_message', 'Confirmation Message Body', 'textarea');
+				?>
 				
 				<div class="form-actions clearfix">
 					<a href="#" id="btnOptionsSave" name="mm_pm_settings_saved" class="btn btn-primary">Save</a>
@@ -42,6 +34,61 @@
 </div>
 
 <?php
+function createFormField($obj, $data=null, $label, $name, $type)
+{
+	$output = '';
+	$field = '';
+
+	switch ($type)
+	{
+		case 'text':
+			$field = createInput($obj, $label, $type);
+		break;
+		case 'textarea':
+			$field = createTextArea($obj, $label, $type);
+		break;
+		case 'select':
+			$field = createSelect($obj, $data, $label);
+		break;
+	}
+
+	$output = '<div class="control-group">' .
+					'<label class="control-label" for="' . $obj->_setting_prefix . $label . '">' . $name . '</label>' .
+					'<div class="controls">' . 
+						$field .
+					'</div>' .
+				'</div>';
+				
+	return $output;
+}
+
+function createInput($obj, $label, $type="text")
+{
+	$output = sprintf('<input type="%s" id="%s" name="%s" value="%s" />', $type,
+		 $obj->_setting_prefix . $label, //id
+		 $obj->_setting_prefix . $label, //name
+		 stripslashes($obj->_settings[$obj->_setting_prefix . $label]) //value
+	);
+	
+	return $output;
+}
+
+function createTextArea($obj, $label)
+{
+	$output = sprintf('<textarea id="%s" name="%s">%s</textarea>', 
+		 $obj->_setting_prefix . $label, //id
+		 $obj->_setting_prefix . $label, //name
+		 stripslashes($obj->_settings[$obj->_setting_prefix . $label]) //value
+	);
+	
+	return $output;
+}
+
+function createSelect($obj, $array, $label)
+{
+	return createSelectOptionsFromArray($array, $obj->_setting_prefix . $label, $obj->_settings[$obj->_setting_prefix . $label]);
+}
+
 function createSelectOptionsFromArray($optionArray, $name, $selectedValue=0)
 {
 	$output = sprintf('<select id="%s" name="%s">', $name, $name);
