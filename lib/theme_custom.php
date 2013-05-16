@@ -72,12 +72,15 @@ class MM_Roots_Optical
 				case 'settings':
 					$data_back = $_REQUEST['settings'];
 					
-					$values = array(
-						$data_back[0]['name'] => $data_back[0]['value'],
-						$data_back[1]['name'] => $data_back[1]['value'],
-					);
+					$values = array();
+					$i = 0;
+					foreach ($data_back as $data)
+					{
+						
+						$values[$data['name']] = $data['value'];
+					}
 					
-					print_r($values);
+					//print_r($values);
 					
 					$this->_save_settings_todb($values);
 				break;
@@ -109,6 +112,7 @@ class MM_Roots_Optical
 		global $shortname; 
 
 		$standart_values = array(
+			$this->_setting_prefix . '_service_page' => '',
 			$this->_setting_prefix . '_service_category' => '',
 			$this->_setting_prefix . '_jumbotron_category' => '',
 		);
