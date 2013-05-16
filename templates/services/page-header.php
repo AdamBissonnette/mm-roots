@@ -6,13 +6,30 @@
 	?>
   	<small><?php echo $description; ?></small>
   </h2>
-  
+
+
+	<?php
+	 $postid =get_post_meta(get_the_ID(), "readmoreid", true);
+	 if ($postid) {
+	 
+	 $post = get_post($postid);
+	 ?>  
   <p>
-  		Blurb about commitment to service post / quality etc...
-  	</p>
+  		<?php
+  			if ($post->post_excerpt)
+  			{
+  				echo $post->post_excerpt;
+  			}
+  			else
+  			{
+  				echo get_post_meta(get_the_ID(), "blurb", true);
+  			}  		
+  		?>
+  </p>
   	
-		<a class="btn btn-small btn-primary" href="#">
-		<i class="icon-search"></i>
-		Read more
-		</a>
+	<a class="btn btn-small btn-primary" href="<?php echo get_permalink($post->ID); ?>">
+	<i class="icon-search"></i>
+	Read more
+	</a>
+	<?php } ?>
 </div>
