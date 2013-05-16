@@ -16,13 +16,15 @@
 	 ?>  
   <p>
   		<?php
-  			if ($post->post_excerpt)
+  			$blurb = get_post_meta(get_the_ID(), "blurb", true);
+  		
+  			if ($blurb)
   			{
-  				echo $post->post_excerpt;
+  				echo $blurb;
   			}
   			else
   			{
-  				echo get_post_meta(get_the_ID(), "blurb", true);
+  				echo $post->post_excerpt;
   			}  		
   		?>
   </p>
