@@ -28,3 +28,6 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 }
 
 input.search-query {}
+
+
+.navbar .brand {padding: 12px 0 10px 70px; line-height: 1em; font-size: 2em; font-weight: bold; color: #74b4cb; background: url('../img/brand-logo.png') no-repeat 0 10px;}
