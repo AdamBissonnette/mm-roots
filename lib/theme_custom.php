@@ -118,6 +118,7 @@ class MM_Roots_Optical
 			$this->_setting_prefix . '_contact_email' => '',
 			$this->_setting_prefix . '_confirmation_message' => '',
 			$this->_setting_prefix . '_confirmation_message_subject' => '',
+			$this->_setting_prefix . '_jumbotron_count' => '',
 		);
 
 		foreach ($standart_values as $key => $value){
