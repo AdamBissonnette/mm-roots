@@ -28,15 +28,27 @@ foreach ($posts as $post)
 
 	if ($image == null)
 	{
-		$image = "assets/img/ipad.png";
-	}
+		if (has_post_thumbnail())
+		{
+			$thumb =  wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID), 'full');
+			//print_r($thumb);
+			
+
+			$image = $thumb[0];
+			//$image = "Turtles";
+		}
+		else
+		{
+			$image = $MM_Roots_Optical->_settings["mm_op_jumbotron_default"];
+		}	
+	}	
 
 ?>
 
 <li>
 	<div class="container">
 		<div class="row">
-			<div class="span5 offset1">
+			<div class="span5 offset1 jumbotron-image">
 				<img alt="" src="<?php echo $image; ?>">
 			</div>
 			<div class="span5 _offset1">

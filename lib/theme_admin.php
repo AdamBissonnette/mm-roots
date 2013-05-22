@@ -14,6 +14,7 @@
 					echo createFormField($this, getCategorySelectArray(), '_service_category', 'Service Category', 'select');
 					echo createFormField($this, getCategorySelectArray(), '_jumbotron_category', 'Jumbotron Category', 'select');
 					echo createFormField($this, null, '_jumbotron_count', 'Number Jumbotron Slides to Display', 'text');
+					echo createFormField($this, null, '_jumbotron_default', 'Default Image to Display', 'text');
 				?>
 				
 				<legend>Contact Form Options</legend>
