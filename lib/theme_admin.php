@@ -7,24 +7,34 @@
 			
 			<form id="<?php echo $this->_setting_prefix . '_settings_form'; ?>" name="<?php echo $this->_setting_prefix . '_settings_form'; ?>" onsubmit="javascript: SaveOptions(this);" class="form-horizontal" method="post">
 			<fieldset>
-				<legend>Homepage / General Options</legend>
+				<div class="row">
+					<div class="span6">
+					<legend>Services Options</legend>
 				
-				<?php
-					echo createFormField($this, getPagesSelectArray(), '_service_page', 'Service Page', 'select');
-					echo createFormField($this, getCategorySelectArray(), '_service_category', 'Service Category', 'select');
-					echo createFormField($this, getCategorySelectArray(), '_jumbotron_category', 'Jumbotron Category', 'select');
-					echo createFormField($this, null, '_jumbotron_count', 'Number Jumbotron Slides to Display', 'text');
-					echo createFormField($this, null, '_jumbotron_default', 'Default Image to Display', 'text');
-				?>
-				
-				<legend>Contact Form Options</legend>
+					<?php
+						echo createFormField($this, getPagesSelectArray(), '_service_page', 'Service Page', 'select');
+						echo createFormField($this, getCategorySelectArray(), '_service_category', 'Service Category', 'select');
+						echo createFormField($this, null, '_service_icon_default', 'Default Services Icon', 'text');
+					?>
+					</div>
+					<div class="span6">
+					<legend>Jumbotron Options</legend>
+					<?php
+						echo createFormField($this, getCategorySelectArray(), '_jumbotron_category', 'Jumbotron Category', 'select');
+						echo createFormField($this, null, '_jumbotron_count', 'Number Jumbotron Slides to Display', 'text');
+						echo createFormField($this, null, '_jumbotron_default', 'Default Image to Display', 'text');
+					?>
+					</div>
+					<div class="span6">
+					<legend>Contact Form Options</legend>
 
-				<?php
-					echo createFormField($this, null, '_contact_email', 'Contact Email', 'text');
-					echo createFormField($this, null, '_confirmation_message_subject', 'Confirmation Message Subject', 'text');
-					echo createFormField($this, null, '_confirmation_message', 'Confirmation Message Body', 'textarea');
-				?>
-				
+					<?php
+						echo createFormField($this, null, '_contact_email', 'Contact Email', 'text');
+						echo createFormField($this, null, '_confirmation_message_subject', 'Confirmation Message Subject', 'text');
+						echo createFormField($this, null, '_confirmation_message', 'Confirmation Message Body', 'textarea');
+					?>
+					</div>
+				</div>
 				<div class="form-actions clearfix">
 					<a href="#" id="btnOptionsSave" name="mm_pm_settings_saved" class="btn btn-primary">Save</a>
 					<input type="reset" class="btn" />

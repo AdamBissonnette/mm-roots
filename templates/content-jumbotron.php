@@ -31,11 +31,7 @@ foreach ($posts as $post)
 		if (has_post_thumbnail())
 		{
 			$thumb =  wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID), 'full');
-			//print_r($thumb);
-			
-
 			$image = $thumb[0];
-			//$image = "Turtles";
 		}
 		else
 		{
