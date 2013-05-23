@@ -12,7 +12,7 @@
 					<legend>General Options</legend>
 				
 					<?php
-						echo createFormField($this, '_brand_logo', 'Navbar Logo', 'text');
+						echo createFormField($this, '_brand_logo', 'Navbar / Brand Logo', 'text');
 						echo createFormField($this, '_footer_logo', 'Footer Logo', 'text');
 						echo createFormField($this, '_footer_text', 'Footer Text', 'textarea');
 					?>
