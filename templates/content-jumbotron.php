@@ -3,9 +3,9 @@
 
     	    <ul class="slides">
 <?php
-global $MM_Roots_Optical;
+global $MM_Roots;
 
-$posts = get_posts( "category=" . $MM_Roots_Optical->_settings["mm_op_jumbotron_category"] . "&numberposts=" . $MM_Roots_Optical->_settings["mm_op_jumbotron_count"]);
+$posts = get_posts( "category=" . $MM_Roots->_settings["mm_roots_jumbotron_category"] . "&numberposts=" . $MM_Roots->_settings["mm_roots_jumbotron_count"]);
 
 foreach ($posts as $post)
 {
@@ -35,7 +35,7 @@ foreach ($posts as $post)
 		}
 		else
 		{
-			$image = $MM_Roots_Optical->_settings["mm_op_jumbotron_default"];
+			$image = $MM_Roots->_settings["mm_roots_jumbotron_default"];
 		}	
 	}	
 

@@ -10,7 +10,12 @@
     <div class="container">
       <p class="pull-right">
         Designed by
-        <a href="http://www.paloozamarketing.com">Palooza Marketing</a>
+        <?php
+        
+        global $MM_Roots;
+        echo stripslashes($MM_Roots->_settings["mm_roots_footer_text"]);
+        
+        ?>
       </p>
       <p>&copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?> - All rights reserved</p>
     </div>

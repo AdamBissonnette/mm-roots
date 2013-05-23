@@ -1,5 +1,5 @@
 <?php 
-global $MM_Roots_Optical;
+global $MM_Roots;
 $icon = get_post_meta($post->ID, "icon", true);
 $image = get_post_meta($post->ID, "image", true);
 
@@ -12,7 +12,7 @@ if (!$image)
 	}
 	else if (!$icon)
 	{
-		$icon = $MM_Roots_Optical->_settings["mm_op_service_icon_default"];
+		$icon = $MM_Roots->_settings["mm_roots_footer_text"];
 	}
 }
 ?>

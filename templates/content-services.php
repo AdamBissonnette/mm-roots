@@ -4,9 +4,9 @@
 		<div class="span3">
 		  <h2 class="section-title">
 		  	<?php
-		  		global $MM_Roots_Optical;		  	
+		  		global $MM_Roots;		  	
 		  	
-		  		$page = get_page($MM_Roots_Optical->_settings["mm_op_service_page"]);
+		  		$page = get_page($MM_Roots->_settings["mm_roots_service_page"]);
 		  		echo $page->post_title;
 		  		
 		  		$description = get_post_meta($page->ID, "tagline", true);
@@ -23,9 +23,9 @@
 		<div class="span9">
 		  <div class="row">
 		  <?php
-		  global $MM_Roots_Optical;
+		  global $MM_Roots;
 		  	
-		  $services = get_posts( "category=" . $MM_Roots_Optical->_settings["mm_op_service_category"] . "&numberposts=3" );
+		  $services = get_posts( "category=" . $MM_Roots->_settings["mm_roots_service_category"] . "&numberposts=3" );
 		  foreach ($services as $post) :  setup_postdata($post);  {
 		  ?>
 		  

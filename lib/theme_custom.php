@@ -3,17 +3,17 @@
  * Custom functions
  */
  
-class MM_Roots_Optical
+class MM_Roots
 {
 	var $_settings;
-    var $_options_pagename = 'mm_roots_optical';
-    var $_settings_key = 'mm_roots_optical';
-    var $_setting_prefix = 'mm_op';
+    var $_options_pagename = 'mm_roots';
+    var $_settings_key = 'mm_roots';
+    var $_setting_prefix = 'mm_roots';
     var $_save_key = '';
     var $_versionnum = 0.1;
 	var $menu_page;
 	
-	function MM_Roots_Optical()
+	function MM_Roots()
 	{
 		return $this->__construct();
 	}
@@ -119,7 +119,7 @@ class MM_Roots_Optical
 			$this->_setting_prefix . '_confirmation_message' => '',
 			$this->_setting_prefix . '_confirmation_message_subject' => '',
 			$this->_setting_prefix . '_jumbotron_count' => '',
-			$this->_setting_prefix . '__jumbotron_default' => '',
+			$this->_setting_prefix . '_jumbotron_default' => '',
 			$this->_setting_prefix . '_service_icon_default' => '',
 		);
 
@@ -135,9 +135,9 @@ class MM_Roots_Optical
 
 }
 
-add_action( 'init', 'MM_Roots_Optical_Init', 5 );
-function MM_Roots_Optical_Init()
+add_action( 'init', 'MM_Roots_Init', 5 );
+function MM_Roots_Init()
 {
-    global $MM_Roots_Optical;
-    $MM_Roots_Optical = new MM_Roots_Optical();
+    global $MM_Roots;
+    $MM_Roots = new MM_Roots();
 }
