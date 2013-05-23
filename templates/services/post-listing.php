@@ -12,7 +12,7 @@ if (!$image)
 	}
 	else if (!$icon)
 	{
-		$icon = $MM_Roots->_settings["mm_roots_footer_text"];
+		$icon = $MM_Roots->_settings["mm_roots_service_icon_default"];
 	}
 }
 ?>
