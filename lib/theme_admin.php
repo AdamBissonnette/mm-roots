@@ -8,11 +8,13 @@
 			<form id="<?php echo $this->_setting_prefix . '_settings_form'; ?>" name="<?php echo $this->_setting_prefix . '_settings_form'; ?>" onsubmit="javascript: SaveOptions(this);" class="form-horizontal" method="post">
 			<fieldset>
 				<div class="row">
-					<div class="span6">										
+					<div class="span12">										
 					<legend>General Options</legend>
 				
 					<?php
-						echo createFormField($this, '_footer_text', 'Footer Text', 'textarea', getPagesSelectArray());
+						echo createFormField($this, '_brand_logo', 'Navbar Logo', 'text');
+						echo createFormField($this, '_footer_logo', 'Footer Logo', 'text');
+						echo createFormField($this, '_footer_text', 'Footer Text', 'textarea');
 					?>
 					</div>
 					<div class="span6">					
@@ -32,7 +34,7 @@
 						echo createFormField($this, '_jumbotron_default', 'Default Image to Display', 'text');
 					?>
 					</div>
-					<div class="span6">
+					<div class="span12">
 					<legend>Contact Form Options</legend>
 
 					<?php
@@ -64,7 +66,7 @@ function createFormField($obj, $label, $name, $type, $data=null)
 			$field = createInput($obj, $label, $type);
 		break;
 		case 'textarea':
-			$field = createTextArea($obj, $label, $type);
+			$field = createTextArea($obj, $label);
 		break;
 		case 'select':
 			$field = createSelect($obj, $data, $label);
@@ -94,7 +96,7 @@ function createInput($obj, $label, $type="text")
 
 function createTextArea($obj, $label)
 {
-	$output = sprintf('<textarea id="%s" name="%s">%s</textarea>', 
+	$output = sprintf('<textarea id="%s" class="span5" rows="5" name="%s">%s</textarea>', 
 		 $obj->_setting_prefix . $label, //id
 		 $obj->_setting_prefix . $label, //name
 		 stripslashes($obj->_settings[$obj->_setting_prefix . $label]) //value

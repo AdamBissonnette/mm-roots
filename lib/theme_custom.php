@@ -121,6 +121,8 @@ class MM_Roots
 			$this->_setting_prefix . '_jumbotron_count' => '',
 			$this->_setting_prefix . '_jumbotron_default' => '',
 			$this->_setting_prefix . '_service_icon_default' => '',
+			$this->_setting_prefix . '_footer_logo' => '',
+			$this->_setting_prefix . '_brand_logo' => '',
 		);
 
 		foreach ($standart_values as $key => $value){
