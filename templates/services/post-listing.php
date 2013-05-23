@@ -3,14 +3,14 @@ global $MM_Roots_Optical;
 $icon = get_post_meta($post->ID, "icon", true);
 $image = get_post_meta($post->ID, "image", true);
 
-if (!$image && !$icon)
+if (!$image)
 {
 	if (has_post_thumbnail())
 	{
 		$thumb =  wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID), 'full');
 		$image = $thumb[0];
 	}
-	else
+	else if (!$icon)
 	{
 		$icon = $MM_Roots_Optical->_settings["mm_op_service_icon_default"];
 	}
