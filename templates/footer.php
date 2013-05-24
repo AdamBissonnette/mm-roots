@@ -1,7 +1,11 @@
-<?php global $MM_Roots; ?>
+<?php
+global $MM_Roots;
+$footerText = $MM_Roots->get_setting("footer_text");
+
+?>
 
 <footer class="section-color-primarydark">
-<div class="container" style="background-image: url('<?php echo $MM_Roots->_settings["mm_roots_footer_logo"]; ?>')">
+<div class="container" style="background-image: url('<?php echo $MM_Roots->get_setting("footer_logo"); ?>')">
   <div class="row">
 	  <?php dynamic_sidebar('sidebar-footer'); ?>
   </div>
@@ -13,7 +17,7 @@
       <p class="pull-right">
         Designed by
         <?php
-        echo stripslashes($MM_Roots->_settings["mm_roots_footer_text"]);
+        echo stripslashes($footerText);
         
         ?>
       </p>

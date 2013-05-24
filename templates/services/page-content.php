@@ -3,7 +3,7 @@
 	<?php
 	global $MM_Roots;
 
-	$services = get_posts( "category=" . $MM_Roots->_settings["mm_roots_service_category"] . "&numberposts=9" );
+	$services = get_posts( "category=" . $MM_Roots->get_setting("service_category") . "&numberposts=9" );
 	foreach ($services as $post) :  setup_postdata($post);  {
 	?>
 

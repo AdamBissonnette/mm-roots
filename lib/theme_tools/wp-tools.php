@@ -32,7 +32,7 @@ function createInput($obj, $label, $type="text")
 	$output = sprintf('<input type="%s" id="%s" name="%s" value="%s" />', $type,
 		 $obj->_setting_prefix . $label, //id
 		 $obj->_setting_prefix . $label, //name
-		 stripslashes($obj->_settings[$obj->_setting_prefix . $label]) //value
+		 stripslashes($obj->get_setting($label)) //value
 	);
 	
 	return $output;
@@ -43,7 +43,7 @@ function createTextArea($obj, $label)
 	$output = sprintf('<textarea id="%s" rows="5" name="%s">%s</textarea>', 
 		 $obj->_setting_prefix . $label, //id
 		 $obj->_setting_prefix . $label, //name
-		 stripslashes($obj->_settings[$obj->_setting_prefix . $label]) //value
+		 stripslashes($obj->get_setting($label)) //value
 	);
 	
 	return $output;
@@ -51,7 +51,7 @@ function createTextArea($obj, $label)
 
 function createSelect($obj, $array, $label)
 {
-	return createSelectOptionsFromArray($array, $obj->_setting_prefix . $label, $obj->_settings[$obj->_setting_prefix . $label]);
+	return createSelectOptionsFromArray($array, $obj->_setting_prefix . $label, $obj->get_setting($label));
 }
 
 function createSelectOptionsFromArray($optionArray, $name, $selectedValue=0)

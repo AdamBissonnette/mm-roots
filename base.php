@@ -18,16 +18,16 @@
   <?php get_template_part('templates/footer');
   
   		global $MM_Roots;
-  		$animation = $MM_Roots->_settings["mm_roots_jumbotron_animation"];
+  		$animation = $MM_Roots->get_setting("jumbotron_animation");
   		if ($animation != '')
   		{
-	  		$animation = sprintf('animation: "%s", ', $animation);
+	  		$animation = sprintf('animation: "%s"', $animation);
   		}
   		
   		$jumbotron = $animation;
   		
-  		$mapPosition = $MM_Roots->_settings["mm_roots_map_position"];
-  		$mapZoom = $MM_Roots->_settings["mm_roots_zoom_level"];
+  		$mapPosition = $MM_Roots->get_setting("map_position");
+  		$mapZoom = $MM_Roots->get_setting("zoom_level");
   ?>
 
   <script type="text/javascript">  

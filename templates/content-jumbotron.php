@@ -1,11 +1,19 @@
+<?php
+global $MM_Roots;
+
+$jumbotronCategory = $MM_Roots->get_setting("jumbotron_category");
+$jumbotronCount = $MM_Roots->get_setting("jumbotron_count");
+$jumbotronDefault = $MM_Roots->get_setting("jumbotron_default");
+
+?>
+
 <section class="section-content section-jumbotron" id="section-jumbotron">
         <div class="flexslider">
 
     	    <ul class="slides">
 <?php
-global $MM_Roots;
 
-$posts = get_posts( "category=" . $MM_Roots->_settings["mm_roots_jumbotron_category"] . "&numberposts=" . $MM_Roots->_settings["mm_roots_jumbotron_count"]);
+$posts = get_posts( "category=" . $jumbotronCategory . "&numberposts=" . $jumbotronCount);
 
 foreach ($posts as $post)
 {
@@ -35,7 +43,7 @@ foreach ($posts as $post)
 		}
 		else
 		{
-			$image = $MM_Roots->_settings["mm_roots_jumbotron_default"];
+			$image = $jumbotronDefault;
 		}	
 	}	
 

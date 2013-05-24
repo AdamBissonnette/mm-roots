@@ -1,8 +1,8 @@
 <?php 
 global $MM_Roots;
 $displayHours = true;
-$hoursTitle = $MM_Roots->_settings["mm_roots_hours_title"];
-$hoursContent = $MM_Roots->_settings["mm_roots_hours_content"];
+$hoursTitle = $MM_Roots->get_setting("hours_title");
+$hoursContent = $MM_Roots->get_setting("hours_content");
 
 if ($hoursContent == '' && $hoursContent == '')
 {

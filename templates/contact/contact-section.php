@@ -1,9 +1,9 @@
 <?php 
 global $MM_Roots;
-$businessName = $MM_Roots->_settings["mm_roots_business_name"];
-$businessAddress = $MM_Roots->_settings["mm_roots_business_address"];
-$businessPhone = $MM_Roots->_settings["mm_roots_business_phone"];
-$businessEmail = $MM_Roots->_settings["mm_roots_business_email"];
+$businessName = $MM_Roots->get_setting("business_name");
+$businessAddress = $MM_Roots->get_setting("business_address");
+$businessPhone = $MM_Roots->get_setting("business_phone");
+$businessEmail = $MM_Roots->get_setting("business_email");
 
 ?>
 
@@ -21,6 +21,19 @@ $businessEmail = $MM_Roots->_settings["mm_roots_business_email"];
 		<br>
 		<i class="icon-phone"></i>
 		<a href="tel:<?php echo $businessPhone; ?>"><?php echo $businessPhone; ?></a>
+	  </p>
+	  <br />
+	  <h5>Follow Us</h5>	  
+	  <p>
+		<a class="btn btn-squared" href="#">
+		  <i class="icon-facebook"></i>
+		</a>
+		<a class="btn btn-squared" href="#">
+		  <i class="icon-twitter"></i>
+		</a>
+		<a class="btn btn-squared" href="#">
+		  <i class="icon-google-plus"></i>
+		</a>
 	  </p>
 	</div>
 	<div class="span4">

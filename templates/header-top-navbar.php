@@ -1,6 +1,6 @@
 <?php
 	global $MM_Roots;
-	$brand_logo = $MM_Roots->_settings["mm_roots_brand_logo"];
+	$brand_logo = $MM_Roots->get_setting("brand_logo");
 ?>
 <header class="banner navbar-fixed-top" role="banner">
   <div class="navbar">
