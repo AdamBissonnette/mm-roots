@@ -2,7 +2,9 @@
 /**
  * Custom functions
  */
- 
+
+include_once('tools/functions.php');
+
 class MM_Roots
 {
 	var $_settings;
