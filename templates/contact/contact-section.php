@@ -11,18 +11,16 @@ $businessEmail = $MM_Roots->_settings["mm_roots_business_email"];
 <div class="container">
   <div class="row">
 	<div class="span4">
-	  <h5>Retine Fix Inc.</h5>
+	  <h5><?php echo $businessName; ?></h5>
 	  <address>
-		1st Ave, Suite 600
-		<br>
-		Saskatoon, SK
+		<?php echo $businessAddress; ?>
 	  </address>
 	  <p>
 		<i class="icon-envelope"></i>
-		<a href="mailto:info@company.com">info@retinafix.com</a>
+		<a href="mailto:<?php echo $businessEmail; ?>"><?php echo $businessEmail; ?></a>
 		<br>
 		<i class="icon-phone"></i>
-		<a href="tel:123-456-7890">(123) 456-7890</a>
+		<a href="tel:<?php echo $businessPhone; ?>"><?php echo $businessPhone; ?></a>
 	  </p>
 	</div>
 	<div class="span4">
