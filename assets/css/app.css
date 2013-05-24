@@ -32,6 +32,10 @@ body {overflow-x: hidden;}
 .flexslider .slides .jumbotron-image img {width: auto; margin: 0 auto;}
 .service-image {}
 
+footer .container {
+	background: transparent url(../img/footer-logo.png) no-repeat 0 bottom;
+}
+
 @media (max-width: 767px) {
 	.logged-in .navbar-fixed-top {margin-top: 0;}
 	.navbar .brand {padding-top: 2px;}
