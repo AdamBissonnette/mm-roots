@@ -23,13 +23,10 @@ class MM_Roots
     function __construct()
     {
         $this->_settings = get_option($this->_settings_key) ? get_option($this->_settings_key) : array();
-        $this->_set_standart_values();       
+        $this->_set_standart_values();
 
         add_action( 'admin_menu', array(&$this, 'create_menu_link') );
-		date_default_timezone_set(get_option('timezone_string'));		
-		
-		//Shortcodes
-		//add_shortcode("MMProductGroup", array(&$this, "MMProductGroup") );
+		date_default_timezone_set(get_option('timezone_string'));
 		
 		//Ajax Posts
 		add_action('wp_ajax_nopriv_do_ajax', array(&$this, '_save') );
@@ -53,7 +50,9 @@ class MM_Roots
             $this->_save_settings_todb($_POST);
         
         wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', false, null);
-  		wp_enqueue_script('js', get_template_directory_uri() . '/assets/js/mm_op_admin.js', false, null);
+        wp_enqueue_style('admin', get_template_directory_uri() . '/assets/css/mm_roots_admin.css', false, null);
+        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', false, null);
+  		wp_enqueue_script('admin', get_template_directory_uri() . '/assets/js/mm_roots_admin.js', false, null);
         
 		include_once('theme_admin.php');
     }
@@ -82,8 +81,6 @@ class MM_Roots
 						$values[$data['name']] = $data['value'];
 					}
 					
-					//print_r($values);
-					
 					$this->_save_settings_todb($values);
 				break;
 			}
@@ -103,29 +100,15 @@ class MM_Roots
 			$this->_settings = $form_settings;
 
 			#set standart values in case we have empty fields
-			$this->_set_standart_values();
+			$this->_set_standart_values($form_settings);
 		}
 		
 		update_option($this->_settings_key, $this->_settings);
 	}
 
-	function _set_standart_values()
+	function _set_standart_values($standart_values)
 	{
-		global $shortname; 
-
-		$standart_values = array(
-			$this->_setting_prefix . '_service_page' => '',
-			$this->_setting_prefix . '_service_category' => '',
-			$this->_setting_prefix . '_jumbotron_category' => '',
-			$this->_setting_prefix . '_contact_email' => '',
-			$this->_setting_prefix . '_confirmation_message' => '',
-			$this->_setting_prefix . '_confirmation_message_subject' => '',
-			$this->_setting_prefix . '_jumbotron_count' => '',
-			$this->_setting_prefix . '_jumbotron_default' => '',
-			$this->_setting_prefix . '_service_icon_default' => '',
-			$this->_setting_prefix . '_footer_logo' => '',
-			$this->_setting_prefix . '_brand_logo' => '',
-		);
+		global $shortname;
 
 		foreach ($standart_values as $key => $value){
 			if ( !array_key_exists( $key, $this->_settings ) )

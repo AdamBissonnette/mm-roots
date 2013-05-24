@@ -40,7 +40,7 @@ function createInput($obj, $label, $type="text")
 
 function createTextArea($obj, $label)
 {
-	$output = sprintf('<textarea id="%s" class="span5" rows="5" name="%s">%s</textarea>', 
+	$output = sprintf('<textarea id="%s" rows="5" name="%s">%s</textarea>', 
 		 $obj->_setting_prefix . $label, //id
 		 $obj->_setting_prefix . $label, //name
 		 stripslashes($obj->_settings[$obj->_setting_prefix . $label]) //value

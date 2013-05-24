@@ -15,7 +15,44 @@
   ?>
   <?php include roots_template_path(); ?>
 
-  <?php get_template_part('templates/footer'); ?>
+  <?php get_template_part('templates/footer');
+  
+  		global $MM_Roots;
+  		$animation = $MM_Roots->_settings["mm_roots_jumbotron_animation"];
+  		if ($animation != '')
+  		{
+	  		$animation = sprintf('animation: "%s", ', $animation);
+  		}
+  		
+  		$jumbotron = $animation;
+  		
+  		$mapPosition = $MM_Roots->_settings["mm_roots_map_position"];
+  		$mapZoom = $MM_Roots->_settings["mm_roots_zoom_level"];
+  ?>
+
+  <script type="text/javascript">  
+  	jQuery().ready(function($) {
+		// ------------------------------------
+		// FlexSlider
+		// ------------------------------------
+		$('.flexslider').flexslider({
+			<?php echo $jumbotron; ?>
+		});
+	
+		// ------------------------------------
+		// Google Maps
+		// ------------------------------------
+		$('#map_canvas').gmap({'scrollwheel': false}).bind('init', function() {
+			$('#map_canvas').gmap('addMarker', {'position': '<?php echo $mapPosition; ?>', 'bounds': true}).click(function() {});
+			$('#map_canvas').gmap('option', 'zoom', <?php echo $mapZoom; ?>);
+		});
+	
+		// ------------------------------------
+		// FitVids
+		// ------------------------------------
+		$(".fitvids").fitVids();
+	});
+  </script>
 
 </body>
 </html>

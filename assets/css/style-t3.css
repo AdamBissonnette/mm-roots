@@ -9786,23 +9786,6 @@ footer {
 footer .container {
   position: relative;
 }
-footer .container:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 25em;
-  height: 19em;
-  bottom: -5em;
-  left: -6em;
-  opacity: 0.3;
-  filter: alpha(opacity=30);
-  background: transparent url(../img/simiot-big-w.png) no-repeat 0 0;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
-  z-index: 1;
-}
 footer .container .row {
   position: relative;
   z-index: 2;

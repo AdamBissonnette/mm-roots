@@ -1,5 +1,9 @@
 <?php 
 global $MM_Roots;
+$businessName = $MM_Roots->_settings["mm_roots_business_name"];
+$businessAddress = $MM_Roots->_settings["mm_roots_business_address"];
+$businessPhone = $MM_Roots->_settings["mm_roots_business_phone"];
+$businessEmail = $MM_Roots->_settings["mm_roots_business_email"];
 
 ?>
 

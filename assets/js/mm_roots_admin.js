@@ -1,9 +1,3 @@
-function Start()
-{
-	CheckScripts();
-	jQuery('#btnOptionsSave').click(function() {SaveOptions(jQuery("#mm_roots_settings_form")); });
-}
-
 function SaveOptions(form)
 {
 	var formdata = jQuery(form).serializeArray()
@@ -176,5 +170,6 @@ var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, 
  };
 
 jQuery(document).ready(function($) {
-	Start();
+	CheckScripts();
+	$('#btnOptionsSave').click(function(e) {e.preventDefault(); SaveOptions(jQuery("#mm_roots_settings_form")); });
 });
