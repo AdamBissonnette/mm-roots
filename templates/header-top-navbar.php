@@ -1,3 +1,7 @@
+<?php
+	global $MM_Roots;
+	$brand_logo = $MM_Roots->_settings["mm_roots_brand_logo"];
+?>
 <header class="banner navbar-fixed-top" role="banner">
   <div class="navbar">
   <div class="navbar-inner">
@@ -8,6 +12,7 @@
         <span class="icon-bar"></span>
       </a>
       <a class="brand span3" href="<?php echo home_url(); ?>/">
+      	<img class="brand-logo" src="<?php echo $brand_logo; ?>" />
         <?php bloginfo('name'); ?>
       </a>
       <nav class="nav-collapse collapse" role="navigation">

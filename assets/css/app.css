@@ -23,14 +23,22 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    Media Queries
    ========================================================================== */
 
-@media (max-width: 767px) {
-
-}
-
 input.search-query {}
 
 body {overflow-x: hidden;}
-.navbar .brand {padding: 12px 0 10px 70px; line-height: 1em; font-size: 2em; font-weight: bold; color: #74b4cb; background: url('../img/brand-logo.png') no-repeat 0 10px;}
+.navbar .brand {width: 300px; padding: 10px 0 4px; line-height: 1em; font-size: 2em; font-weight: bold; color: #74b4cb;}
+.navbar img.brand-logo {height: 1em; vertical-align: text-top; margin: 2px 0 0 5px;}
 .flexslider {border-bottom: 0px;}
 .flexslider .slides .jumbotron-image img {width: auto; margin: 0 auto;}
 .service-image {}
+
+footer .container {
+	background: transparent url(../img/footer-logo.png) no-repeat 0 bottom;
+}
+
+@media (max-width: 767px) {
+	.logged-in .navbar-fixed-top {margin-top: 0;}
+	.navbar .brand {padding-top: 2px;}
+	.navbar .btn-navbar {padding: 7px 6px;}
+}
+
