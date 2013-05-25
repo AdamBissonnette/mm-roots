@@ -29,37 +29,55 @@ function createFormField($label, $name, $value, $type, $options=null)
 
 function createInput($label, $value, $type="text", $options = null)
 {
-	$output = sprintf('<input type="%s" id="%s" name="%s" value="%s" />', $type,
+	if ($options) extract( $options );
+
+	$output = sprintf('<input type="%s" id="%s" class="%s" name="%s" value="%s" placeholder="%s" />', $type,
 		 $label, //id
+		 $class,
 		 $label, //name
-		 stripslashes($value) //value
+		 stripslashes($value), //value
+		 $placeholder
 	);
+	
+	if ($note) {
+		$output .= sprintf('<p class="help-block">%s</p>', $note);
+	}
 	
 	return $output;
 }
 
 function createTextArea($label, $value, $options = null)
 {
-	$output = sprintf('<textarea id="%s" rows="5" name="%s">%s</textarea>', 
+	if ($options) extract( $options );
+
+	$output = sprintf('<textarea id="%s" class="%s" rows="5" name="%s" placeholder="%s">%s</textarea>', 
 		 $label, //id
+		 $class,
 		 $label, //name
+		 $placeholder,
 		 stripslashes($value) //value
 	);
+	
+	if ($note) {
+		$output .= sprintf('<p class="help-block">%s</p>', $note);
+	}
 	
 	return $output;
 }
 
 function createSelect($label, $value, $options)
 {
-	return createSelectOptionsFromArray($options["data"], $label, $value);
+	return createSelectOptionsFromArray($options, $label, $value);
 }
 
-function createSelectOptionsFromArray($optionArray, $name, $selectedValue=0)
+function createSelectOptionsFromArray($options, $name, $selectedValue=0)
 {
-	$output = sprintf('<select id="%s" name="%s">', $name, $name);
+	if ($options) extract( $options );
+	
+	$output = sprintf('<select id="%s" class="%s" name="%s">', $name, $class, $name);
 	$optionTemplate = '<option value="%s"%s>%s</option>\n';
-	$output .= sprintf($optionTemplate, "", "", "Select an Option");
-	foreach ($optionArray as $key => $value)
+	$output .= sprintf($optionTemplate, "", "", $placeholder);
+	foreach ($data as $key => $value)
 	{
 		if ($selectedValue == $key)
 		{
@@ -72,6 +90,10 @@ function createSelectOptionsFromArray($optionArray, $name, $selectedValue=0)
 	}
 	
 	$output .= '</select>';
+	
+	if ($note) {
+		$output .= sprintf('<p class="help-block">%s</p>', $note);
+	}
 	
 	return $output;
 }

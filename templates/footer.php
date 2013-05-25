@@ -15,7 +15,6 @@ $footerText = $MM_Roots->get_setting("footer_text");
 <div class="post-footer section-content section-content-mini section-color-graydark">
     <div class="container">
       <p class="pull-right">
-        Designed by
         <?php
         echo stripslashes($footerText);
         

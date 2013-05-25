@@ -20,9 +20,9 @@
 				<legend>General Options</legend>
 			
 				<?php
-					echo createMMRootsFormField('brand_logo', 'Navbar / Brand Logo', 'text');
-					echo createMMRootsFormField('footer_logo', 'Footer Logo', 'text');
-					echo createMMRootsFormField('footer_text', 'Footer Text', 'textarea');
+					echo MMRootsField('brand_logo', 'Navbar / Brand Logo', 'text');
+					echo MMRootsField('footer_logo', 'Footer Logo', 'text');
+					echo MMRootsField('footer_text', 'Footer Text', 'textarea', array('placeholder' => 'ex. Made by Media Manifesto Inc'));
 				?>
 				</div>
 				<div class="tab-pane" id="home">
@@ -30,20 +30,20 @@
 					<legend>Services Options</legend>
 			
 					<?php
-						echo createMMRootsFormField('service_page', 'Service Page', 'select', array( "data" => getPagesSelectArray()));
-						echo createMMRootsFormField('service_category', 'Service Category', 'select',  array( "data" => getCategorySelectArray()));
-						echo createMMRootsFormField('service_icon_default', 'Default Services Icon', 'text');
+						echo MMRootsField('service_page', 'Service Page', 'select', array( "data" => getPagesSelectArray()));
+						echo MMRootsField('service_category', 'Service Category', 'select',  array( "data" => getCategorySelectArray()));
+						echo MMRootsField('service_icon_default', 'Default Services Icon', 'text', array('placeholder' => 'ex. cloud'));
 					?>
 					</div>
 					<div class="span6">
 					<legend>Jumbotron Options</legend>
 					<?php
-						echo createMMRootsFormField('jumbotron_category', 'Jumbotron Category', 'select',  array( "data" => getCategorySelectArray()));
-						echo createMMRootsFormField('jumbotron_count', 'Number Jumbotron Slides to Display', 'text');
-						echo createMMRootsFormField('jumbotron_default', 'Default Image to Display', 'text');
+						echo MMRootsField('jumbotron_category', 'Jumbotron Category', 'select',  array( "data" => getCategorySelectArray()));
+						echo MMRootsField('jumbotron_count', 'Number Jumbotron Slides to Display', 'text');
+						echo MMRootsField('jumbotron_default', 'Default Image to Display', 'text');
 					
 						$transitionEffects = array("slide"=>"Slide", "fade"=>"Fade");
-						echo createMMRootsFormField('jumbotron_animation', 'Transition Effect', 'select', array("data" => $transitionEffects));
+						echo MMRootsField('jumbotron_animation', 'Transition Effect', 'select', array("data" => $transitionEffects));
 					?>
 					</div>
 				</div>
@@ -53,14 +53,14 @@
 					<legend>Business Information</legend>
 
 					<?php
-						echo createMMRootsFormField('business_name', 'Business Name', 'text');
-						echo createMMRootsFormField('business_address', 'Business Address', 'textarea');
-						echo createMMRootsFormField('business_phone', 'Phone Number', 'text');
-						echo createMMRootsFormField('business_email', 'Email Address', 'text');
-						echo createMMRootsFormField('business_facebook', 'Facebook', 'text');
-						echo createMMRootsFormField('business_twitter', 'Twitter', 'text');
-						echo createMMRootsFormField('business_googleplus', 'Google Plus', 'text');
-						echo createMMRootsFormField('business_youtube', 'YouTube', 'text');
+						echo MMRootsField('business_name', 'Business Name', 'text');
+						echo MMRootsField('business_address', 'Business Address', 'textarea');
+						echo MMRootsField('business_phone', 'Phone Number', 'text');
+						echo MMRootsField('business_email', 'Email Address', 'text');
+						echo MMRootsField('business_facebook', 'Facebook', 'text', array("class" => "req"));
+						echo MMRootsField('business_twitter', 'Twitter', 'text');
+						echo MMRootsField('business_googleplus', 'Google Plus', 'text');
+						echo MMRootsField('business_youtube', 'YouTube', 'text');
 					?>
 					</div>
 					
@@ -68,8 +68,8 @@
 					<legend>Hours Information</legend>
 
 					<?php
-						echo createMMRootsFormField('hours_title', 'Business Hours Title', 'text');
-						echo createMMRootsFormField('hours_content', 'Business Hours', 'textarea');
+						echo MMRootsField('hours_title', 'Business Hours Title', 'text');
+						echo MMRootsField('hours_content', 'Business Hours', 'textarea');
 					?>
 					</div>
 				
@@ -77,8 +77,10 @@
 					<legend>Google Map Options</legend>
 
 					<?php
-						echo createMMRootsFormField('map_position', 'Google Map Position', 'text');
-						echo createMMRootsFormField('zoom_level', 'Google Map Zoom', 'text');
+						echo MMRootsField('map_position', 'Google Map Position', 'text',
+						 array('placeholder' => 'ex. lattitude,longitude',
+						 'note' => "Note: if you can't find your lattitude and longitude just ask google."));
+						echo MMRootsField('zoom_level', 'Google Map Zoom', 'text', array('placeholder' => 'ex. 15'));
 					?>
 					</div>
 				
@@ -86,9 +88,9 @@
 					<legend>Contact Form Options</legend>
 
 					<?php
-						echo createMMRootsFormField('contact_email', 'Contact Email', 'text');
-						echo createMMRootsFormField('confirmation_message_subject', 'Confirmation Message Subject', 'text');
-						echo createMMRootsFormField('confirmation_message', 'Confirmation Message Body', 'textarea');
+						echo MMRootsField('contact_email', 'Contact Email', 'text');
+						echo MMRootsField('confirmation_message_subject', 'Confirmation Message Subject', 'text');
+						echo MMRootsField('confirmation_message', 'Confirmation Message Body', 'textarea');
 					?>
 					</div>
 				</div>
@@ -108,7 +110,7 @@
 </div>
 
 <?php
-	function createMMRootsFormField($name, $label, $type, $options=null)
+	function MMRootsField($name, $label, $type, $options=null)
 	{
 		global $MM_Roots;
 		return createFormField($name, $label, $MM_Roots->get_setting($name), $type, $options);
