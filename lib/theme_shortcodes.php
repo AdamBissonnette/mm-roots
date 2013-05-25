@@ -114,4 +114,25 @@ function span($atts, $content="")
 }
 add_shortcode( 'span', 'span' );
 
+function video($atts, $content="")
+{
+	extract(shortcode_atts(array(
+		'id' = '',
+		'autoplay' = '', //not used atm
+		'x' = '420',
+		'y' = '315'
+	), $atts) );
+
+	$output = "";
+	$videoContainerFormat = '<div class="fitvids">%s</div>';
+	$videoEmbedFormat = '<iframe width="%s" height="%s" src="http://www.youtube.com/embed/%s" frameborder="0" allowfullscreen></iframe>';
+
+	$embedOutput = sprintf($videoEmbedFormat, $x, $y, $id);
+	$output = sprintf($videoContainerFormat, $embedOutput);
+
+	return $output;
+}
+
+add_shortcode( 'video', 'video' );
+
 ?>
