@@ -171,5 +171,5 @@ var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, 
 
 jQuery(document).ready(function($) {
 	CheckScripts();
-	$('#btnOptionsSave').click(function(e) {e.preventDefault(); SaveOptions(jQuery("#mm_roots_settings_form")); });
+	$('#btnOptionsSave').click(function(e) {e.preventDefault(); SaveOptions(jQuery("form#theme_settings")); });
 });

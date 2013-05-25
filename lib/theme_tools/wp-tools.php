@@ -1,5 +1,5 @@
 <?php
-function createFormField($obj, $label, $name, $type, $data=null)
+function createFormField($label, $name, $value, $type, $options=null)
 {
 	$output = '';
 	$field = '';
@@ -7,18 +7,18 @@ function createFormField($obj, $label, $name, $type, $data=null)
 	switch ($type)
 	{
 		case 'text':
-			$field = createInput($obj, $label, $type);
+			$field = createInput($label, $value, $type, $options);
 		break;
 		case 'textarea':
-			$field = createTextArea($obj, $label);
+			$field = createTextArea($label, $value, $options);
 		break;
 		case 'select':
-			$field = createSelect($obj, $data, $label);
+			$field = createSelect($label, $value, $options);
 		break;
 	}
 
 	$output = '<div class="control-group">' .
-					'<label class="control-label" for="' . $obj->_setting_prefix . $label . '">' . $name . '</label>' .
+					'<label class="control-label" for="' . $label . '">' . $name . '</label>' .
 					'<div class="controls">' . 
 						$field .
 					'</div>' .
@@ -27,31 +27,31 @@ function createFormField($obj, $label, $name, $type, $data=null)
 	return $output;
 }
 
-function createInput($obj, $label, $type="text")
+function createInput($label, $value, $type="text", $options = null)
 {
 	$output = sprintf('<input type="%s" id="%s" name="%s" value="%s" />', $type,
-		 $obj->_setting_prefix . $label, //id
-		 $obj->_setting_prefix . $label, //name
-		 stripslashes($obj->get_setting($label)) //value
+		 $label, //id
+		 $label, //name
+		 stripslashes($value) //value
 	);
 	
 	return $output;
 }
 
-function createTextArea($obj, $label)
+function createTextArea($label, $value, $options = null)
 {
 	$output = sprintf('<textarea id="%s" rows="5" name="%s">%s</textarea>', 
-		 $obj->_setting_prefix . $label, //id
-		 $obj->_setting_prefix . $label, //name
-		 stripslashes($obj->get_setting($label)) //value
+		 $label, //id
+		 $label, //name
+		 stripslashes($value) //value
 	);
 	
 	return $output;
 }
 
-function createSelect($obj, $array, $label)
+function createSelect($label, $value, $options)
 {
-	return createSelectOptionsFromArray($array, $obj->_setting_prefix . $label, $obj->get_setting($label));
+	return createSelectOptionsFromArray($options["data"], $label, $value);
 }
 
 function createSelectOptionsFromArray($optionArray, $name, $selectedValue=0)

@@ -10,7 +10,7 @@ class MM_Roots
 	var $_settings;
     var $_options_pagename = 'mm_roots';
     var $_settings_key = 'mm_roots';
-    var $_setting_prefix = 'mm_roots_';
+    //var $_setting_prefix = 'mm_roots_';
     var $_save_key = '';
     var $_versionnum = 0.1;
 	var $menu_page;
@@ -39,103 +39,103 @@ class MM_Roots
     	$themeSettings = array (
 			  0 => 
 			  array (
-				'name' => 'mm_roots_brand_logo',
+				'name' => 'brand_logo',
 				'value' => 'http://localhost:8888/Wordpress/assets/img/brand-logo.png',
 			  ),
 			  1 => 
 			  array (
-				'name' => 'mm_roots_footer_logo',
+				'name' => 'footer_logo',
 				'value' => 'http://localhost:8888/Wordpress/assets/img/footer-logo.png',
 			  ),
 			  2 => 
 			  array (
-				'name' => 'mm_roots_footer_text',
+				'name' => 'footer_text',
 				'value' => 'Made by Media Manifesto Inc',
 			  ),
 			  3 => 
 			  array (
-				'name' => 'mm_roots_service_page',
+				'name' => 'service_page',
 				'value' => '34',
 			  ),
 			  4 => 
 			  array (
-				'name' => 'mm_roots_service_category',
+				'name' => 'service_category',
 				'value' => '4',
 			  ),
 			  5 => 
 			  array (
-				'name' => 'mm_roots_service_icon_default',
+				'name' => 'service_icon_default',
 				'value' => 'cloud',
 			  ),
 			  6 => 
 			  array (
-				'name' => 'mm_roots_jumbotron_category',
+				'name' => 'jumbotron_category',
 				'value' => '5',
 			  ),
 			  7 => 
 			  array (
-				'name' => 'mm_roots_jumbotron_count',
+				'name' => 'jumbotron_count',
 				'value' => '3',
 			  ),
 			  8 => 
 			  array (
-				'name' => 'mm_roots_jumbotron_default',
+				'name' => 'jumbotron_default',
 				'value' => 'http://localhost:8888/Wordpress/assets/img/ipad.png',
 			  ),
 			  9 => 
 			  array (
-				'name' => 'mm_roots_jumbotron_animation',
+				'name' => 'jumbotron_animation',
 				'value' => 'slide',
 			  ),
 			  10 => 
 			  array (
-				'name' => 'mm_roots_business_name',
+				'name' => 'business_name',
 				'value' => 'Company xyz inc',
 			  ),
 			  11 => 
 			  array (
-				'name' => 'mm_roots_business_address',
+				'name' => 'business_address',
 				'value' => '123 Street,<br />
 			City',
 			  ),
 			  12 => 
 			  array (
-				'name' => 'mm_roots_business_phone',
+				'name' => 'business_phone',
 				'value' => '1.234.456.7890',
 			  ),
 			  13 => 
 			  array (
-				'name' => 'mm_roots_business_email',
+				'name' => 'business_email',
 				'value' => 'contact@companyxyz.com',
 			  ),
 			  14 => 
 			  array (
-				'name' => 'mm_roots_business_facebook',
+				'name' => 'business_facebook',
 				'value' => '',
 			  ),
 			  15 => 
 			  array (
-				'name' => 'mm_roots_business_twitter',
+				'name' => 'business_twitter',
 				'value' => '',
 			  ),
 			  16 => 
 			  array (
-				'name' => 'mm_roots_business_googleplus',
+				'name' => 'business_googleplus',
 				'value' => '',
 			  ),
 			  17 => 
 			  array (
-				'name' => 'mm_roots_business_youtube',
+				'name' => 'business_youtube',
 				'value' => '',
 			  ),
 			  18 => 
 			  array (
-				'name' => 'mm_roots_hours_title',
+				'name' => 'hours_title',
 				'value' => 'Hours of Operation',
 			  ),
 			  19 => 
 			  array (
-				'name' => 'mm_roots_hours_content',
+				'name' => 'hours_content',
 				'value' => '<p>Monday Through Friday:</p>
 			<p>9am - 5pm
 			</p>
@@ -143,27 +143,27 @@ class MM_Roots
 			  ),
 			  20 => 
 			  array (
-				'name' => 'mm_roots_map_position',
+				'name' => 'map_position',
 				'value' => '-13.434324,-234',
 			  ),
 			  21 => 
 			  array (
-				'name' => 'mm_roots_zoom_level',
+				'name' => 'zoom_level',
 				'value' => '15',
 			  ),
 			  22 => 
 			  array (
-				'name' => 'mm_roots_contact_email',
+				'name' => 'contact_email',
 				'value' => '',
 			  ),
 			  23 => 
 			  array (
-				'name' => 'mm_roots_confirmation_message_subject',
+				'name' => 'confirmation_message_subject',
 				'value' => '',
 			  ),
 			  24 => 
 			  array (
-				'name' => 'mm_roots_confirmation_message',
+				'name' => 'confirmation_message',
 				'value' => '',
 			  ),
 			);
@@ -215,7 +215,6 @@ class MM_Roots
 					$i = 0;
 					foreach ($data_back as $data)
 					{
-						
 						$values[$data['name']] = $data['value'];
 					}
 					
@@ -260,7 +259,7 @@ class MM_Roots
 	
 	function get_setting($name)
 	{
-		return $this->_settings[$this->_setting_prefix . $name];
+		return $this->_settings[$name];
 	}
 
 }
