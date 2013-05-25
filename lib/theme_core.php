@@ -190,6 +190,7 @@ class MM_Roots
         wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', false, null);
   		wp_enqueue_script('admin', get_template_directory_uri() . '/assets/js/mm_roots_admin.js', false, null);
         
+        include_once('theme_admin_data.php');
 		include_once('theme_admin_ui.php');
     }
     
