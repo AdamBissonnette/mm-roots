@@ -50,6 +50,24 @@
 					)
 				),
 				array(
+					'name' => 'News Options',
+					'size' => 6,
+					'fields' => array(
+						array('id' => 'news_page',
+							'label' => 'News Page',
+							'type' => 'select',
+							'options' => array( "data" => getPagesSelectArray())),
+						array('id' => 'news_category',
+							'label' => 'News Category',
+							'type' => 'select',
+							'options' => array( "data" => getCategorySelectArray())),
+						array('id' => 'news_icon_default',
+							'label' => 'Default News Icon',
+							'type' => 'text',
+							'options' => array( "placeholder" => 'ex. cloud' ))
+					)
+				),
+				array(
 					'name' => 'Jumbotron Options',
 					'size' => 6,
 					'fields' => array(
