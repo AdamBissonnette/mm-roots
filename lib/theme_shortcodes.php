@@ -117,10 +117,10 @@ add_shortcode( 'span', 'span' );
 function video($atts, $content="")
 {
 	extract(shortcode_atts(array(
-		'id' = '',
-		'autoplay' = '', //not used atm
-		'x' = '420',
-		'y' = '315'
+		'id' => '',
+		'autoplay' => '',
+		'x' => '420',
+		'y' => '315'
 	), $atts) );
 
 	$output = "";
