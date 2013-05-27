@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand span3" href="<?php echo home_url(); ?>/">
+      <a class="brand span6" href="<?php echo home_url(); ?>/">
       	<img class="brand-logo" src="<?php echo $brand_logo; ?>" />
         <?php bloginfo('name'); ?>
       </a>

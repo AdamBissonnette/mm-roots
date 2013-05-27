@@ -26,7 +26,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 input.search-query {}
 
 body {overflow-x: hidden;}
-.navbar .brand {width: 300px; padding: 10px 0 4px; line-height: 1em; font-size: 2em; font-weight: bold; color: #74b4cb;}
+.navbar .brand {padding: 10px 0 4px; line-height: 1em; font-size: 2em; font-weight: bold; white-space: nowrap;}
 .navbar img.brand-logo {height: 1em; vertical-align: text-top; margin: 2px 0 0 5px;}
 .flexslider {border-bottom: 0px;}
 .flexslider .slides .jumbotron-image img {width: auto; margin: 0 auto;}
