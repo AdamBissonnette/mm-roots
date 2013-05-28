@@ -1,7 +1,10 @@
 <?php
 	global $MM_Roots;		  		  	
-	$page = get_page($MM_Roots->get_setting("news_page"));
-	$news = get_posts( "category=" . $MM_Roots->get_setting("news_category") . "&numberposts=3" );
+	$pageTitle = $MM_Roots->get_setting("news_title");
+	$pageTagline = $MM_Roots->get_setting("news_tagline");
+	$category_id = $MM_Roots->get_setting("news_category");
+	$news = get_posts( "category=" . $category_id . "&numberposts=3" );
+	$newsLink = get_category_link($category_id);
 ?>
 <section class="section-content section-news" id="section-news">
 	<div class="container">
@@ -9,14 +12,12 @@
 		<div class="span3">
 		  <h2 class="section-title">
 		  	<?php
-		  		echo $page->post_title;
-		  		
-		  		$description = get_post_meta($page->ID, "tagline", true);
+		  		echo $pageTitle;
 		  	?>	
-		  	<small><?php echo $description; ?></small>
+		  	<small><?php echo $pageTagline; ?></small>
 		  </h2>
 		  <p>
-			<a class="btn btn-small btn-primary" href="<?php echo get_permalink($page->ID); ?>">
+			<a class="btn btn-small btn-primary" href="<?php echo $newsLink; ?>">
 			  <i class="icon-search"></i>
 			  View all
 			</a>
