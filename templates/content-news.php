@@ -23,7 +23,7 @@
 			</a>
 		  </p>
 		</div>
-		<div class="span9">
+		<div class="span9 news-content">
 		  <div class="row">
 		  <?php
 		  foreach ($news as $post) :  setup_postdata($post);  {
