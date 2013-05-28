@@ -43,6 +43,7 @@ function roots_scripts() {
   wp_register_script('google_map','http://maps.google.com/maps/api/js?sensor=true', false, null, true);
   wp_register_script('jquery_map', get_template_directory_uri() . '/assets/js/jquery.ui.map.min.js', false, null, true);
   wp_register_script('fit_vids', get_template_directory_uri() . '/assets/js/jquery.fitvids.min.js', false, null, true);
+  wp_register_script('formtools', get_template_directory_uri() . '/assets/js/formtools.js', false, null, true);
 
   wp_enqueue_script('jquery');
   wp_enqueue_script('modernizr');
@@ -52,6 +53,7 @@ function roots_scripts() {
   wp_enqueue_script('fit_vids');
   wp_enqueue_script('google_map');
   wp_enqueue_script('jquery_map');
+  wp_enqueue_script('formtools');
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 

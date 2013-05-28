@@ -87,6 +87,23 @@
 							'options' => array( "data" => array("slide"=>"Slide", "fade"=>"Fade"))
 							)
 					)
+				),
+				array(
+					'name' => 'Testimonial Options',
+					'size' => 6,
+					'fields' => array(
+						array('id' => 'testimonial_category',
+							'label' => 'Testimonial Category',
+							'type' => 'select',
+							'options' => array( "data" => getCategorySelectArray())),
+						array('id' => 'testimonial_title',
+							'label' => 'Testimonial Title',
+							'type' => 'text'),
+						array('id' => 'testimonial_tagline',
+							'label' => 'Testimonial Tagline',
+							'type' => 'text')
+
+					),
 				)
 			)
 		),
@@ -114,14 +131,15 @@
 							'label' => 'Email Address',
 							'type' => 'text'
 						),
-						array('id' => 'business_facebook',
-							'label' => 'Facebook',
+						array('id' => 'business_github',
+							'label' => 'Github',
 							'type' => 'text'
 						),
 						array('id' => 'business_twitter',
 							'label' => 'Twitter',
 							'type' => 'text'
 						)
+
 					)
 				),
 				array(
@@ -153,6 +171,20 @@
 						array('id' => 'zoom_level',
 							'label' => 'Google Map Zoom',
 							'type' => 'text'
+						)
+					)				
+				),
+				array(
+					'name' => 'Collaboration Information',
+					'size' => 6,
+					'fields' => array(
+						array('id' => 'collab_title',
+							'label' => 'Collaboration Title',
+							'type' => 'text'
+						),
+						array('id' => 'collab_content',
+							'label' => 'Collaboration Content',
+							'type' => 'textarea'
 						)
 					)				
 				)

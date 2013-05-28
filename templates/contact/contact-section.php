@@ -4,6 +4,11 @@ $businessName = $MM_Roots->get_setting("business_name");
 $businessAddress = $MM_Roots->get_setting("business_address");
 $businessPhone = $MM_Roots->get_setting("business_phone");
 $businessEmail = $MM_Roots->get_setting("business_email");
+$businessGithub = $MM_Roots->get_setting("business_github");
+$businessTwitter = $MM_Roots->get_setting("business_twitter");
+
+$collabTitle = $MM_Roots->get_setting("collab_title");
+$collabContent = $MM_Roots->get_setting("collab_content");
 
 ?>
 
@@ -25,40 +30,34 @@ $businessEmail = $MM_Roots->get_setting("business_email");
 	  <br />
 	  <h5>Follow Us</h5>	  
 	  <p>
-		<a class="btn btn-squared" href="#">
-		  <i class="icon-facebook"></i>
+		<a class="btn btn-squared" href="<?php echo $businessGithub; ?>">
+		  <i class="icon-github"></i>
 		</a>
-		<a class="btn btn-squared" href="#">
+		<a class="btn btn-squared" href="<?php echo $businessTwitter; ?>">
 		  <i class="icon-twitter"></i>
-		</a>
-		<a class="btn btn-squared" href="#">
-		  <i class="icon-google-plus"></i>
 		</a>
 	  </p>
 	</div>
 	<div class="span4">
-	  <h5>Mail us</h5>
-	  <form class="form-vertical" id="mail-form">
+	  <h5>Contact us</h5>
+	  <form class="form-vertical" id="mail">
 		<div class="control-group">
-		  <label for="mail-name-surname"></label>
-		  <input class="span3" id="mail-name-surname" placeholder="name surname" type="text">
-		  <span class="help-inline" style="display: none;">Insert name and surname</span>
+		  <label for="name"></label>
+		  <input class="span3" id="name" placeholder="your name" type="text">
 		</div>
 		<div class="control-group">
-		  <label for="mail-email"></label>
-		  <input class="span3" id="mail-email" placeholder="email" type="email">
-		  <span class="help-inline" style="display: none;">Insert valid email</span>
+		  <label for="contact"></label>
+		  <input class="span3" id="contact" placeholder="your phone # or email address" type="text">
 		</div>
-		<label for="mail-message"></label>
-		<textarea class="span4" id="mail-message" name="message" placeholder="message" rows="5"></textarea>
+		<label for="message"></label>
+		<textarea class="span4" id="message" name="message" placeholder="your message, question, comment, query or qualm" rows="5"></textarea>
 		<button class="btn btn-primary" type="submit">Send message</button>
 	  </form>
 	</div>
 	<div class="span4">
-	  <h5>Work with us!</h5>
-	  <p>Blanditiis nobis voluptatem placeat ullam eum deleniti tenetur optio omnis facere incidunt quibusdam modi pariatur saepe maxime ab ipsum labore nihil tempore.</p>
+	  <h5><?php echo $collabTitle; ?></h5>
 	  <p>
-		<a class="btn btn-small btn-primary" href="#">Send Resume</a>
+	  	<?php echo $collabContent; ?>
 	  </p>
 	</div>
   </div>

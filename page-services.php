@@ -15,5 +15,3 @@ Template Name: Services Template
 	  </div><!-- /.main -->
 	</div><!-- /.content -->
 </div><!-- /.wrap -->
-
-<?php get_template_part('templates/content', 'testimonials'); ?>
