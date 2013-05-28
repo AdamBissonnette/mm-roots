@@ -16,41 +16,7 @@ $collabContent = $MM_Roots->get_setting("collab_content");
 <div class="container">
   <div class="row">
 	<div class="span4">
-	  <?php if ($businessName != '') { ?>
-	  <h5><?php echo $businessName; ?></h5>
-	  <?php } ?>
-
-	  <?php if ($businessAddress != '') { ?>
-	  <address>
-		<?php echo $businessAddress; ?>
-	  </address>
-	  <?php } ?>
-
-	  <p>
-	  	<?php if ($businessEmail != '') { ?>
-		<i class="icon-envelope"></i>
-		<a href="mailto:<?php echo $businessEmail; ?>"><?php echo $businessEmail; ?></a>
-		<br>
-		<?php } ?>
-		<?php if ($businessPhone != '') { ?>
-		<i class="icon-phone"></i>
-		<a href="tel:<?php echo $businessPhone; ?>"><?php echo $businessPhone; ?></a>
-		<?php } ?>
-	  </p>
-	  <br />
-	  <h5>Follow Us</h5>	  
-	  <p>
-	  	<?php if ($businessTwitter != '') { ?>
-		<a class="btn btn-squared" href="<?php echo $businessGithub; ?>">
-		  <i class="icon-github"></i>
-		</a>
-		<?php } ?>
-		<?php if ($businessGithub != '') { ?>
-		<a class="btn btn-squared" href="<?php echo $businessTwitter; ?>">
-		  <i class="icon-twitter"></i>
-		</a>
-		<?php } ?>
-	  </p>
+	  <?php get_template_part('templates/contact/business', 'info'); ?>
 	</div>
 	<div class="span4">
 	  <h5>Contact us</h5>
