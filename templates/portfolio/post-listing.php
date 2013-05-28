@@ -21,7 +21,7 @@ if (!$image)
 	<figure>
 	  <a href="<?php the_permalink(); ?>">
 	  <?php if ($image) { ?>
-	  	<img class="service-image" src="<?php echo $image; ?>" />
+	  	<img class="portfolio-image" src="<?php echo $image; ?>" />
 	  <?php } else {  ?>
 		<i class="icon-<?php echo $icon; ?> icon-8x icon-border"></i>
 	  <?php } ?>

@@ -16,4 +16,4 @@ Template Name: Portfolio Template
 	</div><!-- /.content -->
 </div><!-- /.wrap -->
 
-<?php if (isset($MM_Roots->get_setting('news_category'))get_template_part('templates/content', 'testimonials'); ?>
+<?php if ($MM_Roots->get_setting('testimonial_category')) get_template_part('templates/content', 'testimonials'); ?>
