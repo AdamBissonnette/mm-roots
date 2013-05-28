@@ -1,3 +1,8 @@
+<?php 
+  global $MM_Roots;
+  $category_id = $MM_Roots->get_setting("news_category");
+?>
+
 <div class="news-header">
   <h2 class="section-title">
     <?php echo roots_title(); ?>
@@ -6,32 +11,9 @@
 	?>
   	<small><?php echo $description; ?></small>
   </h2>
-
-
-	<?php
-	 $postid =get_post_meta(get_the_ID(), "readmoreid", true);
-	 if ($postid) {
-	 
-	 $post = get_post($postid);
-	 ?>  
-  <p>
-  		<?php
-  			$blurb = get_post_meta(get_the_ID(), "blurb", true);
-  		
-  			if ($blurb)
-  			{
-  				echo $blurb;
-  			}
-  			else
-  			{
-  				echo $post->post_excerpt;
-  			}  		
-  		?>
-  </p>
   	
-	<a class="btn btn-small btn-primary" href="<?php echo get_permalink($post->ID); ?>">
+	<a class="btn btn-small btn-primary" href="<?php echo get_category_link($category_id); ?>">
 	<i class="icon-search"></i>
-	Read more
+	Visit the Archives
 	</a>
-	<?php } ?>
 </div>
