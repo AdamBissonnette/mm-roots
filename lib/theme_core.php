@@ -210,8 +210,6 @@ class MM_Roots
 				case 'settings':
 					$data_back = $_REQUEST['settings'];
 					
-					//var_export($data_back); enable if you want to copy the settings
-					
 					$values = array();
 					$i = 0;
 					foreach ($data_back as $data)
@@ -222,6 +220,31 @@ class MM_Roots
 					$this->_save_settings_todb($values);
 				break;
 			}
+		}
+
+		switch($_REQUEST['fn']){
+		case 'mail':
+			$data_back = $_REQUEST['mail'];
+			
+			$data = $data_back[0];
+
+			if ($data['honey'] == 1 && $data['terms'] == '')
+			{
+				$emailTemplate = "%s says:<br /> %s<br /><br />- %s";
+
+				$name = $data['name'];
+				$contact = $data['contact'];
+				$message = $data['message'];
+
+				$emailBody = sprintf($emailTemplate, $name, $contact, $message);
+
+				$toEmail = get_setting('business_email');
+				$subject = "Website Message";
+
+
+				SendMail($toEmail, $subject, $toEmail, $emailBody);
+			}
+		break;
 		}
 	}
     

@@ -3,12 +3,7 @@ global $MM_Roots;
 $footerText = $MM_Roots->get_setting("footer_text");
 $footerImage = $MM_Roots->get_setting("footer_logo");
 
-$backgroundStyle = '';
-
-if ($footerImage)
-{
-  $backgroundStyle = sprintf(" style=\"background-image: url('%s')\"", $footerImage);
-}
+$backgroundStyle = sprintf(" style=\"background-image: url('%s')\"", $footerImage);
 
 ?>
 

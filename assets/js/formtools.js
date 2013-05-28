@@ -1,6 +1,17 @@
-function FormToolsSetup()
-{	
-	CheckScripts();
+function SendMessage(form)
+{
+	var formdata = jQuery(form).serializeArray()
+	jQuery.post ('../wp-admin/admin-ajax.php',
+		 { 'action':'do_ajax', 'fn':'contact', 'count':10, settings:formdata },
+		  function(data){FinalizeSend(data)},
+		   "json");
+}
+
+
+
+function FinalizeSend(data)
+{
+	alert("Your Message has been sent!");
 }
 
 function CheckScripts()
@@ -158,7 +169,16 @@ var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, 
    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "jQuery1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
  };
 
-/* Form Tools Setup */
-jQuery(document).ready(function() {
-	FormToolsSetup()
+jQuery(document).ready(function($) {
+	CheckScripts();
+	$('#send').click(function(e) {
+		e.preventDefault();
+		if (ValidateForm("form#mail"))
+		{
+			SendMessage(jQuery("form#mail"));
+		}
+	});
+
+	$('#terms').hide();
+	$('#honey').hide();
 });
