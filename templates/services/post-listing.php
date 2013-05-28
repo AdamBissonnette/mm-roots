@@ -17,7 +17,7 @@ if (!$image)
 }
 ?>
 
-<div class="span3">
+<div class="span3 service-item">
 	<figure>
 	  <a href="<?php the_permalink(); ?>">
 	  <?php if ($image) { ?>

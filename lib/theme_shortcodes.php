@@ -170,7 +170,9 @@ function PricingBox($atts, $content = null)
 		'price' => '',
 		'term' => '',
 		'ribbon' => '',
-		'class' => ''
+		'class' => '',
+		'url' => '',
+		'orderText' => 'Order Now'
 	), $atts) );
 
 	if ($ribbon != '')
@@ -193,10 +195,14 @@ function PricingBox($atts, $content = null)
               <ul class="muted icons">
                 %s
               </ul>
+              <a class="btn btn-primary btn-small" href="%s">
+                <i class="icon-shopping-cart"></i>
+                %s
+              </a>
             </div>%s
           </div>';
 
-    $output = sprintf($template, $class, $title, $price, $term, do_shortcode($content), $ribbon);
+    $output = sprintf($template, $class, $title, $price, $term, do_shortcode($content), $url, $orderText, $ribbon);
 
     return $output;
 
@@ -204,13 +210,13 @@ function PricingBox($atts, $content = null)
 
 add_shortcode("PricingBox", "PricingBox");
 
-function PricingItem($atts)
+function PricingItem($atts, $content='')
 {
 	extract(shortcode_atts(array(
 		'title' => ''
 	), $atts) );
 
-	return sprintf('<li><i class="icon-ok"></i>%s</li>', $title);
+	return sprintf('<li><i class="icon-ok"></i>%s%s</li>', $title, $content);
 }
 
 
