@@ -223,12 +223,18 @@ class MM_Roots
 		}
 
 		switch($_REQUEST['fn']){
-		case 'mail':
-			$data_back = $_REQUEST['mail'];
+		case 'contact':
 			
-			$data = $data_back[0];
+			$data_back = $_REQUEST['contact'];
+					
+			$data = array();
+			$i = 0;
+			foreach ($data_back as $field)
+			{
+				$data[$field['name']] = $field['value'];
+			}
 
-			if ($data['honey'] == 1 && $data['terms'] == '')
+			if ($data['honey'] == '1' && $data['terms'] == '')
 			{
 				$emailTemplate = "%s says:<br /> %s<br /><br />- %s";
 
@@ -236,9 +242,9 @@ class MM_Roots
 				$contact = $data['contact'];
 				$message = $data['message'];
 
-				$emailBody = sprintf($emailTemplate, $name, $contact, $message);
+				$emailBody = sprintf($emailTemplate, $name, $message, $contact);
 
-				$toEmail = get_setting('business_email');
+				$toEmail = $this->get_setting('business_email');
 				$subject = "Website Message";
 
 
