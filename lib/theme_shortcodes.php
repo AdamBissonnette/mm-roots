@@ -222,6 +222,26 @@ function PricingItem($atts, $content='')
 
 add_shortcode("PricingItem", "PricingItem");
 
+function ButtonLink($atts)
+{
+	extract(shortcode_atts(array(
+		'url' => '',
+		'title' => 'Take a Look',
+		'icon' => 'external-link'
+	), $atts) );
+
+	$template = '<a class="btn btn-primary" href="%s">
+              <i class="icon-%s"></i>
+              %s
+            </a>';
+
+    $output = sprintf($template, $url, $icon, $title);
+
+    return $output;
+}
+
+add_shortcode("ButtonLink", "ButtonLink");
+
 add_filter('widget_text', 'do_shortcode');
 
 ?>
