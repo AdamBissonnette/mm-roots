@@ -135,4 +135,34 @@ function video($atts, $content="")
 
 add_shortcode( 'video', 'video' );
 
+
+function mm_fact_me() {
+	global $MM_Roots;
+	$facts = $MM_Roots->get_setting('mm_facts');
+	$facts = explode("\n", $facts);
+	return wptexturize( $facts[ mt_rand( 0, count( $facts ) - 1 ) ] );
+}
+
+function MMFact($atts)
+{
+	$chosen = mm_fact_me();
+	return '"' . stripcslashes($chosen) . '"';
+}
+
+add_shortcode("MMFact", "MMFact");
+
+
+function BusinessInfo()
+{
+	ob_start();
+	get_template_part('templates/contact/business', 'info');
+	$output = ob_get_contents();  
+    ob_end_clean();  
+    return $output;  
+}
+
+add_shortcode("BusinessInfo", "BusinessInfo");
+
+add_filter('widget_text', 'do_shortcode');
+
 ?>

@@ -191,6 +191,22 @@
 					)				
 				)
 			)
+		),
+		array('name' => 'Misc Options',
+			'id' => 'misc',
+			'icon' => 'shopping-cart',
+			'sections' => array(
+				array(
+			'name' => 'MM Facts',
+					'size' => 6,
+					'fields' => array(
+						array('id' => 'mm_facts',
+							'label' => 'Random Facts',
+							'type' => 'textarea'
+						)
+					)	
+				)
+			)
 		)
 	);
 
