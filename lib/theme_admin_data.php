@@ -12,7 +12,7 @@
 			'sections' => array(
 				array(
 					'name' => 'General Options',
-					'size' => '12',
+					'size' => '6',
 					'fields' => array(
 						array('id' => 'brand_logo',
 							'label' => 'Navbar / Brand Logo',
@@ -22,8 +22,22 @@
 							'type' => 'text'),
 						array('id' => 'footer_text',
 							'label' => 'Footer Text',
-							'type' => 'textarea')
+							'type' => 'textarea'),
+						array('id' => 'icon_default',
+							'label' => 'Default Icon',
+							'type' => 'text',
+							'options' => array( "placeholder" => 'ex. cloud' ))
 					)
+				),
+				array(
+					'name' => 'Portfolio Options',
+					'size' => '6',
+					'fields' => array(
+						array('id' => 'portfolio_category',
+							'label' => 'Portfolio Category',
+							'type' => 'select',
+							'options' => array( "data" => getCategorySelectArray()))
+						)
 				)
 			)
 		),
@@ -42,11 +56,7 @@
 						array('id' => 'service_category',
 							'label' => 'Service Category',
 							'type' => 'select',
-							'options' => array( "data" => getCategorySelectArray())),
-						array('id' => 'service_icon_default',
-							'label' => 'Default Services Icon',
-							'type' => 'text',
-							'options' => array( "placeholder" => 'ex. cloud' ))
+							'options' => array( "data" => getCategorySelectArray()))
 					)
 				),
 				array(
@@ -62,11 +72,7 @@
 						array('id' => 'news_category',
 							'label' => 'News Category',
 							'type' => 'select',
-							'options' => array( "data" => getCategorySelectArray())),
-						array('id' => 'news_icon_default',
-							'label' => 'Default News Icon',
-							'type' => 'text',
-							'options' => array( "placeholder" => 'ex. cloud' ))
+							'options' => array( "data" => getCategorySelectArray()))
 					)
 				),
 				array(
@@ -198,11 +204,13 @@
 			'sections' => array(
 				array(
 			'name' => 'MM Facts',
-					'size' => 6,
+					'size' => 12,
 					'fields' => array(
 						array('id' => 'mm_facts',
 							'label' => 'Random Facts',
-							'type' => 'textarea'
+							'type' => 'textarea',
+							'options' => array('note' => "Note: each new line will be randomly selected to be displayed when using the [MMFact /] shortcode.",
+											'class' => "span9", "rows" => "15")
 						)
 					)	
 				)

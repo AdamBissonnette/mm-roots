@@ -12,7 +12,7 @@ if (!$image)
 	}
 	else if (!$icon)
 	{
-		$icon = $MM_Roots->get_setting("service_icon_default");
+		$icon = $MM_Roots->get_setting("icon_default");
 	}
 }
 ?>

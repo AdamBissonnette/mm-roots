@@ -50,9 +50,15 @@ function createTextArea($label, $value, $options = null)
 {
 	if ($options) extract( $options );
 
-	$output = sprintf('<textarea id="%s" class="%s" rows="5" name="%s" placeholder="%s">%s</textarea>', 
+	if (!$rows)
+	{
+		$rows = 3;
+	}
+
+	$output = sprintf('<textarea id="%s" class="%s" rows="%s" name="%s" placeholder="%s">%s</textarea>', 
 		 $label, //id
 		 $class,
+ 		 $rows,
 		 $label, //name
 		 $placeholder,
 		 stripslashes($value) //value
