@@ -1,4 +1,4 @@
-<div class="span3">
+<div class="span3 listed-post">
   <blockquote>
     <p>
       <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
