@@ -26,6 +26,8 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 input.search-query {}
 
 body {overflow-x: hidden;}
+h1.lead { margin: 0; }
+
 .navbar .brand {padding: 10px 0 4px; line-height: 1em; font-size: 2em; font-weight: bold; white-space: nowrap; text-shadow: 1px 1px 1px #000000}
 .navbar img.brand-logo {height: 1em; vertical-align: text-top; margin: 2px 0 0 5px;}
 .flexslider {border-bottom: 0px;}

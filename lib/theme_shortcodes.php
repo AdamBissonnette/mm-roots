@@ -163,6 +163,59 @@ function BusinessInfo()
 
 add_shortcode("BusinessInfo", "BusinessInfo");
 
+function PricingBox($atts, $content = null)
+{
+	extract(shortcode_atts(array(
+		'title' => '',
+		'price' => '',
+		'term' => '',
+		'ribbon' => '',
+		'class' => ''
+	), $atts) );
+
+	if ($ribbon != '')
+	{
+		$ribbon = sprintf('<div class="ribbon">%s</div>', $ribbon);
+	}
+
+	if ($class != '')
+	{
+		$class = " " . $class;
+	}
+
+	$template = '<div class="box pricing-box%s">
+            <h3 class="box-title">%s</h3>
+            <div class="box-content">
+              <h1 class="lead">
+                %s
+                <small>$/%s</small>
+              </h1>
+              <ul class="muted icons">
+                %s
+              </ul>
+            </div>%s
+          </div>';
+
+    $output = sprintf($template, $class, $title, $price, $term, do_shortcode($content), $ribbon);
+
+    return $output;
+
+}
+
+add_shortcode("PricingBox", "PricingBox");
+
+function PricingItem($atts)
+{
+	extract(shortcode_atts(array(
+		'title' => ''
+	), $atts) );
+
+	return sprintf('<li><i class="icon-ok"></i>%s</li>', $title);
+}
+
+
+add_shortcode("PricingItem", "PricingItem");
+
 add_filter('widget_text', 'do_shortcode');
 
 ?>
