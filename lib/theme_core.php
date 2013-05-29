@@ -158,7 +158,7 @@ class MM_Roots
 	
 	function get_setting($name)
 	{
-		return $this->_settings[$name];
+		return stripslashes($this->_settings[$name]);
 	}
 
 }
