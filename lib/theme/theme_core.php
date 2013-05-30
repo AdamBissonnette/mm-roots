@@ -13,7 +13,7 @@ class MM_Roots
     var $_meta_key = 'mm_roots_meta';
     //var $_setting_prefix = 'mm_roots_';
     var $_save_key = '';
-    var $_versionnum = 0.1;
+    var $_versionnum = 1.0;
 	var $menu_page;
 	
 	function MM_Roots()
