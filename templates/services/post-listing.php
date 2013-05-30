@@ -1,7 +1,7 @@
 <?php 
 global $MM_Roots;
-$icon = get_post_meta($post->ID, "icon", true);
-$image = get_post_meta($post->ID, "image", true);
+$icon = $MM_Roots->get_post_meta($post->ID, "icon", true);
+$image = $MM_Roots->get_post_meta($post->ID, "image", true);
 
 if (!$image)
 {

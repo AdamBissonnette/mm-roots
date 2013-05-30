@@ -1,22 +1,27 @@
+<?php
+  global $MM_Roots;
+  $description = $MM_Roots->get_post_meta(get_the_ID(), "tagline", true);
+  $postid = $MM_Roots->get_post_meta(get_the_ID(), "readmoreid", true);
+
+?>
+
 <div class="services-header">
   <h2 class="section-title">
     <?php echo roots_title(); ?>
-	<?php
-		$description = get_post_meta(get_the_ID(), "tagline", true);
-	?>
+
   	<small><?php echo $description; ?></small>
   </h2>
 
 
 	<?php
-	 $postid =get_post_meta(get_the_ID(), "readmoreid", true);
+	 
 	 if ($postid) {
 	 
 	 $post = get_post($postid);
 	 ?>  
   <p>
   		<?php
-  			$blurb = get_post_meta(get_the_ID(), "blurb", true);
+  			$blurb = $MM_Roots->get_post_meta($postid, "blurb", true);
   		
   			if ($blurb)
   			{

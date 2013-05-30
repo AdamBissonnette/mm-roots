@@ -51,6 +51,7 @@ add_shortcode( 'section_block', 'section_block' );
 
 function getFormattedPostContent($postid, $linktext)
 {
+	global $MM_Roots;
 	//Load content "blurb" from a given post or page
      $output = '';
      $postFormat = '<p class="post-content">%s</p><a class="btn btn-small btn-primary" href="%s"><i class="icon-search"></i>%s</a>';
@@ -64,7 +65,7 @@ function getFormattedPostContent($postid, $linktext)
     	}
     	else
     	{
-     		$postContent = get_post_meta($postid, "blurb", true);
+     		$postContent = $MM_Roots->get_post_meta($postid, "blurb", true);
      	}
      	
         $output = sprintf($postFormat, $postContent, get_permalink($postid), $linktext);

@@ -2,8 +2,8 @@
 global $MM_Roots;
 $postID = get_the_ID();
 
-$icon = get_post_meta($postID, "icon", true);
-$image = get_post_meta($postID, "image", true);
+$icon = $MM_Roots->get_post_meta($postID, "icon", true);
+$image = $MM_Roots->get_post_meta($postID, "image", true);
 
 if (!$image)
 {
