@@ -56,15 +56,13 @@ class MM_Roots
 
 	function page_meta(){
 		global $post;
-		
-        wp_enqueue_style('admin', get_template_directory_uri() . '/assets/css/mm_roots_admin.css', false, null);
-  		wp_enqueue_script('formtools', get_template_directory_uri() . '/assets/js/formtools.js', false, null);
-  		wp_enqueue_script('admin', get_template_directory_uri() . '/assets/js/mm_roots_admin.js', false, null);
-        
-		$values = get_post_meta(get_the_ID(), $this->_meta_key, true);
 
         include_once('data/taxonomy_data.php');
-		include_once('ui/meta_page_ui.php');
+		
+		$options = $page_options;
+		$values = get_post_meta(get_the_ID(), $this->_meta_key, true);
+
+		include_once('ui/meta_post_ui.php');
 	}
 
 	function post_metabox(){
@@ -74,13 +72,11 @@ class MM_Roots
 	function post_meta(){
 		global $post;
 
-		wp_enqueue_style('admin', get_template_directory_uri() . '/assets/css/mm_roots_admin.css', false, null);
-  		wp_enqueue_script('formtools', get_template_directory_uri() . '/assets/js/formtools.js', false, null);
-  		wp_enqueue_script('admin', get_template_directory_uri() . '/assets/js/mm_roots_admin.js', false, null);
-        
-  		$values = get_post_meta(get_the_ID(), $this->_meta_key, true);
+  		include_once('data/taxonomy_data.php');
+		
+		$options = $post_options;
+		$values = get_post_meta(get_the_ID(), $this->_meta_key, true);
 
-        include_once('data/taxonomy_data.php');
 		include_once('ui/meta_post_ui.php');
 	}
 
