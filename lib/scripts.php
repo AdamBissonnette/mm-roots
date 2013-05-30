@@ -43,7 +43,7 @@ function roots_scripts() {
   wp_register_script('jquery_map', get_template_directory_uri() . '/assets/js/jquery.ui.map.min.js', false, null, true);
   wp_register_script('fit_vids', get_template_directory_uri() . '/assets/js/jquery.fitvids.min.js', false, null, true);
   wp_register_script('formtools', get_template_directory_uri() . '/assets/js/formtools.js', false, null, true);
-  wp_register_script('formtools', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
+  wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
 
   wp_enqueue_script('jquery');
   wp_enqueue_script('modernizr');
