@@ -3,7 +3,7 @@
  * Core Theme Object
  */
 
-include_once('theme_tools/functions.php');
+include_once('theme/functions.php');
 
 class MM_Roots
 {
@@ -61,8 +61,8 @@ class MM_Roots
   		wp_enqueue_script('formtools', get_template_directory_uri() . '/assets/js/formtools.js', false, null);
   		wp_enqueue_script('admin', get_template_directory_uri() . '/assets/js/mm_roots_admin.js', false, null);
         
-        include_once('theme_admin_data.php');
-		include_once('theme_admin_ui.php');
+        include_once('theme/admin_data.php');
+		include_once('theme/admin_ui.php');
     }
 
     function check_user_capability()
@@ -265,7 +265,7 @@ function post_meta(){
 
 add_action("admin_init", "post_metabox");
 
-function mm_save_details( $post_id, $post ){
+function mm_save_post_meta( $post_id, $post ){
 	global $pagenow;
 	
 	if ( 'post.php' != $pagenow ) return $post_id;
@@ -298,4 +298,4 @@ function mm_save_details( $post_id, $post ){
 	}
 }
 
-add_action( 'save_post', 'mm_save_details', 10, 2 );
+add_action( 'save_post', 'mm_save_post_meta', 10, 2 );
