@@ -18,21 +18,21 @@ $posts = get_posts( "category=" . $jumbotronCategory . "&numberposts=" . $jumbot
 foreach ($posts as $post)
 {
 
-	$blurb = get_post_meta($post->ID, "blurb", true);
+	$blurb = $MM_Roots->get_post_meta($post->ID, "blurb", true);
 		
 	if ($blurb == null)
 	{
 		$blurb = wp_trim_words($post->post_content, 25, "...");
 	}
 
-	$readmoretext = get_post_meta($post->ID, "readmoretext", true);
+	$readmoretext = $MM_Roots->get_post_meta($post->ID, "readmoretext", true);
 
 	if ($readmoretext == null)
 	{
 		$readmoretext = "Read More";
 	}
 
-	$image = get_post_meta($post->ID, "image", true);
+	$image = $MM_Roots->get_post_meta($post->ID, "image", true);
 
 	if ($image == null)
 	{

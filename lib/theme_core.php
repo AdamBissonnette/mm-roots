@@ -10,6 +10,7 @@ class MM_Roots
 	var $_settings;
     var $_options_pagename = 'mm_roots';
     var $_settings_key = 'mm_roots';
+    var $_meta_key = 'mm_roots_meta';
     //var $_setting_prefix = 'mm_roots_';
     var $_save_key = '';
     var $_versionnum = 0.1;
@@ -30,6 +31,12 @@ class MM_Roots
 		//Ajax Posts
 		add_action('wp_ajax_nopriv_do_ajax', array(&$this, '_save') );
 		add_action('wp_ajax_do_ajax', array(&$this, '_save') );
+
+		//Page / Post Meta
+		add_action("admin_init", array(&$this, "page_metabox") );
+		add_action("admin_init", array(&$this, "post_metabox") );
+
+		add_action( 'save_post', array(&$this, '_save_post_meta'), 10, 2 );
     }
 
     static function MM_Roots_install() {
@@ -42,6 +49,41 @@ class MM_Roots
 		add_option($_settings_key . "_versionnum", $_versionnum);
 	}
     
+
+	function page_metabox(){
+		add_meta_box("mm_page_meta", "Page Meta", array($this, "page_meta"), "page");
+	}
+
+	function page_meta(){
+		global $post;
+		
+        wp_enqueue_style('admin', get_template_directory_uri() . '/assets/css/mm_roots_admin.css', false, null);
+  		wp_enqueue_script('formtools', get_template_directory_uri() . '/assets/js/formtools.js', false, null);
+  		wp_enqueue_script('admin', get_template_directory_uri() . '/assets/js/mm_roots_admin.js', false, null);
+        
+		$values = get_post_meta(get_the_ID(), $this->_meta_key, true);
+
+        include_once('theme/taxonomy_data.php');
+		include_once('theme/meta_page_ui.php');
+	}
+
+	function post_metabox(){
+		add_meta_box("mm_post_meta", "Post Meta", array(&$this, "post_meta"), "post");
+	}
+
+	function post_meta(){
+		global $post;
+
+		wp_enqueue_style('admin', get_template_directory_uri() . '/assets/css/mm_roots_admin.css', false, null);
+  		wp_enqueue_script('formtools', get_template_directory_uri() . '/assets/js/formtools.js', false, null);
+  		wp_enqueue_script('admin', get_template_directory_uri() . '/assets/js/mm_roots_admin.js', false, null);
+        
+  		$values = get_post_meta(get_the_ID(), $this->_meta_key, true);
+
+        include_once('theme/taxonomy_data.php');
+		include_once('theme/meta_post_ui.php');
+	}
+
 	function create_menu_link()
     {
         $this->menu_page = add_options_page('Theme Options', 'Theme Options',
@@ -54,10 +96,10 @@ class MM_Roots
             wp_die( __('You do not have sufficient permissions to access this page.') );
         }
         
-        wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', false, null);
+        //wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', false, null);
+        //wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/js/vendor/jquery-1.9.1.min.js', false, null);
+        //wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/plugins.js', false, null);
         wp_enqueue_style('admin', get_template_directory_uri() . '/assets/css/mm_roots_admin.css', false, null);
-        wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/js/vendor/jquery-1.9.1.min.js', false, null);
-        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/plugins.js', false, null);
   		wp_enqueue_script('formtools', get_template_directory_uri() . '/assets/js/formtools.js', false, null);
   		wp_enqueue_script('admin', get_template_directory_uri() . '/assets/js/mm_roots_admin.js', false, null);
         
@@ -125,6 +167,45 @@ class MM_Roots
 		}
 	}
     
+	function _save_post_meta( $post_id, $post ){
+		global $pagenow;
+		
+		if ( 'post.php' != $pagenow ) return $post_id;
+		
+		if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) 
+			return $post_id;
+
+		if ( ! isset( $_POST['mm_nonce'] ) || ! wp_verify_nonce( $_POST['mm_nonce'], 'mm_nonce' ) )
+	        return $post_id;
+
+	    include('theme/taxonomy_data.php');
+
+	    $metafields = array();
+
+		switch ($post->post_type) {
+			case 'post':
+				$metafields = GetThemeDataFields($post_options);
+
+				break;
+			case 'page':
+				$metafields = GetThemeDataFields($page_options);
+
+				break;
+			default:
+				//Do Nothing
+				break;
+		}
+
+		$metadata = array();
+
+		foreach ($metafields as $field) {
+			$fieldID = $field["id"];
+			$metadata[$fieldID] = $_POST[$fieldID];
+		}
+
+		update_post_meta( $post_id, $this->_meta_key, $metadata );
+	}
+
     function get_option($setting)
     {
         return $this->_settings[$setting];
@@ -163,6 +244,26 @@ class MM_Roots
 		return stripslashes($this->_settings[$name]);
 	}
 
+	/*****
+	*	get_post_meta($id, $key)
+	*	$id - the post to get the theme meta from
+	*	$key (optional) - the optional key if this is the only value you want or need
+	*	$single (optional) - if the key is a single value or an array
+	*	$ouput - returns either the single value key or the whole meta array
+	*/
+	function get_post_meta($id, $key=null, $single = true)
+	{
+		$output = "";
+		$post_meta = get_post_meta($id, $this->_meta_key, $single);
+
+		if ($key != null)
+		{
+			$output = $post_meta[$key];
+		}
+		
+		return $output;
+	}
+
 }
 
 register_activation_hook(__FILE__,array('MM_Roots', 'MM_Roots_install'));
@@ -173,129 +274,3 @@ function MM_Roots_Init()
     global $MM_Roots;
     $MM_Roots = new MM_Roots();
 }
-
-function page_metabox(){
-	add_meta_box("mm_page_tagline", "Page Meta", "page_meta", "page");
-}
-
-function page_meta(){
-	global $post;
-
-	$tagline = get_post_meta($post->ID,'tagline',true);
-	$readmoreid = get_post_meta($post->ID,'readmoreid',true);
-	$blurb = get_post_meta($post->ID,'blurb',true);
-	$icon = get_post_meta($post->ID,'icon',true);
-	$image = get_post_meta($post->ID,'image',true);
-
-	?>
-
-	<?php wp_nonce_field( 'mm_nonce', 'mm_nonce' ); ?>
-
-	<div style="margin: 13px 0 11px 4px;">
-		<label for="tagline" style="color: #000; font-weight: bold;">Tagline</label>
-		<input type="text" value="<?php echo esc_attr( $tagline ); ?>" id="tagline" name="tagline" size="20" />
-	</div>
-
-	<div style="margin: 13px 0 11px 4px;">
-		<label for="readmoreid" style="color: #000; font-weight: bold;">Read More ID</label>
-		<input type="text" value="<?php echo esc_attr( $readmoreid ); ?>" id="readmoreid" name="readmoreid" size="20" />
-	</div>
-
-	<div style="margin: 13px 0 11px 4px;">
-		<label for="blurb" style="color: #000; font-weight: bold;">Blurb</label>
-		<input type="text" value="<?php echo esc_attr( $blurb ); ?>" id="blurb" name="blurb" size="20" />
-	</div>
-
-	<div style="margin: 13px 0 11px 4px;">
-		<label for="icon" style="color: #000; font-weight: bold;">Icon</label>
-		<input type="text" value="<?php echo esc_attr( $icon ); ?>" id="icon" name="icon" size="20" />
-	</div>
-
-	<div style="margin: 13px 0 11px 4px;">
-		<label for="image" style="color: #000; font-weight: bold;">Image Url</label>
-		<input type="text" value="<?php echo esc_attr( $image ); ?>" id="image" name="image" size="20" />
-		<p>Note: Use this if you want to link to an external URL as the featured image</p>
-	</div>
-
-	<?php
-}
-
-add_action("admin_init", "page_metabox");
-
-
-function post_metabox(){
-	add_meta_box("mm_post_tagline", "Post Meta", "post_meta", "post");
-}
-
-function post_meta(){
-	global $post;
-
-	$tagline = get_post_meta($post->ID,'tagline',true);
-	$blurb = get_post_meta($post->ID,'blurb',true);
-	$icon = get_post_meta($post->ID,'icon',true);
-	$image = get_post_meta($post->ID,'image',true);
-
-	?>
-
-	<?php wp_nonce_field( 'mm_nonce', 'mm_nonce' ); ?>
-
-	<div style="margin: 13px 0 11px 4px;">
-		<label for="tagline" style="color: #000; font-weight: bold;">Tagline</label>
-		<input type="text" value="<?php echo esc_attr( $tagline ); ?>" id="tagline" name="tagline" size="20" />
-	</div>
-
-	<div style="margin: 13px 0 11px 4px;">
-		<label for="blurb" style="color: #000; font-weight: bold;">Blurb</label>
-		<input type="text" value="<?php echo esc_attr( $blurb ); ?>" id="blurb" name="blurb" size="20" />
-	</div>
-
-	<div style="margin: 13px 0 11px 4px;">
-		<label for="icon" style="color: #000; font-weight: bold;">Icon</label>
-		<input type="text" value="<?php echo esc_attr( $icon ); ?>" id="icon" name="icon" size="20" />
-	</div>
-
-	<div style="margin: 13px 0 11px 4px;">
-		<label for="image" style="color: #000; font-weight: bold;">Image Url</label>
-		<input type="text" value="<?php echo esc_attr( $image ); ?>" id="image" name="image" size="20" />
-		<p>Note: Use this if you want to link to an external URL as the featured image</p>
-	</div>
-
-	<?php
-}
-
-add_action("admin_init", "post_metabox");
-
-function mm_save_post_meta( $post_id, $post ){
-	global $pagenow;
-	
-	if ( 'post.php' != $pagenow ) return $post_id;
-	
-	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) 
-		return $post_id;
-
-	if ( ! isset( $_POST['mm_nonce'] ) || ! wp_verify_nonce( $_POST['mm_nonce'], 'mm_nonce' ) )
-        return $post_id;
-
-	switch ($post->post_type) {
-		case 'post':
-			update_post_meta( $post_id, "blurb", $_POST["blurb"] );
-			update_post_meta( $post_id, "tagline", $_POST["tagline"] );
-			update_post_meta( $post_id, "icon", $_POST["icon"] );
-			update_post_meta( $post_id, "image", $_POST["image"] );
-
-			break;
-		case 'page':
-			update_post_meta( $post_id, "blurb", $_POST["blurb"] );
-			update_post_meta( $post_id, "tagline", $_POST["tagline"] );
-			update_post_meta( $post_id, "icon", $_POST["icon"] );
-			update_post_meta( $post_id, "image", $_POST["image"] );
-			update_post_meta( $post_id, "readmoreid", $_POST["readmoreid"] );
-
-			break;
-		default:
-			//Do Nothing
-			break;
-	}
-}
-
-add_action( 'save_post', 'mm_save_post_meta', 10, 2 );

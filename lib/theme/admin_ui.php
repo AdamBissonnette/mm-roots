@@ -8,7 +8,7 @@
 	<div class="row">
 		<form id="theme_settings" name="<?php echo $this->_setting_prefix . '_settings_form'; ?>" onsubmit="javascript: SaveOptions(this);" class="form-horizontal" method="post">
 		
-		<?php echo OutputThemeSettings($options); ?>
+		<?php echo OutputThemeData($options); ?>
 		
 		<div class="row">
 			<div class="span12">
