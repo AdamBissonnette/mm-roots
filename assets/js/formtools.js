@@ -1,25 +1,3 @@
-function SendMessage(form)
-{
-	var formdata = jQuery(form).serializeArray()
-	jQuery.post ('../wp-admin/admin-ajax.php',
-		 { 'action':'do_ajax', 'fn':'contact', 'count':10, contact:formdata },
-		  function(data){FinalizeSend(data)},
-		   "json");
-}
-
-
-
-function FinalizeSend(data)
-{
-	//alert("Your Message has been sent!");
-	
-	jQuery('#mm-contact-dialog-title').html('Message Sent!');
-	jQuery('#mm-contact-dialog-message').html('<p>Your message has been sent.  We will be in touch shortly!</p>');
-	ShowModal('mm-contact-dialog');
-
-	document.getElementById('mail').reset()
-}
-
 function CheckScripts()
 {
 	if(typeof(jQuery)=='undefined'){
@@ -66,9 +44,7 @@ function ValidateForm(Form)
 	{
 		Handle(Form, ErrorFields);
 		
-		jQuery('#mm-contact-dialog-title').html('Oops!');
-		jQuery('#mm-contact-dialog-message').html('It looks like some of the fields you entered were incomplete or not formatted properly.  Please fix any fields highlighted in red and try submitting again.');
-		ShowModal('mm-contact-dialog');
+		ShowModal('Oops!', 'It looks like some of the fields you entered were incomplete or not formatted properly.  Please fix any fields highlighted in red and try submitting again.');
 
 	}
 	
@@ -181,28 +157,20 @@ var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, 
 
 jQuery(document).ready(function($) {
 	CheckScripts();
-	$('#send').click(function(e) {
-		e.preventDefault();
-		if (ValidateForm("form#mail"))
-		{
-			SendMessage(jQuery("form#mail"));
-		}
-	});
-
-	$('#mm-contact-dialog').modal({
+	$('#mm-dialog').modal({
   		show: false
 	});
-	$('#terms').hide();
-	$('#honey').hide();
 });
 
 
 function HideModal()
 {
-	$('#mm-contact-dialog').modal('hide');
+	jQuery('#mm-dialog').modal('hide');
 }
 
-function ShowModal()
+function ShowModal(title, message)
 {
-	$('#mm-contact-dialog').modal('show');
+	jQuery('#mm-dialog-title').html(title);
+	jQuery('#mm-dialog-message').html(message);
+	jQuery('#mm-dialog').modal('show');
 }
