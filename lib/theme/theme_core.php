@@ -3,7 +3,7 @@
  * Core Theme Object
  */
 
-include_once('theme/functions.php');
+include_once('functions.php');
 
 class MM_Roots
 {
@@ -63,8 +63,8 @@ class MM_Roots
         
 		$values = get_post_meta(get_the_ID(), $this->_meta_key, true);
 
-        include_once('theme/taxonomy_data.php');
-		include_once('theme/meta_page_ui.php');
+        include_once('data/taxonomy_data.php');
+		include_once('ui/meta_page_ui.php');
 	}
 
 	function post_metabox(){
@@ -80,8 +80,8 @@ class MM_Roots
         
   		$values = get_post_meta(get_the_ID(), $this->_meta_key, true);
 
-        include_once('theme/taxonomy_data.php');
-		include_once('theme/meta_post_ui.php');
+        include_once('data/taxonomy_data.php');
+		include_once('ui/meta_post_ui.php');
 	}
 
 	function create_menu_link()
@@ -103,8 +103,8 @@ class MM_Roots
   		wp_enqueue_script('formtools', get_template_directory_uri() . '/assets/js/formtools.js', false, null);
   		wp_enqueue_script('admin', get_template_directory_uri() . '/assets/js/mm_roots_admin.js', false, null);
         
-        include_once('theme/admin_data.php');
-		include_once('theme/admin_ui.php');
+        include_once('data/admin_data.php');
+		include_once('ui/admin_ui.php');
     }
 
     function check_user_capability()
@@ -178,7 +178,7 @@ class MM_Roots
 		if ( ! isset( $_POST['mm_nonce'] ) || ! wp_verify_nonce( $_POST['mm_nonce'], 'mm_nonce' ) )
 	        return $post_id;
 
-	    include('theme/taxonomy_data.php');
+	    include('data/taxonomy_data.php');
 
 	    $metafields = array();
 
