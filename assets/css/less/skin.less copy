@@ -162,7 +162,7 @@ PARALLAX EFFECTS...........................1474
 				font-size:65px;*/
 				display:inline-block;
 				font-size:32.5px;
-				color: #fff;
+				color: #fff/*rgba(250, 250, 250, 1)*/;
 				line-height: 40px;
 				margin:5px 0px -5px;
 				padding:10px 20px;
@@ -1746,4 +1746,4 @@ PARALLAX EFFECTS...........................1474
 					font-size: 200%;
 					line-height: 35px;
 					}
-			}
+			}			
