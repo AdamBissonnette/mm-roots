@@ -124,11 +124,13 @@ function video($atts, $content="")
 		'y' => '315'
 	), $atts) );
 
+	//not sure what to do with height / width right now...
+
 	$output = "";
 	$videoContainerFormat = '<div class="fitvids">%s</div>';
-	$videoEmbedFormat = '<iframe width="%s" height="%s" src="http://www.youtube.com/embed/%s" frameborder="0" allowfullscreen></iframe>';
+	$videoEmbedFormat = '<iframe src="http://www.youtube.com/embed/%s" frameborder="0" allowfullscreen></iframe>';
 
-	$embedOutput = sprintf($videoEmbedFormat, $x, $y, $id);
+	$embedOutput = sprintf($videoEmbedFormat, $id);
 	$output = sprintf($videoContainerFormat, $embedOutput);
 
 	return $output;

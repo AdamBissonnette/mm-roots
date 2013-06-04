@@ -9,89 +9,106 @@
       <header class="">
         <div class="text-center page-header">
           <h3 class="">
-            <span class="white"><!-- WHITE SPACE-->
-              WHAT WE ARE <span class="main-color">OFFER</span> 
+            <span class="white">
+              WHY CHOOSE <span class="main-color">PARR</span> 
             </span> 
           </h3>
         </div>
       </header>
     </div>
-</div><!-- /SERVICE HEADER-->
+</div>
   <div class="container">
+
     <div class="row-fluid">
-    <!-- FEATURE ITEM-->
-      <div class="span3 effect-box-1 active">
+    
+
+    
+
+
+<div class="span5">
+            
+            
+        <h3 class="main-color-line">What We Believe</h3>
+        <p class="">
+          Coming to Parr Auto Body is an experience. Stop for a coffee, take a tour of the shop. Find out what’s important to our team at Parr Auto Body. We want you to feel like you are part of our family!
+        </p>
+        
+        <h3 class="main-color-line">Our Vision</h3>
+        <p class="">
+          Parr's Vision is to become an organization that operates in a stress-free and seamless work environment which provides an exceptional collision repair experience for every customer.
+        </p>
+        
+        <h3 class="main-color-line">Our Commitment to You</h3>
+        <p class="">
+          We adhere to the highest standards to ensure that you receive the best possible service.  We choose our product based on their long-term sustainability over simply cutting costs (which sees some short term savings but those aren't usually passed back to the customer).  Our goal is to be honest in our efforts, maintain integrity in our attitudes, strive to ensure safety in our product, and deliver the highest quality craftsmanship in the Saskatoon automotive repair scene.
+        </p>
+  
+</div>
+  <div class="span7">
+    <div style="padding-top: 150px; margin: 0 40px;">
+      <?php echo do_shortcode('[video id="QH2-TGUlwu4" x="550px" y="435px"]'); ?>
+    </div>
+  </div>
+</div>
+<hr />
+<div class="row-fluid">
+      <header class="">
+        <div class="text-center page-header">
+          <h3 class="">
+            <span class="white">
+              Our Core <span class="main-color">Values</span> 
+            </span> 
+          </h3>
+        </div>
+      </header>
+    </div>
+
+
+    <div class="row-fluid">
+ 
+  <div class="span3 effect-box-1 active">
         <span class="label label-warning lines-bg-color text-center">
-                <i class="icon-fullscreen icon-4x"></i>
+                <i class="icon-legal icon-4x"></i>
         </span>
         <h4 class="features-title"> 
-          <span class="main-color">Responsive</span> Layout
+          We Believe In <span class="main-color">Honesty</span>
         </h4>
-        <p class=""> We combine creative forces with systematic activists. All ideas require implementation and our multi-disciplined netproject fosters a wide array of abilities that empower visionaries and entrepreneurs to lead meaningful brands.</p>
-  </div><!-- END FEATURE ITEM-->
-    
-    
-    <!-- FEATURE ITEM-->
+        <p class=""> Phasellus eget urna justo. Donec nulla purus, porttitor in mollis id, mattis ac sapien. Mauris venenatis cursus justo in imperdiet. Praesent non nulla a purus eleifend aliquet. Mauris facilisis, turpis sed viverra sollicitudin, tellus enim aliquam risus, vitae ultrices diam erat vel odio. Sed bibendum augue non arcu sollicitudin posuere.</p>
+  </div>
+        
     <div class="span3 effect-box-2 active">
-      <span class="label label-warning lines-bg-color text-center">
-      <i class="icon-tint icon-4x"></i>
-      </span>
-      <h4 class="features-title"> 
-        <span class="main-color">Designer  </span>Friendly
-      </h4>
-      <p class=""> We combine creative forces with systematic activists. All ideas require implementation and our multi-disciplined netproject fosters a wide array of abilities that empower visionaries and entrepreneurs to lead meaningful brands.</p>
-    </div><!-- END FEATURE ITEM-->
-    
-    <!-- FEATURE ITEM-->
-    <div class="span3 effect-box-3 active"> 
       <span class="label label-warning lines-bg-color text-center">
       <i class="icon-thumbs-up icon-4x"></i>
       </span>
       <h4 class="features-title"> 
-        <span class="main-color">Faster</span> Setup
+        We Have <span class="main-color">Integrity  </span>
       </h4>
-      <p class=""> Inspired Thinking. Ask smarter questions, push for innovative solutions and believe in the power of creativity. Be consistently open and honest. Be true to ourselves and our values. Find, stimulate and maintain the best minds.</p>
+        <p class=""> Phasellus eget urna justo. Donec nulla purus, porttitor in mollis id, mattis ac sapien. Mauris venenatis cursus justo in imperdiet. Praesent non nulla a purus eleifend aliquet. Mauris facilisis, turpis sed viverra sollicitudin, tellus enim aliquam risus, vitae ultrices diam erat vel odio. Sed bibendum augue non arcu sollicitudin posuere.</p>
+      </div>
+    
+    <div class="span3 effect-box-3 active"> 
+      <span class="label label-warning lines-bg-color text-center">
+      <i class="icon-heart icon-4x"></i>
+      </span>
+      <h4 class="features-title"> 
+        We Prioritize Your <span class="main-color">Safety</span>
+      </h4>
+        <p class=""> Phasellus eget urna justo. Donec nulla purus, porttitor in mollis id, mattis ac sapien. Mauris venenatis cursus justo in imperdiet. Praesent non nulla a purus eleifend aliquet. Mauris facilisis, turpis sed viverra sollicitudin, tellus enim aliquam risus, vitae ultrices diam erat vel odio. Sed bibendum augue non arcu sollicitudin posuere.</p>
     </div>
-    <!-- END FEATURE ITEM-->
-    <!-- FEATURE ITEM-->
+
     <div class="span3 effect-box-4 active"> 
       <span class="label label-warning lines-bg-color text-center">
-      <i class="icon-spinner icon-spin icon-4x "></i>
+      <i class="icon-cog icon-spin icon-4x "></i>
       </span>
       <h4 class="features-title">
-        <span class="main-color">Modern</span> features
+        We Promote <span class="main-color">Craftsmanship</span>
       </h4>
-      <p class=""> Inspired Thinking. Ask smarter questions, push for innovative solutions and believe in the power of creativity. Be consistently open and honest. Be true to ourselves and our values. Find, stimulate and maintain the best minds.</p>
+        <p class=""> Phasellus eget urna justo. Donec nulla purus, porttitor in mollis id, mattis ac sapien. Mauris venenatis cursus justo in imperdiet. Praesent non nulla a purus eleifend aliquet. Mauris facilisis, turpis sed viverra sollicitudin, tellus enim aliquam risus, vitae ultrices diam erat vel odio. Sed bibendum augue non arcu sollicitudin posuere.</p>
     </div>
-    <!-- FEATURE ITEM-->
-    </div><!--/ ROW-FLUID-->
+
+    </div>
     <hr>
-  
-  
-  <div class="row-fluid">
-    <div class="well">
-      <div class="well-wrapp">
-        <p class="lead text-large text-center">
-          
-            <span class="main-color"> 
-              Scroll&amp;Strap
-            </span> - modern Bootstrap onepager with parallax effect and smooth scrolling
-        </p>
-  <span class="btn-box">        
-    <a href="#" class="btn btn-icon-4x  btn-large  btn-action btn-block-third">
-    <i class="icon-download-alt icon-4x"></i> 
-    Buy now!
-    </a>
-      <i class="or">- or - </i>
-      <span id="nav3">
-        <a href="#slogan-section-2" class="btn btn-icon-4x  btn-large  btn-green-alt btn-block-third"><i class="icon-info-sign icon-4x"></i> Show me more!</a>
-      </span>
-  </span>
-        
-        </div>  
-      </div>
-    </div><!-- /row-fluid-->
-  </div><!--/CONTAINER-->
-</div><!-- / BG WRAPER-->
+  </div>
+</div>
 
 </section>

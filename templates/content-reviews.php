@@ -9,7 +9,7 @@
               
                 <h3>
                 <span class="white">
-                PROJECT WITH <span class="main-color"> RESPONSIVE VIDEO</span></span>
+                REVIEWS FROM OUR <span class="main-color"> CUSTOMERS</span></span>
                 </h3>
                 
           </div>
@@ -26,13 +26,22 @@
         <div class="span8">
             <div class="vendor">
               <div class="container-video">
-                <div class="fluid-width-video-wrapper" style="padding-top: 50%;"><iframe src="http://player.vimeo.com/video/35108500?color=ffffff" id="fitvid862574"></iframe></div> 
+                <?php echo do_shortcode('[video id="QH2-TGUlwu4" x="550px" y="435px"]'); ?>
               </div>
             </div>
             <div class="well">
-            <p>
-            Description of video. Few words about your project video.
-            </p>
+                <div class="span3">
+                  <?php echo do_shortcode('[video id="QH2-TGUlwu4" x="550px" y="435px"]'); ?>
+                </div>
+                <div class="span3">
+                  <?php echo do_shortcode('[video id="QH2-TGUlwu4" x="550px" y="435px"]'); ?>
+                </div>
+                <div class="span3">
+                  <?php echo do_shortcode('[video id="QH2-TGUlwu4" x="550px" y="435px"]'); ?>
+                </div>
+                <div class="span3">
+                  <?php echo do_shortcode('[video id="QH2-TGUlwu4" x="550px" y="435px"]'); ?>
+                </div>
             </div>
             
         </div>

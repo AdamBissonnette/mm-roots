@@ -55,7 +55,7 @@ if ($logo == '')
 <?php
 
 get_template_part('templates/content', 'service-offerings');
-get_template_part('templates/content', 'about-us');
+get_template_part('templates/content', 'work');
 get_template_part('templates/content', 'reviews');
 
 ?>

@@ -3,16 +3,18 @@
 
 
 
-  <nav class="nav-top">
+  <nav class="nav-top" id="nav">
     <div class="navbar navbar-fixed-top" id="topnavbar"> 
       <div class="navbar-inner navbar-scroll" id="navbartop">
         <div class="container">
           <div class="row">
-            <div classs="span5">
+            <div class="">
               <a class="brand" href="<?php echo home_url(); ?>"> 
-              <span style="text-transform: uppercase;"> <?php bloginfo('name'); ?></span></a>
+                <img id="brand-logo" src="/Wordpress/assets/img/ParrLogoSmallWhite2.png" alt="logo" />
+                <!--- <span style="text-transform: uppercase;"> <?php bloginfo('name'); ?></span> --->
+              </a>
             </div>
-            <div class="span7">
+            <div>
               <div id="main-nav" class="scroller-spy">
                 <nav class="nav-collapse collapse" role="navigation">
                     <?php

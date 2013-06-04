@@ -2,7 +2,7 @@
    WP Admin Bar Fixes
    ========================================================================== */
 
-.logged-in .navbar-fixed-top {margin-top: 27px;}
+.admin-bar .navbar-fixed-top {margin-top: 27px;}
 .ab-item img.media-object { min-width: auto; min-height: auto;}
 
 
@@ -28,3 +28,5 @@ input.search-query {}
 body {overflow-x: hidden;}
 
 .page-header {border: none; margin: 0;}
+
+.navbar #brand-logo {height: 2.5em;}

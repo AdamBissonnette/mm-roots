@@ -73,17 +73,18 @@ $backgroundStyle = sprintf(" style=\"background-image: url('%s')\"", $footerImag
     
   <div class="span6">
   <span class="logo"><!--LOGO-->
-      <a href="#" title="Scroll&amp;Strap">
-        <img src="assets/img/logo_1_orange.png" alt="logo">
+      <a href="#">
+        <img src="assets/img/Logo_1-parrwhite.png" alt="logo">
       </a>
     </span>
     <hr>
       
       <address>
-        <strong>SCROLL&amp;STRAP, Inc.</strong><br>
-        <i class="icon-map-marker"></i> 795 Folsom Ave, Suite 600
-        San Francisco, CA 94107<br>
-        <i class="icon-phone-sign"></i> + 4 (123) 456-7890
+        <strong>Parr Autobody</strong><br>
+        <i class="icon-map-marker"></i> 336 Packham Ave
+        Saskatoon, SK. S7N 2T1<br>
+        <i class="icon-phone-sign"></i> 306.374.2833<br />
+        <i class="icon-print"></i> 306.373.5512
         <div class="foot-line"></div>
                     
       </address>
@@ -99,10 +100,8 @@ $backgroundStyle = sprintf(" style=\"background-image: url('%s')\"", $footerImag
         <h4 class="main-color-line text-center"><i class="icon-share main-color"></i> <span>Follow us</span></h4>
       <ul class="social-bottom">
               <li><span class="badge badge-warning"><a href="#" title=""><i class="icon-facebook"></i></a></span></li>
-        <li><span class="badge badge-warning"><a href="#" title=""><i class="icon-twitter"></i></a></span></li>
-        <li><span class="badge badge-warning"><a href="#" title=""><i class="icon-github-alt"></i></a></span></li>
         <li><span class="badge badge-warning"><a href="#" title=""><i class="icon-google-plus"></i></a></span></li>
-        <li><span class="badge badge-warning"><a href="#" title=""><i class="icon-linkedin"></i></a></span></li>
+        <li><span class="badge badge-warning"><a href="#" title="" style="height: 21px; width: 26px; display: block;">y</a></span></li>
       </ul>
         
       

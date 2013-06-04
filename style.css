@@ -13,14 +13,11 @@ License URI:        http://opensource.org/licenses/MIT
 input.search-query {}
 
 body {overflow-x: hidden;}
-.navbar .brand {width: 300px; padding: 10px 0 4px; line-height: 1em; font-size: 2em; font-weight: bold; color: #74b4cb;}
+.navbar .brand {padding: 10px 0 4px; line-height: 1em; font-size: 2em; font-weight: bold; color: #74b4cb;}
 .navbar img.brand-logo {height: 1em; vertical-align: text-top; margin: 2px 0 0;}
-.flexslider {border-bottom: 0px;}
-.flexslider .slides .jumbotron-image img {width: auto; margin: 0 auto;}
-.service-image {}
 
 @media (max-width: 767px) {
-	.logged-in .navbar-fixed-top {margin-top: 0;}
+	.admin-bar .navbar-static-top {margin-top: 0;}
 	.navbar .brand {padding-top: 2px;}
 	.navbar .btn-navbar {padding: 7px 6px;}
 }
