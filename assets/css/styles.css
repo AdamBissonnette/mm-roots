@@ -9079,6 +9079,10 @@ PARALLAX EFFECTS...........................1474
         display:block;
       
       }
+      .admin-bar #header-section .wrap-hero{
+        top:87px;
+      }
+
       #header-section .logowrap{
         position:absolute;
         top:10px;
@@ -9172,7 +9176,7 @@ PARALLAX EFFECTS...........................1474
       }
       
       #header-section .hero-unit span:first-child{
-        font-size: 70px;
+        font-size: 40px;
         border-top: 1px dotted rgba(250, 250, 250, 1);
         border-bottom: 1px dotted rgba(250, 250, 250, 1);
         background: rgba(0, 0, 0, 0.0.5);
@@ -10602,6 +10606,12 @@ PARALLAX EFFECTS...........................1474
   
     
     /*********************** @MEDIA *****************************/
+
+      @media (min-width: 1200px){
+        #header-section .hero-unit span:first-child{
+          font-size:50px;
+        }
+      }
 
       @media (max-width: 979px){
         .navbar-fixed-top, .navbar-fixed-bottom {
