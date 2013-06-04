@@ -144,7 +144,6 @@ function GetThemeDataFields($tabs)
 
 	foreach ($tabs as $tab)
 	{
-
 		foreach ($tab["sections"] as $section)
 		{
 			$fields = array_merge($fields, $section["fields"]);
@@ -170,5 +169,20 @@ function MMRootsField($id, $label, $type, $options=null, $values)
 	}
 
 	return $formField;
+}
+
+//Custom Taxonomies
+function RegisterTaxonomies($taxonomies)
+{
+	foreach ($taxonomies as $taxonomy) 
+	{
+		RegisterTaxonomy($taxonomy[""]);
+		RegisterTaxonomyMeta()
+	}
+}
+
+function RegisterTaxonomy($taxonomySlug, $args)
+{
+	register_post_type( $taxonomySlug, $args );
 }
 ?>

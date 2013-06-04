@@ -32,9 +32,17 @@ class MM_Roots
 		add_action('wp_ajax_nopriv_do_ajax', array(&$this, '_save') );
 		add_action('wp_ajax_do_ajax', array(&$this, '_save') );
 
+		//Custom Taxonomies
+		add_action( 'init', array(&$this, 'custom_taxonomies'));
+
 		//Page / Post Meta
-		add_action("admin_init", array(&$this, "page_metabox") );
-		add_action("admin_init", array(&$this, "post_metabox") );
+		add_post_type_support( 'page', 'excerpt' ); //Pages should have this - it's silly not to!
+
+		//add_action("admin_init", array(&$this, "page_metabox") );
+		//add_action("admin_init", array(&$this, "post_metabox") );
+		
+		//Custom Meta
+		add_action( 'admin_init', array(&$this, 'custom_metabox'));
 
 		add_action( 'save_post', array(&$this, '_save_post_meta'), 10, 2 );
     }
@@ -48,35 +56,34 @@ class MM_Roots
 		
 		add_option($_settings_key . "_versionnum", $_versionnum);
 	}
-    
 
-	function page_metabox(){
-		add_meta_box("mm_page_meta", "Page Meta", array($this, "page_meta"), "page");
+	function custom_metabox(){
+		global $taxonomies;
+
+		foreach ($taxonomies as $taxonomy)
+		{
+			add_meta_box("mm_post_meta", "Meta", array(&$this, "taxonomy_meta"), $taxonomy["slug"], "normal", "low", $taxonomy["options"]);
+		}	
 	}
 
-	function page_meta(){
-		global $post;
+	function custom_taxonomies()
+	{
+		global $taxonomies;
 
-        include_once('data/taxonomy_data.php');
-		
-		$options = $page_options;
-		$values = get_post_meta(get_the_ID(), $this->_meta_key, true);
-
-		include_once('ui/meta_post_ui.php');
+		foreach ($taxonomies as $taxonomy) 
+		{
+			if ($taxonomy["registration-args"])
+			{
+				register_post_type( $taxonomy["slug"], $taxonomy["registration-args"] );
+			}
+		}
 	}
 
-	function post_metabox(){
-		add_meta_box("mm_post_meta", "Post Meta", array(&$this, "post_meta"), "post");
-	}
+	function taxonomy_meta($post, $data)
+	{
+		$options = $data["args"];
 
-	function post_meta(){
-		global $post;
-
-  		include_once('data/taxonomy_data.php');
-		
-		$options = $post_options;
-		$values = get_post_meta(get_the_ID(), $this->_meta_key, true);
-
+		$values = get_post_meta($post->ID, $this->_meta_key, true);
 		include_once('ui/meta_post_ui.php');
 	}
 
@@ -99,7 +106,6 @@ class MM_Roots
   		wp_enqueue_script('formtools', get_template_directory_uri() . '/assets/js/formtools.js', false, null);
   		wp_enqueue_script('admin', get_template_directory_uri() . '/assets/js/mm_roots_admin.js', false, null);
         
-        include_once('data/admin_data.php');
 		include_once('ui/admin_ui.php');
     }
 
@@ -165,7 +171,8 @@ class MM_Roots
     
 	function _save_post_meta( $post_id, $post ){
 		global $pagenow;
-		
+		global $taxonomies;
+
 		if ( 'post.php' != $pagenow ) return $post_id;
 		
 		if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) 
@@ -174,32 +181,28 @@ class MM_Roots
 		if ( ! isset( $_POST['mm_nonce'] ) || ! wp_verify_nonce( $_POST['mm_nonce'], 'mm_nonce' ) )
 	        return $post_id;
 
-	    include('data/taxonomy_data.php');
-
 	    $metafields = array();
 
-		switch ($post->post_type) {
-			case 'post':
-				$metafields = GetThemeDataFields($post_options);
+	    $taxonomySlugs = array();
 
-				break;
-			case 'page':
-				$metafields = GetThemeDataFields($page_options);
-
-				break;
-			default:
-				//Do Nothing
-				break;
+		foreach ($taxonomies as $taxonomy) {
+			$taxonomySlugs[] = $taxonomy["slug"];
 		}
 
-		$metadata = array();
+	    if (in_array($post->post_type, $taxonomySlugs))
+	    {
+	   		$taxonomyKey = array_search($post->post_type, $taxonomySlugs);
+	   		$metafields = GetThemeDataFields($taxonomies[$taxonomyKey]["options"]);
 
-		foreach ($metafields as $field) {
-			$fieldID = $field["id"];
-			$metadata[$fieldID] = $_POST[$fieldID];
-		}
+			$metadata = array();
 
-		update_post_meta( $post_id, $this->_meta_key, $metadata );
+			foreach ($metafields as $field) {
+				$fieldID = $field["id"];
+				$metadata[$fieldID] = $_POST[$fieldID];
+			}
+
+			update_post_meta( $post_id, $this->_meta_key, $metadata );
+	    }
 	}
 
     function get_option($setting)

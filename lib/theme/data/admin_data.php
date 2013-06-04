@@ -4,8 +4,8 @@
 		Sections
 		Fields
 	*/
-
-	$options = array(
+	global $theme_options;
+	$theme_options = array(
 		array('name' => 'Theme Options',
 			'id' => 'theme',
 			'icon' => 'cog',
@@ -28,16 +28,6 @@
 							'type' => 'text',
 							'options' => array( "placeholder" => 'ex. cloud' ))
 					)
-				),
-				array(
-					'name' => 'Portfolio Options',
-					'size' => '6',
-					'fields' => array(
-						array('id' => 'portfolio_category',
-							'label' => 'Portfolio Category',
-							'type' => 'select',
-							'options' => array( "data" => getCategorySelectArray()))
-						)
 				)
 			)
 		),
@@ -46,72 +36,37 @@
 			'icon' => 'home',
 			'sections' => array(
 				array(
-					'name' => 'Services Options',
+					'name' => 'Title Bar',
 					'size' => 6,
 					'fields' => array(
-						array('id' => 'service_page',
-							'label' => 'Service Page',
-							'type' => 'select',
-							'options' => array( "data" => getPagesSelectArray())),
-						array('id' => 'service_category',
-							'label' => 'Service Category',
-							'type' => 'select',
-							'options' => array( "data" => getCategorySelectArray()))
+						array('id' => 'homepage-logo',
+							'label' => 'Homepage Logo',
+							'type' => 'text'),
+						array('id' => 'primary-tagline',
+							'label' => 'Primary Tagline',
+							'type' => 'text'),
+						array('id' => 'secondary-tagline',
+							'label' => 'Secondary Tagline',
+							'type' => 'text'),
 					)
 				),
 				array(
-					'name' => 'News Options',
+					'name' => 'Sections',
 					'size' => 6,
 					'fields' => array(
-						array('id' => 'news_title',
-							'label' => 'News Section Title',
-							'type' => 'text'),
-						array('id' => 'news_tagline',
-							'label' => 'News Section Tagline',
-							'type' => 'text'),
-						array('id' => 'news_category',
-							'label' => 'News Category',
+						array('id' => 'service_offerings',
+							'label' => 'Service Offerings',
 							'type' => 'select',
-							'options' => array( "data" => getCategorySelectArray()))
+							'options' => array( "data" => getTaxonomySelectArray('home-section'))),
+						array('id' => 'about_us',
+							'label' => 'About Section',
+							'type' => 'select',
+							'options' => array( "data" => getTaxonomySelectArray('home-section'))),
+						array('id' => 'reviews',
+							'label' => 'Reviews',
+							'type' => 'select',
+							'options' => array( "data" => getTaxonomySelectArray('home-section')))
 					)
-				),
-				array(
-					'name' => 'Jumbotron Options',
-					'size' => 6,
-					'fields' => array(
-						array('id' => 'jumbotron_category',
-							'label' => 'Jumbotron Category',
-							'type' => 'select',
-							'options' => array( "data" => getCategorySelectArray())),
-						array('id' => 'jumbotron_count',
-							'label' => 'Number Jumbotron Slides to Display',
-							'type' => 'text'),
-						array('id' => 'jumbotron_default',
-							'label' => 'Default Image to Display',
-							'type' => 'text'),
-						array('id' => 'jumbotron_animation',
-							'label' => 'Transition Effect',
-							'type' => 'select',
-							'options' => array( "data" => array("slide"=>"Slide", "fade"=>"Fade"))
-							)
-					)
-				),
-				array(
-					'name' => 'Testimonial Options',
-					'size' => 6,
-					'fields' => array(
-						array('id' => 'testimonial_category',
-							'label' => 'Testimonial Category',
-							'type' => 'select',
-							'options' => array( "data" => getCategorySelectArray())),
-						array('id' => 'testimonial_title',
-							'label' => 'Testimonial Title',
-							'type' => 'text'),
-						array('id' => 'testimonial_tagline',
-							'label' => 'Testimonial Tagline',
-							'type' => 'text')
-
-					),
 				)
 			)
 		),
@@ -181,38 +136,6 @@
 							'type' => 'text'
 						)
 					)				
-				),
-				array(
-					'name' => 'Collaboration Information',
-					'size' => 6,
-					'fields' => array(
-						array('id' => 'collab_title',
-							'label' => 'Collaboration Title',
-							'type' => 'text'
-						),
-						array('id' => 'collab_content',
-							'label' => 'Collaboration Content',
-							'type' => 'textarea'
-						)
-					)				
-				)
-			)
-		),
-		array('name' => 'Misc Options',
-			'id' => 'misc',
-			'icon' => 'shopping-cart',
-			'sections' => array(
-				array(
-			'name' => 'MM Facts',
-					'size' => 12,
-					'fields' => array(
-						array('id' => 'mm_facts',
-							'label' => 'Random Facts',
-							'type' => 'textarea',
-							'options' => array('note' => "Note: each new line will be randomly selected to be displayed when using the [MMFact /] shortcode.",
-											'class' => "span9", "rows" => "15")
-						)
-					)	
 				)
 			)
 		)

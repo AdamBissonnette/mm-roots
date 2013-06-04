@@ -119,15 +119,26 @@ function getCategorySelectArray()
 
 function getPagesSelectArray()
 {
-	$pages = get_pages();
+	return getTaxonomySelectArray('page');
+}
+
+function getPostsSelectArray()
+{
+	return getTaxonomySelectArray('post');
+}
+
+function getTaxonomySelectArray($taxonomy)
+{
+	$args = array('post_type' => $taxonomy);
+	$posts = get_posts($args);
 	
-	$pageArray = array();
-	foreach ($pages as $pages)
+	$postArray = array();
+	foreach ($posts as $post)
 	{
-		$pageArray[$pages->ID] = $pages->post_title;
+		$postArray[$post->ID] = $post->post_title;
 	}
 	
-	return $pageArray;
+	return $postArray;
 }
 
 ?>
