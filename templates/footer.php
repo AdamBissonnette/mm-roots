@@ -88,33 +88,53 @@ $backgroundStyle = sprintf(" style=\"background-image: url('%s')\"", $footerImag
         <div class="foot-line"></div>
                     
       </address>
-       
-      
-        
+  
+      <div class="text-center">
+        <ul class="social-bottom">
+                <li><span class="badge badge-warning"><a href="#" title=""><i class="icon-facebook"></i></a></span></li>
+          <li><span class="badge badge-warning"><a href="#" title=""><i class="icon-google-plus"></i></a></span></li>
+          <li><span class="badge badge-warning"><a href="#" title="" style="height: 21px; width: 26px; display: block;">y</a></span></li>
+        </ul>
+      </div>  
+
       </div>
     
   
     
     
     <div class="span3">
-        <h4 class="main-color-line text-center"><i class="icon-share main-color"></i> <span>Follow us</span></h4>
-      <ul class="social-bottom">
-              <li><span class="badge badge-warning"><a href="#" title=""><i class="icon-facebook"></i></a></span></li>
-        <li><span class="badge badge-warning"><a href="#" title=""><i class="icon-google-plus"></i></a></span></li>
-        <li><span class="badge badge-warning"><a href="#" title="" style="height: 21px; width: 26px; display: block;">y</a></span></li>
-      </ul>
-        
+      <h4 class="main-color-line"><i class="icon-comment-alt main-color"></i> <span>Book With Us Today!</span></h4>
+    <form class="form-vertical" id="mail">
+    <div class="control-group">
+      <label for="name"></label>
+      <div class="controls">
+      <input class="req" id="name" name="name" placeholder="your name" type="text">
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="contact"></label>
+      <div class="controls">
+        <input class="req" id="contact" name="contact" placeholder="your phone # or email address" type="text">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="message"></label>
+      <div class="controls">
+        <textarea class="req" id="message" name="message" placeholder="help fix my car!!" rows="5"></textarea>
+      </div>
+    </div>
+    <input type="text" name="terms" id="terms" />
+
+    <script type="text/javascript">
+        document.write('<input type="text" name="honey" value="1" id="honey" />');
+      </script>
+
+    <button class="btn btn-primary" id="send">Send message</button>
+    </form>        
       
       
     </div>
-  
-   <div class="span3">
-        <h4 class="main-color-line"><i class="icon-twitter main-color"></i> <span>Twitter feed</span></h4>
-        <div id="tweets">
-    <ul class="tweetList"><li class="tweet_content_0"><p class="tweet_link_0">Screensiz.es is a comprehensive reference of phone, tablet, and desktop screen specs  <a href="http://t.co/Y1k2hoIoVR">http://t.co/Y1k2hoIoVR</a> <p class="timestamp"><time datetime="2013-06-03T16:14:33Z" title="03/06/2013, 16:14">about 9 hours ago</time></p></p></li></ul></div>
-      </div>
-    
-    </div><!-- / ROW-->
     
   </div>
   

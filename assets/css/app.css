@@ -30,3 +30,9 @@ body {overflow-x: hidden;}
 .page-header {border: none; margin: 0;}
 
 .navbar #brand-logo {height: 2.5em;}
+
+section {padding-top: 100px;}
+
+#mail input, #mail textarea {width: 90%;}
+
+.social-bottom {width: auto;}

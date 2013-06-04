@@ -46,54 +46,14 @@ jQuery(document).ready(function(){
 	jQuery('#about-us-section').parallax("50%", 0.1);
 	jQuery('.bg').parallax("50%", 0.3);
 	jQuery('#reviews-section').parallax("50%", 0.3);
-	jQuery('#footer').parallax("50%", 0.1);
-	
+	jQuery('#footer').parallax("50%", 0.1);	
 });
 
-jQuery('#service-offerings-section .parallax-point-event').bind('inview', function (event, visible) {
+jQuery('#NeedWorkDone .parallax-point-event').bind('inview', function (event, visible) {
         if (visible == true) {
-            jQuery('.effect-box-1').addClass("active");
-			jQuery('.effect-box-2').addClass("active");
-			jQuery('.effect-box-3').addClass("active");
-			jQuery('.effect-box-4').addClass("active");
-			
+            jQuery('.work-shot').addClass("active");
         }else{
-            jQuery('.effect-box-1').removeClass("active");
-			jQuery('.effect-box-2').removeClass("active");
-			jQuery('.effect-box-3').removeClass("active");
-			jQuery('.effect-box-4').removeClass("active");
-		
-			//jQuery('.effect-box').unbind('inview');
-        }
-    });
-
-jQuery('#slogan-section-1').bind('inview', function (event, visible) {
-        if (visible == true) {
-            jQuery('.large-slogan').addClass("active");
-		 }else{
-            jQuery('.large-slogan').removeClass("active"); 	
-        }
-    });
-
-jQuery('#slogan-section-2 .parallax-point-event').bind('inview', function (event, visible) {
-        if (visible == true) {
-            jQuery('.browser-shot-1').addClass("active");
-			jQuery('.browser-shot-2').addClass("active");
-			jQuery('.browser-shot-3').addClass("active");
-			
-        }else{
-            jQuery('.browser-shot-1').removeClass("active"); 
-			jQuery('.browser-shot-2').removeClass("active");
-			jQuery('.browser-shot-3').removeClass("active");
-			
-        }
-    });
-
-jQuery('#slogan-section-3').bind('inview', function (event, visible) {
-        if (visible == true) {
-            jQuery('.goprice').addClass("active");
-		}else{
-            jQuery('.goprice').removeClass("active"); 	
+            jQuery('.work-shot').removeClass("active");
         }
     });
 
