@@ -9501,7 +9501,7 @@ PARALLAX EFFECTS...........................1474
   section h3.top{
     font-size:70px;
   }
-  #features-section {
+  #service-offerings-section {
     
     background:#fff;
     position:relative;
@@ -9509,7 +9509,7 @@ PARALLAX EFFECTS...........................1474
     min-height:650px;
     background:#fff url(../img/png.png) top left repeat;
   }
-  #features-section .bg-wraper{
+  #service-offerings-section .bg-wraper{
     background:url(../img/section-top-bg.png)repeat-x;
     width:100%;
     height:100%;
@@ -10611,6 +10611,7 @@ PARALLAX EFFECTS...........................1474
         #header-section .hero-unit span:first-child{
           font-size:50px;
         }
+        body section {font-size: 1.2em;}
       }
 
       @media (max-width: 979px){

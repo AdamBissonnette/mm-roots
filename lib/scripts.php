@@ -44,7 +44,7 @@ function roots_scripts() {
   wp_register_script('fit_vids', get_template_directory_uri() . '/assets/js/jquery.fitvids.min.js', false, null, true);
   wp_register_script('local_scroll', get_template_directory_uri() . '/assets/js/jquery.localscroll-1.2.7-min.js', false, null, true);
   wp_register_script('inview', get_template_directory_uri() . '/assets/js/jquery.inview.js', false, null, true);
-  wp_register_script('scrollTo', get_template_directory_uri() . '/assets/js/jquery.scrollTo-1.4.2-min.js', false, null, true);
+  wp_register_script('scrollTo', get_template_directory_uri() . '/assets/js/jquery.scrollTo-1.4.6-min.js', false, null, true);
   wp_register_script('parallax', get_template_directory_uri() . '/assets/js/jquery.parallax-1.1.3.js', false, null, true);
   wp_register_script('formtools', get_template_directory_uri() . '/assets/js/formtools.js', false, null, true);
   wp_register_script('roots_main', get_template_directory_uri() . '/assets/js/main.js', false, null, true);

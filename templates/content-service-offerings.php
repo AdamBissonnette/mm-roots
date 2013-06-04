@@ -2,7 +2,7 @@
   
 ?>
 
-<section id="features-section" class="section-2" style="background-position: 50% 55px;">
+<section id="service-offerings-section" class="section-2" style="background-position: 50% 55px;">
   <div class="bg-wraper parallax-point-event">
   <div class="container">
     <div class="row-fluid">
@@ -22,7 +22,7 @@
     <!-- FEATURE ITEM-->
       <div class="span3 effect-box-1 active">
         <span class="label label-warning lines-bg-color text-center">
-                <i class="fa-icon-fullscreen fa-icon-large"></i>
+                <i class="icon-fullscreen icon-4x"></i>
         </span>
         <h4 class="features-title"> 
           <span class="main-color">Responsive</span> Layout
@@ -34,7 +34,7 @@
     <!-- FEATURE ITEM-->
     <div class="span3 effect-box-2 active">
       <span class="label label-warning lines-bg-color text-center">
-      <i class="fa-icon-tint fa-icon-large"></i>
+      <i class="icon-tint icon-4x"></i>
       </span>
       <h4 class="features-title"> 
         <span class="main-color">Designer  </span>Friendly
@@ -45,7 +45,7 @@
     <!-- FEATURE ITEM-->
     <div class="span3 effect-box-3 active"> 
       <span class="label label-warning lines-bg-color text-center">
-      <i class="fa-icon-thumbs-up fa-icon-large"></i>
+      <i class="icon-thumbs-up icon-4x"></i>
       </span>
       <h4 class="features-title"> 
         <span class="main-color">Faster</span> Setup
@@ -56,7 +56,7 @@
     <!-- FEATURE ITEM-->
     <div class="span3 effect-box-4 active"> 
       <span class="label label-warning lines-bg-color text-center">
-      <i class="fa-icon-spinner fa-icon-spin fa-icon-large "></i>
+      <i class="icon-spinner icon-spin icon-4x "></i>
       </span>
       <h4 class="features-title">
         <span class="main-color">Modern</span> features
@@ -78,13 +78,13 @@
             </span> - modern Bootstrap onepager with parallax effect and smooth scrolling
         </p>
   <span class="btn-box">        
-    <a href="#" class="btn btn-icon-large  btn-large  btn-action btn-block-third">
-    <i class="fa-icon-download-alt fa-icon-large"></i> 
+    <a href="#" class="btn btn-icon-4x  btn-large  btn-action btn-block-third">
+    <i class="icon-download-alt icon-4x"></i> 
     Buy now!
     </a>
       <i class="or">- or - </i>
       <span id="nav3">
-        <a href="#slogan-section-2" class="btn btn-icon-large  btn-large  btn-green-alt btn-block-third"><i class="fa-icon-info-sign fa-icon-large"></i> Show me more!</a>
+        <a href="#slogan-section-2" class="btn btn-icon-4x  btn-large  btn-green-alt btn-block-third"><i class="icon-info-sign icon-4x"></i> Show me more!</a>
       </span>
   </span>
         

@@ -10,7 +10,6 @@
       ?>
         <?php
           get_template_part('templates/header-top-navbar');
-          get_template_part('templates/header');
         }
         
       ?>

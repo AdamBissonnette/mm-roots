@@ -9,7 +9,7 @@ $secondaryTagline = $MM_Roots->get_setting("secondary-tagline");
 
 if ($logo == '')
 {
-	$logo = 'assets/img/logo_1.png';
+	$logo = 'assets/img/logo_1.png?d=1';
 }
 
 ?>
@@ -24,7 +24,7 @@ if ($logo == '')
 
 	        <div class="logo">
 	          <a href="#" title="Scroll&amp;Strap">
-	            <img src="assets/img/logo_1.png" alt="logo">
+	            <img src="<?php echo $logo; ?>" alt="logo">
 	          </a>
 	        </div>
 	        
@@ -40,7 +40,7 @@ if ($logo == '')
 	          </div>
 
 	      <span class="gobottom" id="nav2">
-	          <a href="#features-section" title="">
+	          <a href="#service-offerings-section" title="">
 	            <i class="icon-chevron-down icon-4x"></i>
 	          </a>
 	      </span>
@@ -54,6 +54,8 @@ if ($logo == '')
 
 <?php
 
-get_template_part('templates/content', 'home-section');
+get_template_part('templates/content', 'service-offerings');
+get_template_part('templates/content', 'about-us');
+get_template_part('templates/content', 'reviews');
 
 ?>
