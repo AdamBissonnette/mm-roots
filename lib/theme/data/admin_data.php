@@ -49,24 +49,6 @@
 							'label' => 'Secondary Tagline',
 							'type' => 'text'),
 					)
-				),
-				array(
-					'name' => 'Sections',
-					'size' => 6,
-					'fields' => array(
-						array('id' => 'service_offerings',
-							'label' => 'Service Offerings',
-							'type' => 'select',
-							'options' => array( "data" => getTaxonomySelectArray('home-section'))),
-						array('id' => 'about_us',
-							'label' => 'About Section',
-							'type' => 'select',
-							'options' => array( "data" => getTaxonomySelectArray('home-section'))),
-						array('id' => 'reviews',
-							'label' => 'Reviews',
-							'type' => 'select',
-							'options' => array( "data" => getTaxonomySelectArray('home-section')))
-					)
 				)
 			)
 		),

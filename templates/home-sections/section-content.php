@@ -1,11 +1,10 @@
 <?php
-	global $MM_Roots, $sectionID;
+	global $MM_Roots;
 
-	$section = get_post($sectionID);
-	$tagline = $MM_Roots->get_post_meta($section->ID, "tagline", true);
+	//$tagline = $MM_Roots->get_post_meta(get_the_ID(), "tagline", true);
 ?>
 
-<section id="<?php echo $section->post_name; ?>" style="background-position: 50% 70px;">
+<section id="<?php echo $get_the_name(); ?>" style="background-position: 50% 70px;">
 	<?php get_template_part('templates/home-sections/section', 'header'); ?>
 
 
@@ -15,7 +14,7 @@
   
   <div class="container">
       <div class="row-fluid">
-   		<?php echo $section->post_content; ?>	
+   		<?php the_content(); ?>	
       </div>  
   </div>
 </section>
