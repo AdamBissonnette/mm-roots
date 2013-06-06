@@ -1,8 +1,8 @@
 <?php
 	global $MM_Roots;
 
-	$tagline = $MM_Roots->get_post_meta($post->ID, "tagline", true);
-	$keyword = $MM_Roots->get_post_meta($post->ID, "keyword", true);
+	$tagline = $MM_Roots->get_post_meta($section->ID, "tagline", true);
+	$keyword = $MM_Roots->get_post_meta($section->ID, "keyword", true);
 
 	$keywordTemplate = '<span class="main-color"> %s</span>';
 

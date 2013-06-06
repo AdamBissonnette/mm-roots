@@ -53,8 +53,13 @@ if ($logo == '')
 </section>
 
 <?php
+global $sectionID;
+
+$sectionID = 265;
 
 get_template_part('templates/content', 'service-offerings');
+
+get_template_part('templates/home-sections/section', 'content');
 get_template_part('templates/content', 'work');
 get_template_part('templates/content', 'reviews');
 
