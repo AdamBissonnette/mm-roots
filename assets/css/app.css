@@ -31,10 +31,11 @@ body {overflow-x: hidden;}
 
 .navbar #brand-logo {height: 2.5em;}
 
-section {padding-top: 100px;}
+section {}
 
 #mail input, #mail textarea {width: 90%;}
 
 .social-bottom {width: auto;}
 
+.home-section {padding: 100px 0 0;}
 .home-section .content h3 {border-bottom: 2px solid #DF012A; display: inline-block; padding-bottom: 1px;}
