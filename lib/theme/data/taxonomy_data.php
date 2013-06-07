@@ -4,8 +4,10 @@
 	/*
 		Optional "options" variables
 		note - Text displayed below the field
-		data - 
-		validation
+		data - typically a key value array for selects but could be anything
+		class - classes to apply to the field
+		placeholder - placeholder text
+		rows - text area only rows attribute
 	*/
 
 	$taxonomies = array(
@@ -92,7 +94,7 @@
 											'not_found'           => 'No sectionss found',
 											'not_found_in_trash'  => 'No sections found in Trash',
 										),
-				'supports'            => array( 'editor', 'excerpt', 'thumbnail', ),
+				'supports'            => array( 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes' ),
 				//'taxonomies'          => array( 'category', 'post_tag' ),
 				'hierarchical'        => false,
 				'public'              => false,
@@ -113,7 +115,7 @@
 						'sections' => array(
 							array(
 								'name' => 'Home Section Options',
-								'size' => '6',
+								'size' => '10',
 								'fields' => array(
 									array('id' => 'tagline',
 										'label' => 'Tagline',
@@ -127,10 +129,11 @@
 										'label' => 'Section ID',
 										'type' => 'text',
 										'options' => array('note' => 'Note: This is the ID to use in conjunction with the navigation hashtag #SectionID')),
-									array('id' => 'section-background',
-										'label' => 'Background',
-										'type' => 'text',
-										'options' => array('note' => 'Note: This allows you to directly modify the inline background css style on the home section')),
+									array('id' => 'inline-styles',
+										'label' => 'Inline Styles',
+										'type' => 'textarea',
+										'options' => array('note' => 'Note: This allows you to directly modify the inline css styles on the home section for a background or anything',
+											'class' => 'span6')),
 									)
 						)
 					)

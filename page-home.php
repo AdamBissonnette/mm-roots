@@ -54,11 +54,10 @@ if ($logo == '')
 
 <?php
 
-get_template_part('templates/content', 'service-offerings');
+/* get_template_part('templates/content', 'service-offerings');
+get_template_part('templates/content', 'work');
+get_template_part('templates/content', 'reviews'); */
 
 get_template_part('templates/home-sections/section', 'listing');
-
-get_template_part('templates/content', 'work');
-get_template_part('templates/content', 'reviews');
 
 ?>
