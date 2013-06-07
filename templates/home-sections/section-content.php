@@ -1,18 +1,13 @@
 <?php
 	global $MM_Roots;
 
-	//$tagline = $MM_Roots->get_post_meta(get_the_ID(), "tagline", true);
+	$sectionID = $MM_Roots->get_post_meta(get_the_ID(), "sectionID", true);
 ?>
 
-<section id="<?php echo $get_the_name(); ?>" style="background-position: 50% 70px;">
+<section id="<?php echo $sectionID; ?>" class="home-section" style="background-position: 50% 70px;">
 	<?php get_template_part('templates/home-sections/section', 'header'); ?>
 
-
-</section>
-
-<section id="reviews-section" style="background-position: 50% 70px;">
-  
-  <div class="container">
+	<div class="container content">
       <div class="row-fluid">
    		<?php the_content(); ?>	
       </div>  

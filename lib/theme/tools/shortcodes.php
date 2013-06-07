@@ -77,18 +77,13 @@ function getFormattedPostContent($postid, $linktext)
 function row($atts, $content="")
 {
 	extract( shortcode_atts( array(
-	      'cssClass' => ''
+	      'class' => 'row'
      ), $atts ) );
 
 	$output = '';
-	$spanFormat = '<div class="row%s">%s</div>';
+	$spanFormat = '<div class="%s">%s</div>';
 	
-	if ($cssClass != '')
-	{
-		$cssClass = ' ' . $cssClass;
-	}
-	
-	$output = sprintf($spanFormat, $cssClass, do_shortcode($content));
+	$output = sprintf($spanFormat, $class, do_shortcode($content));
 	
 	return $output;
 }
@@ -229,22 +224,75 @@ function ButtonLink($atts)
 {
 	extract(shortcode_atts(array(
 		'url' => '',
+		//'id' => '',
+		//'onclick' => '',
+		'class' => 'btn-primary',
 		'title' => 'Take a Look',
-		'icon' => 'external-link'
+		'icon' => ''
 	), $atts) );
 
-	$template = '<a class="btn btn-primary" href="%s">
-              <i class="icon-%s"></i>
-              %s
+	$iconTemplate = '<i class="icon-%s"></i>
+	';
+
+	if ($icon != '')
+	{
+		$icon = sprintf($iconTemplate, $icon);
+	}
+
+	$template = '<a class="btn %s" href="%s">
+              %s%s
             </a>';
 
-    $output = sprintf($template, $url, $icon, $title);
+    $output = sprintf($template, $class, $url, $icon, $title);
 
     return $output;
 }
 
 add_shortcode("ButtonLink", "ButtonLink");
 
+function IconBlock($atts, $content='')
+{
+	extract(shortcode_atts(array(
+		'tagline' => '',
+		'keyword' => '',
+		'icon' => 'cloud',
+		'size' => '4',
+		'class' => ''
+	), $atts) );
+
+	if ($class != '')
+	{
+		$class = " " . $class;
+	}
+
+	$iconBlockTemplate = '<span class="label label-warning lines-bg-color text-center">
+				                <i class="icon-%s icon-%sx%s"></i>
+				        </span>';
+
+	$iconBlock = sprintf($iconBlockTemplate, $icon, $size, $class);
+
+	if ($keyword != '')
+	{
+		$keyword = sprintf('<span class="main-color">%s</span>', $keyword);
+		$tagline .= ' ' . $keyword;
+	}
+
+	$template = '<div class="effect-box-1 active">
+        %s
+        <h4 class="features-title"> 
+          %s
+        </h4>
+        <p>%s</p>
+  	</div>';
+
+  	$output = sprintf($template, $iconBlock, $tagline, do_shortcode($content));
+
+  	return $output;
+}
+
+add_shortcode("IconBlock", "IconBlock");
+
+//Enable Shortcodes in widgets
 add_filter('widget_text', 'do_shortcode');
 
 ?>

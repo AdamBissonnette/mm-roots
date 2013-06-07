@@ -1,6 +1,13 @@
 <?php
 	global $taxonomies;
 
+	/*
+		Optional "options" variables
+		note - Text displayed below the field
+		data - 
+		validation
+	*/
+
 	$taxonomies = array(
 		array('slug' => 'post',
 			  'options' => array(
@@ -85,7 +92,7 @@
 											'not_found'           => 'No sectionss found',
 											'not_found_in_trash'  => 'No sections found in Trash',
 										),
-				'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', ),
+				'supports'            => array( 'editor', 'excerpt', 'thumbnail', ),
 				//'taxonomies'          => array( 'category', 'post_tag' ),
 				'hierarchical'        => false,
 				'public'              => false,
@@ -105,26 +112,26 @@
 						'icon' => 'cog',
 						'sections' => array(
 							array(
-								'name' => 'General Options',
+								'name' => 'Home Section Options',
 								'size' => '6',
 								'fields' => array(
 									array('id' => 'tagline',
 										'label' => 'Tagline',
-										'type' => 'text'),
-									array('id' => 'icon',
-										'label' => 'Icon',
-										'type' => 'text'),
-									array('id' => 'image',
-										'label' => 'Image',
-										'type' => 'text'),
-									array('id' => 'readmoreid',
-										'label' => 'Read More Post ID',
-										'type' => 'text'),
-									array('id' => 'blurb',
-										'label' => 'Blurb',
-										'type' => 'textarea',
-										'options' => array( "note" => 'Note: Used instead of the excerpt in some cases' ))
-										)
+										'type' => 'text',
+										'options' => array('note' => 'Note: This is the title of the section')),
+									array('id' => 'keyword',
+										'label' => 'Keyword',
+										'type' => 'text',
+										'options' => array('note' => 'Note: This is also title text displayed after the tagline in an emphasized color')),
+									array('id' => 'sectionID',
+										'label' => 'Section ID',
+										'type' => 'text',
+										'options' => array('note' => 'Note: This is the ID to use in conjunction with the navigation hashtag #SectionID')),
+									array('id' => 'section-background',
+										'label' => 'Background',
+										'type' => 'text',
+										'options' => array('note' => 'Note: This allows you to directly modify the inline background css style on the home section')),
+									)
 						)
 					)
 				)

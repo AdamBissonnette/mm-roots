@@ -3,8 +3,7 @@
 
 	//$tagline = $MM_Roots->get_post_meta(get_the_ID(), "tagline", true);
 
-	$args = array('post_type' => 'page');
-
+	$args = array('post_type' => 'home-section');
 	$sections = get_posts($args);
 
 	foreach ($sections as $post) : setup_postdata($post);
