@@ -91,7 +91,7 @@
 											'edit_item'           => 'Edit Section',
 											'update_item'         => 'Update Section',
 											'search_items'        => 'Search sections',
-											'not_found'           => 'No sectionss found',
+											'not_found'           => 'No sections found',
 											'not_found_in_trash'  => 'No sections found in Trash',
 										),
 				'supports'            => array( 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes' ),
@@ -139,6 +139,59 @@
 					)
 				)
 			)
+		),
+		array('slug' => 'review',
+			  'registration-args' => array(
+				'label' => 'review',
+				'description'         => 'Reviews of the organization',
+				'labels'              => array(
+											'name'                => 'Reviews',
+											'singular_name'       => 'Review',
+											'menu_name'           => 'Reviews',
+											'parent_item_colon'   => 'Parent Review:',
+											'all_items'           => 'All Reviews',
+											'view_item'           => 'View Review',
+											'add_new_item'        => 'Add New Review',
+											'add_new'             => 'New Review',
+											'edit_item'           => 'Edit Review',
+											'update_item'         => 'Update Review',
+											'search_items'        => 'Search reviews',
+											'not_found'           => 'No reviews found',
+											'not_found_in_trash'  => 'No reviews found in Trash',
+										),
+				'supports'            => array( 'title','editor', 'excerpt', 'revisions', 'page-attributes' ),
+				//'taxonomies'          => array( 'category', 'post_tag' ),
+				'hierarchical'        => false,
+				'public'              => false,
+				'show_ui'             => true,
+				'show_in_menu'        => true,
+				'show_in_nav_menus'   => false,
+				'show_in_admin_bar'   => true,
+				'menu_position'       => 5,
+				'menu_icon'           => '',
+				'can_export'          => true,
+				'has_archive'         => false,
+				'exclude_from_search' => true,
+				'publicly_queryable'  => true,
+				'capability_type'     => 'page',),
+			'options' => array(	array('name' => 'Review Options',
+						'id' => 'reviews',
+						'icon' => 'cog',
+						'sections' => array(
+							array(
+								'name' => 'Review Options',
+								'size' => '10',
+								'fields' => array(
+									array('id' => 'video-id',
+										'label' => 'YoutTube Video ID',
+										'type' => 'text',
+										'options' => array('note' => 'Note: Add the id of the YouTube Video to link here.')
+										)
+									)
+								)
+						)
+					)
+				)
 		)
 	);
 ?>
