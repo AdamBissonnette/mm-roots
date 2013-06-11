@@ -190,6 +190,10 @@
 										'label' => 'Review Content',
 										'type' => 'editor'
 										),
+									array('id' => 'url',
+										'label' => 'Review Url',
+										'type' => 'text'
+										),
 									array('id' => 'video-id',
 										'label' => 'YoutTube Video ID',
 										'type' => 'text',

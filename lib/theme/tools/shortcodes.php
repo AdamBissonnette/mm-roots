@@ -292,6 +292,68 @@ function IconBlock($atts, $content='')
 
 add_shortcode("IconBlock", "IconBlock");
 
+function ListReviews($atts)
+{
+	extract(shortcode_atts(array(
+		'numberposts' => '2',
+		'orderby' => 'rand',
+		'wrapsize' => ''
+	), $atts) );
+
+	global $MM_Roots;
+
+	$args = array('post_type' => 'review', 'orderby' => $orderby, 'numberposts' => $numberposts);
+	$reviews = get_posts($args);
+
+	$output = "";
+
+	$reviewTemplate = '<blockquote>
+	  <p>
+	  %s
+	  </p>
+	  %s
+    </blockquote>';
+
+    $captionTemplate = '<span class="test-caption"> <strong>%s </strong></span>';
+    $captionTemplateUrl = '<span class="test-caption"> <strong><a href="%s">%s</a> </strong></span>';;
+
+    $wrapTemplate = '<div class="span%s">%s</div>';
+
+	foreach ($reviews as $post):
+		$ReviewerName = $MM_Roots->get_post_meta($post->ID, "name", true);
+		$ReviewContent = $MM_Roots->get_post_meta($post->ID, "content", true);
+		$ReviewUrl = $MM_Roots->get_post_meta($post->ID, "url", true);
+
+		$caption = "";
+
+		if ($ReviewUrl != '')
+		{
+			$caption = sprintf($captionTemplateUrl, $ReviewUrl,  $ReviewerName);
+		}
+		else
+		{
+			$caption = sprintf($captionTemplate, $ReviewerName);
+		}
+
+		
+		$review = sprintf($reviewTemplate, $ReviewContent, $caption);
+
+		if ($wrapsize != '')
+		{
+			$output .= sprintf($wrapTemplate, $wrapsize, $review);
+		}
+		else
+		{
+			$output .= $review;
+		}
+
+	endforeach;
+
+	return $output;
+}
+
+add_shortcode("ListReviews", "ListReviews");
+
 //Enable Shortcodes in widgets
 add_filter('widget_text', 'do_shortcode');
 
