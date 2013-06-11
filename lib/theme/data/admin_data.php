@@ -17,16 +17,22 @@
 						array('id' => 'brand_logo',
 							'label' => 'Navbar / Brand Logo',
 							'type' => 'text'),
-						array('id' => 'footer_logo',
-							'label' => 'Footer Logo',
-							'type' => 'text'),
-						array('id' => 'footer_text',
-							'label' => 'Footer Text',
-							'type' => 'textarea'),
 						array('id' => 'icon_default',
-							'label' => 'Default Icon',
+							'label' => 'Default Site Icon',
 							'type' => 'text',
-							'options' => array( "placeholder" => 'ex. cloud' ))
+							'options' => array( "placeholder" => 'ex. cloud', "note" => 'Note: This will be used for any unset icons on posts that use them.' ))
+					)
+				),
+				array(
+					'name' => 'Footer Options',
+					'size' => '6',
+					'fields' => array(
+						array('id' => 'footer_logo',
+							'label' => 'Logo',
+							'type' => 'text'),
+						array('id' => 'footer_background_color',
+							'label' => 'Background Color',
+							'type' => 'text')
 					)
 				)
 			)

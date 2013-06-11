@@ -94,7 +94,7 @@
 											'not_found'           => 'No sections found',
 											'not_found_in_trash'  => 'No sections found in Trash',
 										),
-				'supports'            => array( 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes' ),
+				'supports'            => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
 				//'taxonomies'          => array( 'category', 'post_tag' ),
 				'hierarchical'        => false,
 				'public'              => false,
@@ -159,7 +159,7 @@
 											'not_found'           => 'No reviews found',
 											'not_found_in_trash'  => 'No reviews found in Trash',
 										),
-				'supports'            => array( 'title','editor', 'excerpt', 'revisions', 'page-attributes' ),
+				'supports'            => array( 'title', 'page-attributes' ),
 				//'taxonomies'          => array( 'category', 'post_tag' ),
 				'hierarchical'        => false,
 				'public'              => false,
@@ -182,10 +182,18 @@
 								'name' => 'Review Options',
 								'size' => '10',
 								'fields' => array(
+									array('id' => 'name',
+										'label' => 'Reviewer Name',
+										'type' => 'text'
+										),
+									array('id' => 'content',
+										'label' => 'Review Content',
+										'type' => 'editor'
+										),
 									array('id' => 'video-id',
 										'label' => 'YoutTube Video ID',
 										'type' => 'text',
-										'options' => array('note' => 'Note: Add the id of the YouTube Video to link here.')
+										'options' => array('note' => 'Note: Add the id of the YouTube Video to link here (optional)')
 										)
 									)
 								)
