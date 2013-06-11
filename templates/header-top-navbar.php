@@ -1,4 +1,7 @@
 <?php
+global $MM_Roots;
+$logo = $MM_Roots->get_setting("brand_logo");
+
   ?>
 
 
@@ -10,8 +13,7 @@
           <div class="row">
             <div class="">
               <a class="brand" href="<?php echo home_url(); ?>"> 
-                <img id="brand-logo" src="/Wordpress/assets/img/ParrLogoSmallWhite2.png" alt="logo" />
-                <!--- <span style="text-transform: uppercase;"> <?php bloginfo('name'); ?></span> --->
+                <img id="brand-logo" src="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?>" />
               </a>
             </div>
             <div>
