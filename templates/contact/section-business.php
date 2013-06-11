@@ -8,6 +8,8 @@ $businessEmail = $MM_Roots->get_setting("business_email");
 $businessGithub = $MM_Roots->get_setting("business_github");
 $businessTwitter = $MM_Roots->get_setting("business_twitter");
 
+$emailTemplate = sprintf('<a href="mailto:%1$s">%1$s</a>', $businessEmail);
+
 ?>
 	
 
@@ -23,6 +25,9 @@ $businessTwitter = $MM_Roots->get_setting("business_twitter");
 <?php } ?>
 <?php if ($businessFax != '') { ?>
 	<i class="icon-print"></i> <?php echo $businessFax; ?>
+<?php } ?>
+<?php if ($businessEmail != '') { ?>
+	<i class="icon-envelope-alt"></i> <?php echo $emailTemplate; ?>
 <?php } ?>
 	<div class="foot-line"></div>         
 </address>

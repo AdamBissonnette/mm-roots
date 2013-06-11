@@ -82,8 +82,16 @@
 							'label' => 'Email Address',
 							'type' => 'text'
 						),
-						array('id' => 'business_github',
-							'label' => 'Github',
+						array('id' => 'business_gplus',
+							'label' => 'Google Plus',
+							'type' => 'text'
+						),
+						array('id' => 'business_youtube',
+							'label' => 'YouTube',
+							'type' => 'text'
+						),
+						array('id' => 'business_facebook',
+							'label' => 'Facebook',
 							'type' => 'text'
 						),
 						array('id' => 'business_twitter',

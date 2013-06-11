@@ -39,3 +39,7 @@ section {}
 
 .home-section {padding: 100px 0 0;}
 .home-section .content h3 {border-bottom: 2px solid #DF012A; display: inline-block; padding-bottom: 1px;}
+
+
+ul.dropdown-menu > li > a {color: #fff;} /* styles.css 3808 */
+ul.dropdown-menu > li > a:hover {background-color: #DF012A; background-image: none;}
