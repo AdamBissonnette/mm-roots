@@ -23,6 +23,11 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    Media Queries
    ========================================================================== */
 
+
+/* ==========================================================================
+   Media Manifesto Tweaks
+   ========================================================================== */
+
 input.search-query {}
 
 body {overflow-x: hidden;}
@@ -40,6 +45,12 @@ section {}
 .home-section {padding: 100px 0 0;}
 .home-section .content h3 {border-bottom: 2px solid #DF012A; display: inline-block; padding-bottom: 1px;}
 
-
 ul.dropdown-menu > li > a {color: #fff;} /* styles.css 3808 */
 ul.dropdown-menu > li > a:hover {background-color: #DF012A; background-image: none;}
+
+.section-content {padding: 25px 0;}
+
+.home .section-content {padding: 0;}
+
+aside.sidebar {margin-bottom: 50px;}
+aside.sidebar section {padding: 0px;}
