@@ -1,9 +1,15 @@
+<?php
+  global $MM_Roots;
+  $description = $MM_Roots->get_post_meta(get_the_ID(), "tagline", true);
+
+?>
+
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
   <div class="post-header">
 	  <h2 class="section-title">
 		<?php echo the_title(); ?>
-		<small><?php the_excerpt(); ?></small>
+		<small><?php echo $description; ?></small>
 	  </h2>
 	</div>
     <div class="entry-content">

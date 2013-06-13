@@ -48,9 +48,8 @@ section {}
 ul.dropdown-menu > li > a {color: #fff;} /* styles.css 3808 */
 ul.dropdown-menu > li > a:hover {background-color: #DF012A; background-image: none;}
 
-.section-content {padding: 25px 0;}
-
-.home .section-content {padding: 0;}
+.section-content {padding-top: 25px;}
+.home .section-content {padding-top: 0;}
 
 aside.sidebar {margin-bottom: 50px;}
 aside.sidebar section {padding: 0px;}

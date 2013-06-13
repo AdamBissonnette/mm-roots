@@ -6764,7 +6764,7 @@ a.badge:focus {
   margin-bottom: 0;
 }
 .hero-unit {
-  padding: 60px;
+  padding: 120px 60px 0;
   margin-bottom: 30px;
   font-size: 18px;
   font-weight: 200;
@@ -9065,8 +9065,6 @@ PARALLAX EFFECTS...........................1474
       
       }
       #header-section .hero-unit {
-        
-        
         z-index: 1;
       }
       
@@ -10533,20 +10531,13 @@ PARALLAX EFFECTS...........................1474
         position: fixed;
         } 
         
-        #main-nav select {
-        display: inline-block;
-        float:left;
-        width:50%;
-        -webkit-border-radius: 1px;
-        -moz-border-radius: 1px;
-        border-radius: 1px;
-        margin-top:5px;
-        }
-        
         .nav-collapse {
           clear: none;
+          font-size: 0.8em;
+          margin-top: 5px;
         }
         
+        .navbar .nav > li > a {margin-right: 0;}
         .navbar .brand {
           float:left;
         }
@@ -10598,8 +10589,19 @@ PARALLAX EFFECTS...........................1474
         body {
         padding-right: 0px;
         padding-left: 0px;
-        } 
-        .container{
+        }
+
+        #main-nav select {
+        display: inline-block;
+        float:left;
+        width:50%;
+        -webkit-border-radius: 1px;
+        -moz-border-radius: 1px;
+        border-radius: 1px;
+        margin-top:5px;
+        }
+
+        .container {
         padding-right: 20px;
         padding-left: 20px;
         }

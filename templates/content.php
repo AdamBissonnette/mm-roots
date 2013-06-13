@@ -24,7 +24,7 @@ if (!$image)
   	<div class="row">
   		
 		<div class="span4">
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			<h5 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 			<?php get_template_part('templates/entry-meta'); ?>
 		    <?php the_excerpt(); ?>
 		</div>
