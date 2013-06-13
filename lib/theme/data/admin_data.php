@@ -78,6 +78,10 @@
 							'label' => 'Phone Number',
 							'type' => 'text'
 						),
+						array('id' => 'business_fax',
+							'label' => 'Fax Number',
+							'type' => 'text'
+						),
 						array('id' => 'business_email',
 							'label' => 'Email Address',
 							'type' => 'text'

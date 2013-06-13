@@ -15,7 +15,8 @@
 	// Register Navigation Menus
 	function custom_navigation_menus() {
 		$locations = array(
-			'header_menu' => __( 'Subpage Menu', 'text_domain' )
+			'header_menu' => __( 'Subpage Menu', 'text_domain' ),
+			'social_menu' => __( 'Social Menu', 'text_domain' )
 		);
 
 		register_nav_menus( $locations );
