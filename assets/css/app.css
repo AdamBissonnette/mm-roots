@@ -17,13 +17,6 @@
 .alignright { float: right; }
 figure.alignnone { margin-left: 0; margin-right: 0; }
 
-
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-
 /* ==========================================================================
    Media Manifesto Tweaks
    ========================================================================== */
@@ -53,3 +46,118 @@ ul.dropdown-menu > li > a:hover {background-color: #DF012A; background-image: no
 
 aside.sidebar {margin-bottom: 50px;}
 aside.sidebar section {padding: 0px;}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+      @media (min-width: 1200px){
+        #header-section .hero-unit span:first-child{
+          font-size:50px;
+        }
+        body {font-size: 1.2em;}
+      }
+
+      @media (max-width: 979px){
+        .navbar-fixed-top, .navbar-fixed-bottom {
+        position: fixed;
+        } 
+        
+        .nav-collapse {
+          clear: none;
+          font-size: 0.8em;
+          margin-top: 5px;
+        }
+        
+        .navbar .nav > li > a {margin-right: 0;}
+		.navbar #brand-logo {height: 1.5em;}
+        .navbar .brand {
+          float:left;
+          margin-right: 0px;
+          margin-top: 6px;
+        }
+        #header-section .wrap-hero { 
+          top: 65px;
+        }
+        #header-section .hero-unit span:first-child{
+          font-size:40px;
+        }
+        #header-section .hero-unit h1 span {
+          font-size:26.5px;
+          margin: 0px 0px -30px;
+          padding: 0px 20px;
+          line-height:60px;
+        
+        }
+        .logo img {
+          width:35%;
+          height:auto;
+        }
+        
+        #NeedWorkDone {
+          
+          min-height: 400px;
+        }
+          
+        
+        #NeedWorkDone .parallax-point-event .container {
+          
+          min-height: 400px;
+        }
+        .large-slogan {
+          padding: 0px 20px;
+          font-size: 2em;
+          }
+        .text-large {
+          font-size: 300%;
+          line-height: 50px;
+          }
+          
+        
+          
+      } 
+
+
+      @media (max-width: 767px){
+        body {
+        padding-right: 0px;
+        padding-left: 0px;
+        }
+
+        #main-nav select {
+        display: inline-block;
+        float:left;
+        width:50%;
+        -webkit-border-radius: 1px;
+        -moz-border-radius: 1px;
+        border-radius: 1px;
+        margin-top:5px;
+        }
+
+        .container {
+        padding-right: 20px;
+        padding-left: 20px;
+        }
+        #main-nav select {
+        
+        width:40%;
+        }
+        #header-section .hero-unit span:first-child{
+          font-size:40px;
+          line-height:75px;
+        }
+        #header-section .hero-unit h1 span {
+          font-size:26.5px;
+          margin: 0px 0px -30px;
+          padding: 10px 20px;
+          line-height:30px;
+        
+        }
+        .logo img {
+          width:45%;
+          height:auto;
+        }
+        .text-large {
+          font-size: 200%;
+          line-height: 35px;
+          }
+      }     
