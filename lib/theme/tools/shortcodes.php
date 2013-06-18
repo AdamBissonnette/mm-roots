@@ -297,13 +297,15 @@ function ListReviews($atts)
 	extract(shortcode_atts(array(
 		'numberposts' => '2',
 		'orderby' => 'rand',
-		'wrapsize' => ''
+		'wrapsize' => '',
+		'class' => ''
 	), $atts) );
 
 	global $MM_Roots;
 
 	$args = array('post_type' => 'review', 'orderby' => $orderby, 'numberposts' => $numberposts);
 	$reviews = get_posts($args);
+	$cssClass = "";
 
 	$output = "";
 
@@ -316,6 +318,16 @@ function ListReviews($atts)
 
     $captionTemplate = '<span class="test-caption"> <strong>%s </strong></span>';
     $captionTemplateUrl = '<span class="test-caption"> <strong><a href="%s">%s</a> </strong></span>';;
+
+    if ($wrapsize != '')
+	{
+		$cssClass = $wrapsize;
+	}
+
+    if ($class != '')
+	{
+		$cssClass .= ' ' . $class;
+	}
 
     $wrapTemplate = '<div class="span%s">%s</div>';
 
@@ -340,7 +352,7 @@ function ListReviews($atts)
 
 		if ($wrapsize != '')
 		{
-			$output .= sprintf($wrapTemplate, $wrapsize, $review);
+			$output .= sprintf($wrapTemplate, $cssClass, $review);
 		}
 		else
 		{
