@@ -160,4 +160,8 @@ aside.sidebar section {padding: 0px;}
           font-size: 200%;
           line-height: 35px;
           }
+
+        #header-section .wrap-hero {
+            position: absolute;
+        }
       }     
