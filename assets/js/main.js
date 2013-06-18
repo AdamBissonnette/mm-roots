@@ -37,10 +37,6 @@ function FinalizeSend(data)
 jQuery(document).ready(function(){
 	jQuery('#menu-primary-navigation').localScroll(1000);
 	jQuery('#nav2').localScroll(1000);
-	//.parallax(xPosition, speedFactor, outerHeight) options:
-	//xPosition - Horizontal position of the element
-	//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
-	//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
 	jQuery('#header-section').parallax("50%", 0.1);
 	jQuery('#service-offerings-section').parallax("50%", 0.1);
 	jQuery('#about-us-section').parallax("50%", 0.1);
@@ -48,14 +44,6 @@ jQuery(document).ready(function(){
 	jQuery('#reviews-section').parallax("50%", 0.3);
 	jQuery('#footer').parallax("50%", 0.1);	
 });
-
-jQuery('#NeedWorkDone .parallax-point-event').bind('inview', function (event, visible) {
-        if (visible == true) {
-            jQuery('.work-shot').addClass("active");
-        }else{
-            jQuery('.work-shot').removeClass("active");
-        }
-    });
 
 jQuery('#header-section').bind('inview', function (event, visible) {
         if (visible == true) {
