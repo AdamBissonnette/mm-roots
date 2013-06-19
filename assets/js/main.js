@@ -37,6 +37,7 @@ function FinalizeSend(data)
 jQuery(document).ready(function(){
 	jQuery('#menu-primary-navigation').localScroll(1000);
 	jQuery('#nav2').localScroll(1000);
+	jQuery('.nav-wrap').localScroll(1000);
 	jQuery('#header-section').parallax("50%", 0.1);
 	jQuery('#service-offerings-section').parallax("50%", 0.1);
 	jQuery('#about-us-section').parallax("50%", 0.1);

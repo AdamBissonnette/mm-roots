@@ -18,7 +18,7 @@ $businessTwitter = $MM_Roots->get_setting("business_twitter");
 	  <li><span class="badge badge-warning"><a href="<?php echo $businessGPlus; ?>" title="Google Plus"><i class="icon-google-plus"></i></a></span></li>
 <?php } ?>
 <?php if ($businessYoutube != '') { ?>
-	  <li><span class="badge badge-warning"><a href="<?php echo $businessYoutube; ?>" title="YoutTube" style="height: 21px; width: 26px; display: block;">y</a></span></li>
+	  <li><span class="badge badge-warning"><a href="<?php echo $businessYoutube; ?>" title="YoutTube"><i class="icon-youtube"></i></a></span></li>
 <?php } ?>
 <?php if ($businessTwitter != '') { ?>
 	  <li><span class="badge badge-warning"><a href="<?php echo $businessTwitter; ?>" title="Twitter"><i class="icon-twitter"></i></a></span></li>
