@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 function SendMessage(form)
 {
 	var formdata = jQuery(form).serializeArray()
-	jQuery.post ('../wp-admin/admin-ajax.php',
+	jQuery.post ('/wp-admin/admin-ajax.php',
 		 { 'action':'do_ajax', 'fn':'contact', 'count':10, contact:formdata },
 		  function(data){FinalizeSend(data)},
 		   "json");
