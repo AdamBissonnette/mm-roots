@@ -40,7 +40,7 @@ function roots_scripts() {
   wp_register_script('roots_plugins', get_template_directory_uri() . '/assets/js/plugins.js', false, null, true);
   wp_register_script('flex_slider', get_template_directory_uri() . '/assets/js/jquery.flexslider.min.js', false, null, true);
   wp_register_script('google_map','http://maps.google.com/maps/api/js?sensor=true', false, null, true);
-  wp_register_script('jquery_map', get_template_directory_uri() . '/assets/js/jquery.ui.map.min.js', false, null, true);
+  wp_register_script('jquery_map', get_template_directory_uri() . '/assets/js/jquery.gmap.js', false, null, true);
   wp_register_script('fit_vids', get_template_directory_uri() . '/assets/js/jquery.fitvids.min.js', false, null, true);
   wp_register_script('local_scroll', get_template_directory_uri() . '/assets/js/jquery.localscroll-1.2.7-min.js', false, null, true);
   wp_register_script('inview', get_template_directory_uri() . '/assets/js/jquery.inview.js', false, null, true);
