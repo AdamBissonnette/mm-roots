@@ -26,7 +26,6 @@ class MM_Roots
         $this->_settings = get_option($this->_settings_key) ? get_option($this->_settings_key) : array();
 
         add_action( 'admin_menu', array(&$this, 'create_menu_link') );
-		date_default_timezone_set(get_option('timezone_string'));
 		
 		//Ajax Posts
 		add_action('wp_ajax_nopriv_do_ajax', array(&$this, '_save') );
@@ -72,7 +71,7 @@ class MM_Roots
 
 		foreach ($taxonomies as $taxonomy) 
 		{
-			if ($taxonomy["registration-args"])
+			if (isset($taxonomy["registration-args"]))
 			{
 				register_post_type( $taxonomy["slug"], $taxonomy["registration-args"] );
 			}
@@ -240,7 +239,14 @@ class MM_Roots
 	
 	function get_setting($name)
 	{
-		return stripslashes($this->_settings[$name]);
+		$output = "";
+
+		if (isset($this->_settings[$name]))
+		{
+			$output = stripslashes($this->_settings[$name]);
+		}
+
+		return $output;
 	}
 
 	/*****

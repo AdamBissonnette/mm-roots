@@ -127,10 +127,11 @@ function OutputSection($name, $size, $fields, $values)
 {
 	$sectionTemplate = '<div class="span%s"><legend>%s</legend>';
 	echo sprintf($sectionTemplate, $size, $name);
-	
+
 	foreach ($fields as $field)
 	{
-		MMRootsField($field["id"], $field["label"], $field["type"], $field["options"], $values);
+		$options = isset($field["options"])?$field["options"]:array();
+		MMRootsField($field["id"], $field["label"], $field["type"], $options, $values);
 	}
 	
 	echo "</div>";
@@ -152,19 +153,20 @@ function GetThemeDataFields($tabs)
 	return $fields;
 }
 
-function MMRootsField($id, $label, $type, $options=null, $values)
+function MMRootsField($id, $label, $type, $options=null, $values=null)
 {
 	global $MM_Roots;
 	
 	$formField = "";
 
-	if ($values != null)
+	if (isset($values))
 	{
-		$formField =createFormField($id, $label, stripslashes($values[$id]), $type, $options);
+		$value = isset($values[$id])?stripslashes($values[$id]):"";
+		$formField = createFormField($id, $label, $value, $type, $options);
 	}
 	else
 	{
-		$formField =createFormField($id, $label, $MM_Roots->get_setting($id), $type, $options);
+		$formField = createFormField($id, $label, $MM_Roots->get_setting($id), $type, $options);
 	}
 
 	//return $formField;

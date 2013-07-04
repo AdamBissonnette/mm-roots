@@ -5,7 +5,8 @@
 		Fields
 	*/
 
-	$options = array(
+	global $theme_options;
+	$theme_options = array(
 		array('name' => 'Theme Options',
 			'id' => 'theme',
 			'icon' => 'cog',
@@ -26,7 +27,7 @@
 						array('id' => 'icon_default',
 							'label' => 'Default Icon',
 							'type' => 'text',
-							'options' => array( "placeholder" => 'ex. cloud' ))
+							'options' => array( "placeholder" => 'ex. cloud', "note" => "Hint: font-awesome icon class" ))
 					)
 				),
 				array(

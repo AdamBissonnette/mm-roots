@@ -39,9 +39,23 @@ function createFormField($label, $name, $value, $type, $options=null)
 	//return $output;
 }
 
+function merge_options($pairs, $atts) {
+    $atts = (array)$atts;
+    $out = array();
+    foreach($pairs as $name => $default) {
+            if ( array_key_exists($name, $atts) )
+                    $out[$name] = $atts[$name];
+            else
+                    $out[$name] = $default;
+    }
+    return $out;
+}
+
 function createInput($label, $value, $type="text", $options = null)
 {
-	if ($options) extract( $options );
+	extract( merge_options(
+		array("class" => "", "placeholder" => "", "note" => ""), $options)
+	);
 
 	$output = sprintf('<input type="%s" id="%s" class="%s" name="%s" value="%s" placeholder="%s" />', $type,
 		 $label, //id
@@ -51,7 +65,7 @@ function createInput($label, $value, $type="text", $options = null)
 		 $placeholder
 	);
 	
-	if ($note) {
+	if (isset($note)) {
 		$output .= sprintf('<p class="help-block">%s</p>', $note);
 	}
 	
@@ -60,12 +74,9 @@ function createInput($label, $value, $type="text", $options = null)
 
 function createTextArea($label, $value, $options = null)
 {
-	if ($options) extract( $options );
-
-	if (!$rows)
-	{
-		$rows = 3;
-	}
+	extract( merge_options(
+		array("class" => "", "placeholder" => "", "rows" => 3, "note" => ""), $options)
+	);
 
 	$output = sprintf('<textarea id="%s" class="%s" rows="%s" name="%s" placeholder="%s">%s</textarea>', 
 		 $label, //id
@@ -85,19 +96,22 @@ function createTextArea($label, $value, $options = null)
 
 function createSelect($label, $value, $options)
 {
-	return createSelectOptionsFromArray($options, $label, $value);
+	return createSelectOptionsFromArray($label, $value, $options);
 }
 
-function createSelectOptionsFromArray($options, $name, $selectedValue=0)
+function createSelectOptionsFromArray($label, $selectedKey, $options)
 {
-	if ($options) extract( $options );
+	extract( merge_options(
+		array("class" => "", "placeholder" => "", "note" => "", "data" => array()), $options)
+	);
 	
-	$output = sprintf('<select id="%s" class="%s" name="%s">', $name, $class, $name);
+	$output = sprintf('<select id="%s" class="%s" name="%s">', $label, $class, $label);
 	$optionTemplate = '<option value="%s"%s>%s</option>\n';
 	$output .= sprintf($optionTemplate, "", "", $placeholder);
+
 	foreach ($data as $key => $value)
 	{
-		if ($selectedValue == $key)
+		if ($selectedKey == $key)
 		{
 			$output .= sprintf($optionTemplate, $key, ' selected', $value);
 		}
