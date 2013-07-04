@@ -3,6 +3,7 @@ function createFormField($label, $name, $value, $type, $options=null)
 {
 	$output = '';
 	$field = '';
+	$useField = true;
 
 	switch ($type)
 	{
@@ -15,16 +16,27 @@ function createFormField($label, $name, $value, $type, $options=null)
 		case 'select':
 			$field = createSelect($label, $value, $options);
 		break;
+		case 'editor':
+			$useField = false;
+		break;
 	}
 
-	$output = '<div class="control-group">' .
+	echo '<div class="control-group">' .
 					'<label class="control-label" for="' . $label . '">' . $name . '</label>' .
-					'<div class="controls">' . 
-						$field .
-					'</div>' .
-				'</div>';
+					'<div class="controls">';
+
+	if ($useField)
+	{
+		echo $field;
+	}
+	else
+	{
+		wp_editor( $value, $label, $settings = array() );
+	}
+
+	echo '</div></div>';
 				
-	return $output;
+	//return $output;
 }
 
 function createInput($label, $value, $type="text", $options = null)
@@ -119,15 +131,26 @@ function getCategorySelectArray()
 
 function getPagesSelectArray()
 {
-	$pages = get_pages();
+	return getTaxonomySelectArray('page');
+}
+
+function getPostsSelectArray()
+{
+	return getTaxonomySelectArray('post');
+}
+
+function getTaxonomySelectArray($taxonomy)
+{
+	$args = array('post_type' => $taxonomy);
+	$posts = get_posts($args);
 	
-	$pageArray = array();
-	foreach ($pages as $pages)
+	$postArray = array();
+	foreach ($posts as $post)
 	{
-		$pageArray[$pages->ID] = $pages->post_title;
+		$postArray[$post->ID] = $post->post_title;
 	}
 	
-	return $pageArray;
+	return $postArray;
 }
 
 ?>

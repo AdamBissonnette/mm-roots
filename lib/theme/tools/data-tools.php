@@ -44,17 +44,17 @@ function OutputThemeData($tabs, $values=null)
 {
 	$isFirst = true;
 
-	$output = '<div class="span12 tabbable">';
+	echo '<div class="span12 tabbable">';
 
 
 	if (count($tabs) > 1)
 	{
 
-		$output .= '<ul class="nav nav-tabs">';
+		echo '<ul class="nav nav-tabs">';
 		
 		foreach ($tabs as $tab)
 		{			
-			$output .= OutputTabNav($tab["id"], $tab["name"], $tab["icon"], $isFirst);
+			OutputTabNav($tab["id"], $tab["name"], $tab["icon"], $isFirst);
 			
 			if ($isFirst)
 			{
@@ -63,17 +63,17 @@ function OutputThemeData($tabs, $values=null)
 		}
 
 		
-		$output .= '</ul>'; //Done with nav
+		echo '</ul>'; //Done with nav
 	
 	}
 
-	$output .= '<div class="row tab-content">';
+	echo '<div class="row tab-content">';
 	
 	$isFirst = true;
 	
 	foreach ($tabs as $tab)
 	{
-		$output .= OutputTabContent($tab["id"], $tab["sections"], $isFirst, $values);
+		echo OutputTabContent($tab["id"], $tab["sections"], $isFirst, $values);
 		
 		if ($isFirst)
 		{
@@ -81,9 +81,9 @@ function OutputThemeData($tabs, $values=null)
 		}
 	}
 	
-	$output .= '</div>'; //Done with tab content
+	echo '</div>'; //Done with tab content
 	
-	return $output;
+	//return $output;
 }
 
 function OutputTabNav($id, $name, $icon, $isFirst)
@@ -97,7 +97,7 @@ function OutputTabNav($id, $name, $icon, $isFirst)
 	 	$class = ' class="active"';
 	 }
 	 
-	 return sprintf($tabTemplate, $class, $id, $icon, $name);
+	 echo sprintf($tabTemplate, $class, $id, $icon, $name);
 }
 
 function OutputTabContent($id, $sections, $isFirst, $values)
@@ -111,31 +111,29 @@ function OutputTabContent($id, $sections, $isFirst, $values)
 	 	$class = ' active';
 	}
 
-	$output .= sprintf($tabContentTemplate, $class, $id);
+	echo sprintf($tabContentTemplate, $class, $id);
 	
 	foreach ($sections as $section)
 	{
-		$output .= OutputSection($section["name"], $section["size"], $section["fields"], $values);
+		OutputSection($section["name"], $section["size"], $section["fields"], $values);
 	}
 
-	$output .= "</div>";
+	echo "</div>";
 		
-	return $output;
+	//return $output;
 }
 
 function OutputSection($name, $size, $fields, $values)
 {
 	$sectionTemplate = '<div class="span%s"><legend>%s</legend>';
-	$output = sprintf($sectionTemplate, $size, $name);
+	echo sprintf($sectionTemplate, $size, $name);
 	
 	foreach ($fields as $field)
 	{
-		$output .= MMRootsField($field["id"], $field["label"], $field["type"], $field["options"], $values);
+		MMRootsField($field["id"], $field["label"], $field["type"], $field["options"], $values);
 	}
 	
-	$output .= "</div>";
-
-	return $output;
+	echo "</div>";
 }
 
 function GetThemeDataFields($tabs)
@@ -169,6 +167,6 @@ function MMRootsField($id, $label, $type, $options=null, $values)
 		$formField =createFormField($id, $label, $MM_Roots->get_setting($id), $type, $options);
 	}
 
-	return $formField;
+	//return $formField;
 }
 ?>
