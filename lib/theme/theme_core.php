@@ -261,7 +261,7 @@ class MM_Roots
 		$output = "";
 		$post_meta = get_post_meta($id, $this->_meta_key, $single);
 
-		if ($key != null)
+		if ($key != null && isset($post_meta[$key]))
 		{
 			$output = $post_meta[$key];
 		}
