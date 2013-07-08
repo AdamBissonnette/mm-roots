@@ -20,6 +20,7 @@ jQuery(document).ready(function($) {
 	// Funky Slider
 	// ------------------------------------
 	var center = $(window).width() / 2;
+    var slideDuration = 8000;
 
 	function d() {
         $(".slide.active img").each(function () {
@@ -177,7 +178,7 @@ jQuery(document).ready(function($) {
         });
         var f = setInterval(function () {
             i()
-        }, 5000)
+        }, slideDuration)
     }
     c();
     $(window).resize(function () {
