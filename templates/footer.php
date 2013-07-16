@@ -1,14 +1,10 @@
 <?php
 global $MM_Roots;
 $footerText = $MM_Roots->get_setting("footer_text");
-$footerImage = $MM_Roots->get_setting("footer_logo");
-
-$backgroundStyle = sprintf(" style=\"background-image: url('%s')\"", $footerImage);
-
 ?>
 
 <footer class="section-color-primarydark">
-<div class="container"<?php echo $backgroundStyle; ?>>
+<div class="container">
   <div class="row">
 	  <?php dynamic_sidebar('sidebar-footer'); ?>
   </div>

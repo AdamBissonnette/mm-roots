@@ -21,12 +21,13 @@ global $MM_Roots;
 
         For the backgrounds, you can combine from the bgs folder :D
     -->
-    <article class="slide" id="home" style="background: url('assets/img/cc/backgrounds/indigo.jpg') repeat-x top center;">
+    <article class="slide home-slide" id="home" style="background: url('assets/img/cc/backgrounds/indigo.jpg') repeat-x top center;">
         <div class="info">
             <img class="asset left-0 sp800 t40 z1" src="assets/img/footer-logo.png" />
             <div class="row">                
                 <div class="span5">
-                    <h2>Unified TaeKwon-Do<br /> International</h2>
+                    <h2>
+                      Unified TaeKwon-Do<br /> International</h2>
                     <?php
                         $atts = array("title" => "Join Us");
                         echo ButtonLink($atts);
@@ -35,7 +36,21 @@ global $MM_Roots;
             </div>
         </div>
     </article>
-    <article class="slide" id="home" style="background: url('assets/img/cc/backgrounds/landscape.png') repeat-x top center;">
+    <article class="slide home-slide" id="home2" style="background: url('assets/img/cc/backgrounds/landscape.png') repeat-x top center;">
+        <div class="info container">
+            <img class="asset left-0 sp800 t40 z1" src="assets/img/footer-logo.png" />
+            <div class="row">                
+                <div class="span5">
+                    <h2>Bringing TaeKwon-Do Styles Together Since 1989.</h2>
+                    <?php
+                        $atts = array("title" => "Join Us");
+                        echo ButtonLink($atts);
+                    ?>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="slide home-slide" id="home3" style="background: url('assets/img/cc/backgrounds/landscape.png') repeat-x top center;">
         <div class="info container">
             <img class="asset left-0 sp800 t40 z1" src="assets/img/footer-logo.png" />
             <div class="row">                
@@ -56,6 +71,7 @@ global $MM_Roots;
       <div class="row">
         <div class="span4">
           <h4 class="section-title">
+            <i class="icon-info-sign"></i>
             About Unified TaeKwon-Do (UTI)
           </h4>
           <p>UTI is a non-political international organization dedicated to the continuing development and evolution of TaeKwon-Do.</p>
@@ -65,6 +81,7 @@ global $MM_Roots;
 
         <div class="span4">
           <h4 class="section-title">
+            <i class="icon-user"></i>
             Meet the President
           </h4>
           <p>Grand Master Scott Luther Kopperud is an 8th Dan Black-Belt Grand Master committed to continuing the development of TaeKwon-Do.</p>
@@ -75,6 +92,7 @@ global $MM_Roots;
 
         <div class="span4">
           <h4 class="section-title">
+            <i class="icon-group"></i>
             Become a Member
           </h4>
           <p>Key benefits include Access to UTI Rank Examination, Seminars, Tournaments, Instructional Resources and More!</p>
@@ -88,27 +106,6 @@ global $MM_Roots;
 <section class="section-content section-services" id="section-services">
     <div class="container">
         <div class="row">
-          <div class="span4">
-            <h4 class="section-title">Newsletter</h4>
-            <p>
-            Subscribe to our Newsletter!<br />
-            Email: <input class="span2" type="text" /> <input class="btn btn-primary" type="button" value="Go" />
-            </p>
-          <br />
-          <h4 class="section-title">Member Resources</h4>
-          <ul>
-            <li><a href="#">Members Forum</a></li>
-            <li><a href="#">Site Management</a></li>
-            <li><a href="#">Book a Seminar</a></li>
-            <li><a href="#">Training Manuals</a></li>
-            <li><a href="#">Training Videos</a></li>
-            <li><a href="#">Frequently Asked Questions</a></li>
-          </ul>
-          <br />
-            <h4 class="section-title">Book a Seminar</h4>
-            <p>Register an official UTI seminar to increase membership and visibility throughout the international community.</p>
-            <a class="btn btn-primary" href="#">Book Today</a>
-          </div>
       <div class="span8">
         <h2 class="section-title">
             News and Events
@@ -122,6 +119,28 @@ global $MM_Roots;
         </p>
 
       </div>
+
+       <div class="span4">
+          <h4 class="section-title">Member Resources</h4>
+          <ul>
+            <li><a href="#">Members Forum</a></li>
+            <li><a href="#">Site Management</a></li>
+            <li><a href="#">Book a Seminar</a></li>
+            <li><a href="#">Training Manuals</a></li>
+            <li><a href="#">Training Videos</a></li>
+            <li><a href="#">Frequently Asked Questions</a></li>
+          </ul>
+          <br />
+            <h4 class="section-title">Book a Seminar</h4>
+            <p>Register an official UTI seminar to increase membership and visibility throughout the international community.</p>
+            <a class="btn btn-primary" href="#">Book Today</a>
+          <br /><br />
+          <h4 class="section-title">Newsletter</h4>
+            <p>
+            Subscribe to our Newsletter!<br />
+            Email: <input class="span2" type="text" /> <input class="btn btn-primary" type="button" value="Go" />
+            </p>
+        </div>
     </div>
 </div>
 </section>
