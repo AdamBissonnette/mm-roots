@@ -62,15 +62,6 @@ global $MM_Roots;
 
           <a class="btn btn-primary" href="#">Learn More</a>
         </div>
-        
-        <div class="span4">
-          <h4 class="section-title">
-            Become a Member
-          </h4>
-          <p>Key benefits include Access to UTI Rank Examination, Seminars, Tournaments, Instructional Resources and More!</p>
-
-          <a class="btn btn-primary" href="#">Join Today</a>
-        </div>
 
         <div class="span4">
           <h4 class="section-title">
@@ -80,15 +71,30 @@ global $MM_Roots;
 
           <a class="btn btn-primary" href="#">Learn More</a>
         </div>
+
+
+        <div class="span4">
+          <h4 class="section-title">
+            Become a Member
+          </h4>
+          <p>Key benefits include Access to UTI Rank Examination, Seminars, Tournaments, Instructional Resources and More!</p>
+
+          <a class="btn btn-primary" href="#">Join Today</a>
+        </div>
       </div>
     </div>
 </section>
 
-
 <section class="section-content section-services" id="section-services">
     <div class="container">
-      <div class="row">
-        <div class="span4">
+        <div class="row">
+          <div class="span4">
+            <h4 class="section-title">Newsletter</h4>
+            <p>
+            Subscribe to our Newsletter!<br />
+            Email: <input class="span2" type="text" /> <input class="btn btn-primary" type="button" value="Go" />
+            </p>
+          <br />
           <h4 class="section-title">Member Resources</h4>
           <ul>
             <li><a href="#">Members Forum</a></li>
@@ -98,50 +104,11 @@ global $MM_Roots;
             <li><a href="#">Training Videos</a></li>
             <li><a href="#">Frequently Asked Questions</a></li>
           </ul>
-
-        </div>
-        
-        <div class="span4">         
-          <h4 class="section-title">Upcoming Seminars</h4>
-
-          <ul>
-            <li><a href="#">September 17th 2013: Lisbon, Germany</a></li>
-          </ul>
-
-          <ul>
-            <li><a href="#">September 25th 2013: Ankara, Turkey</a></li>
-          </ul>
-
-          <ul>
-            <li><a href="#">October 25th 2013: Camrose, Alberta</a></li>
-          </ul>
-
-          <ul>
-            <li><a href="#">November 7th 2013: Kapolei Hale, Hawaii</a></li>
-          </ul>
-
-          
-        </div>
-
-        <div class="span4">
+          <br />
             <h4 class="section-title">Book a Seminar</h4>
             <p>Register an official UTI seminar to increase membership and visibility throughout the international community.</p>
             <a class="btn btn-primary" href="#">Book Today</a>
-        </div>
-    </div>
-    </div>
-</section>
-
-<section class="section-content section-services" id="section-services">
-    <div class="container">
-        <div class="row">
-              <div class="span4">
-        <h4 class="section-title">Newsletter</h4>
-          <p>
-            Subscribe to our Newsletter!<br />
-            Email: <input class="span2" type="text" /> <input class="btn btn-primary" type="button" value="Go" />
-          </p>
-      </div>
+          </div>
       <div class="span8">
         <h2 class="section-title">
             News and Events
