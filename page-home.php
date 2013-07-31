@@ -76,7 +76,7 @@ global $MM_Roots;
           </h4>
           <p>UTI is a non-political international organization dedicated to the continuing development and evolution of TaeKwon-Do.</p>
 
-          <a class="btn btn-primary" href="#">Learn More</a>
+          <a class="btn btn-primary" href="#" id="button1">Learn More</a>
         </div>
 
         <div class="span4">
@@ -86,7 +86,7 @@ global $MM_Roots;
           </h4>
           <p>Grand Master Scott Luther Kopperud is an 8th Dan Black-Belt Grand Master committed to continuing the development of TaeKwon-Do.</p>
 
-          <a class="btn btn-primary" href="#">Learn More</a>
+          <a class="btn btn-primary" href="#" id="button2">Learn More</a>
         </div>
 
 
