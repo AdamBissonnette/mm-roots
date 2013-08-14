@@ -8017,15 +8017,26 @@ article img {
 .faq-answer:before {
   content: "— ";
 }
-.section-content {
+section.section-content {
   position: relative;
-  padding: 5em 0;
-  border-bottom: 1px solid #eeeeee;
+  padding: 3.5em 0;
+  border-bottom: 1px solid #808080;
 }
 .section-title {
   line-height: 1.25em;
   margin-bottom: 1em;
   font-weight: normal;
+}
+.section-title:before {
+  display: block;
+  float: left;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  content: "";
+  margin-right: .25em;
 }
 .section-jumbotron {
   height: 25em;
@@ -8073,6 +8084,23 @@ footer {
 }
 footer .container {
   position: relative;
+}
+footer .container:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 25em;
+  height: 19em;
+  bottom: -5em;
+  left: -6em;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  background: transparent url(../img/footer-logo.png) no-repeat 0 0;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  z-index: 1;
 }
 footer .container .row {
   position: relative;
@@ -8173,51 +8201,6 @@ footer .container .row {
 }
 .flexslider:hover .flex-next {
   right: 20px;
-}
-.theme-switcher {
-  position: fixed;
-  top: 7.5em;
-  left: 0;
-  width: 1em;
-  height: 4em;
-  display: block;
-  z-index: 1000;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.theme-switcher a {
-  display: block;
-  width: 1em;
-  height: 1em;
-  background-color: #333333;
-}
-.theme-switcher a:hover {
-  opacity: .9;
-  width: 2em;
-  height: 2em;
-}
-.theme-switcher a.t1 {
-  background-color: #1c7ca2;
-}
-.theme-switcher a.t2 {
-  background-color: #A61F1F;
-}
-.theme-switcher a.t3 {
-  background-color: #712D73;
-}
-.theme-switcher a.t4 {
-  background-color: #047564;
-}
-.documentation .section-content {
-  padding: 2em 0;
-}
-.documentation .section-content h3 {
-  margin-top: 3.5em;
-}
-.documentation-nav .nav {
-  background-color: #ffffff;
-  z-index: 10;
 }
 [class^="section-color-"] .btn,
 [class*=" section-color-"] .btn,

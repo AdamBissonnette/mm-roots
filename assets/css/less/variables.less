@@ -5,9 +5,6 @@
 @bodyBackground:        @white;
 
 
-
-
-
 // ------------------------------------
 // Typography
 // ------------------------------------
@@ -25,35 +22,21 @@
 // @headingsFontFamily:    @altFontFamily;
 @headingsFontFamily:    inherit;
 
-
-
-
-
 // ------------------------------------
 // Links
 // ------------------------------------
 
-@linkColor:             #1c7ca2;
-
+@linkColor:             #1c7da2;
 @linkColorHover:        darken(@linkColor, 15%);
 @linkColorMuted:        fade(@linkColor, 30%);
-
-@primaryColor:			@linkColor;
-@primaryColorDark:		darken(@primaryColor, 15%);
-@secondaryColor:		#D3E57F;
-@secondaryColorDark:	darken(@secondaryColor, 15%);
-
-
-
-
 
 // ------------------------------------
 // Component sizing
 // ------------------------------------
 
-// @fontSizeLarge:         @baseFontSize * 1.25; // ~18px
-// @fontSizeSmall:         @baseFontSize * 0.85; // ~12px
-// @fontSizeMini:          @baseFontSize * 0.75; // ~11px
+@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
+@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
+@fontSizeMini:          @baseFontSize * 0.75; // ~11px
 
 @paddingLarge:          .5em 2em;
 @paddingSmall:          .5em 2em;
@@ -96,14 +79,42 @@
 @btnInverseBackgroundHighlight:     @grayDark;
 
 
-
-
-
 // ------------------------------------
 // Navbar
 // ------------------------------------
 
 @navbarCollapseWidth:	767px;
+
+
+// ------------------------------------
+// Colors
+// Primary, Secondary / Light & Dark
+// ------------------------------------
+@primaryColor:			@linkColor;
+@primaryColorDark:		darken(@primaryColor, 15%);
+
+@secondaryColor:		#D3E57F;
+@secondaryColorDark:	darken(@secondaryColor, 15%);
+
+// ------------------------------------
+// Misc Section
+// ------------------------------------
+@sectionTitleHeight: 1.25em;
+@sectionTitleMarginBottom: 1em;
+@sectionTitleIcon: "\f105";
+@sectionTitleIconMargin: .25em;
+
+@sectionContentPadding: 3.5em 0;
+@sectionBorderBottomColor: #808080;
+
+// ------------------------------------
+// Jumbotron
+// ------------------------------------
+
+@jumbotronHeight: 25em;
+@jumbotronMarginBottom: 5em;
+@jumbotronBaseTextColor: @white;
+
 
 
 

@@ -716,14 +716,14 @@ article {
 // $section-content
 // ------------------------------------
 
-.section-content {
+section.section-content {
 	position: relative;
-	padding: 5em 0;
-	border-bottom: 1px solid #eeeeee;
+	padding: @sectionContentPadding;
+	border-bottom: 1px solid @sectionBorderBottomColor;
 }
 	.section-title {
-		line-height: 1.25em;
-		margin-bottom: 1em;
+		line-height: @sectionTitleHeight;
+		margin-bottom: @sectionTitleMarginBottom;
 		font-weight: normal;
 
 		// add "icon-angle-right" before text
@@ -735,18 +735,18 @@ article {
 			font-style: normal;
 			text-decoration: inherit;
 			-webkit-font-smoothing: antialiased;
-			content: "\f105";
-			margin-right: .25em;
+			content: @sectionTitleIcon;
+			margin-right: @sectionTitleIconMargin;
 		}
 	}
 
 	.section-jumbotron {
-		height: 25em;
-		margin-bottom: 5em;
+		height: @jumbotronHeight;
+		margin-bottom: @jumbotronMarginBottom;
 		text-align: left;
 		background: url(../img/jumbotron-bg.jpg) no-repeat 50% 50%;
 		.background-size(cover);
-		color: @white;
+		color: @jumbotronBaseTextColor;
 		text-shadow: 1px 1px 1px @black;
 
 		h1 {
@@ -957,80 +957,8 @@ footer {
 		right: 20px;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
 // ------------------------------------
-// $theme-switcher
-// ------------------------------------
-.theme-switcher {
-	position: fixed;
-	top: 7.5em;
-	left: 0;
-	width: 1em;
-	height: 4em;
-	display: block;
-	z-index: 1000;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-
-	a {
-		display: block;
-		width: 1em;
-		height: 1em;
-		background-color: @grayDark;
-
-		&:hover {
-			opacity: .9;
-			width: 2em;
-			height: 2em;
-		}
-
-		&.t1 { background-color: #1c7ca2;}
-		&.t2 { background-color: #A61F1F;}
-		&.t3 { background-color: #712D73;}
-		&.t4 { background-color: #047564;}
-	}
-}
-
-
-
-
-// ------------------------------------
-// $documentation
-// ------------------------------------
-.documentation {
-	.section-content {
-		padding: 2em 0;
-
-		h3 {
-			margin-top: 3.5em;
-		}
-	}
-}
-.documentation-nav {
-	.nav {
-		background-color: @white;
-		z-index: 10;
-	}
-}
-
-
-
-
-
-// ------------------------------------
-// $COLORS section-colors
+// Sections
 // ------------------------------------
 
 [class^="section-color-"],
