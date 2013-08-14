@@ -3,7 +3,7 @@
 	$brand_logo = $MM_Roots->get_setting("brand_logo");
 ?>
 
-<header class="navbar transparent navbar-inverse navbar-fixed-top" role="banner">
+<header class="navbar transparent navbar-fixed-top" role="banner">
   <div class="navbar-inner">
     <div class="container">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">

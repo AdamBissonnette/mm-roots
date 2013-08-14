@@ -15,7 +15,7 @@
  * 4. /theme/assets/js/main.js    (in footer)
  */
 function roots_scripts() {
-  wp_enqueue_style('style-t1', get_template_directory_uri() . '/assets/css/styles.css', false, null);
+  wp_enqueue_style('style', get_template_directory_uri() . '/assets/css/styles.css', false, null);
   wp_enqueue_style('app', get_template_directory_uri() . '/assets/css/app.css', false, null);
   
   // Load style.css from child theme

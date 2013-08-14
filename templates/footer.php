@@ -1,6 +1,8 @@
 <?php
 global $MM_Roots;
 $footerText = $MM_Roots->get_setting("footer_text");
+
+if (is_active_sidebar( 'sidebar-footer' )) {
 ?>
 
 <footer class="section-color-primarydark">
@@ -10,6 +12,8 @@ $footerText = $MM_Roots->get_setting("footer_text");
   </div>
 </div>
 </footer>
+
+<?php } ?>
 
 <div class="post-footer section-content section-content-mini section-color-graydark">
     <div class="container">
