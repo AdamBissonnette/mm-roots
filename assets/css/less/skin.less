@@ -744,7 +744,7 @@ section.section-content {
 		height: @jumbotronHeight;
 		margin-bottom: @jumbotronMarginBottom;
 		text-align: left;
-		background: url(../img/jumbotron-bg.jpg) no-repeat 50% 50%;
+		background: @jumbotronDefaultBackground;
 		.background-size(cover);
 		color: @jumbotronBaseTextColor;
 		text-shadow: 1px 1px 1px @black;
@@ -752,6 +752,7 @@ section.section-content {
 		h1 {
 			font-weight: bold;
 			margin-bottom: 0;
+			color: @jumbotronTitleColor;
 		}
 
 		.extra {
@@ -771,11 +772,18 @@ section.section-content {
 	}
 
 	.slogan {
-		margin-top: 12em;
+		margin-top: @sloganMargin;
 	}
 
 
+	.section-jumbotron ul.slides {
+		height: @jumbotronHeight;
+	}
 
+	.section-jumbotron .icon {
+		font-size: @jumbotronIconSize;
+		color: @jumbotronIconColor;
+	}
 
 
 
@@ -797,8 +805,8 @@ header {
 
 footer {
 	padding: 5em 0;
-	background-color: @linkColorHover;
-	color: @white !important;
+	background-color: @footerBackgroundColor !important;
+	color: @footerTextColor !important;
 
 	.container {
 		position: relative;
@@ -812,7 +820,7 @@ footer {
 			bottom: -5em;
 			left: -6em;
 			.opacity(30);
-			background: transparent url(../img/footer-logo.png) no-repeat 0 0;
+			background: @footerAfterBackground;
 			.background-size(contain);
 			z-index: 1;
 		}

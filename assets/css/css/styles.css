@@ -7427,7 +7427,7 @@ a:hover {
   text-shadow: none;
   font-size: inherit;
   line-height: 3em;
-  color: #404040;
+  color: #ececec;
 }
 .navbar .brand img {
   height: 2em;
@@ -7634,8 +7634,8 @@ a:hover {
   text-decoration: none;
 }
 .btn-secondary {
-  color: #ffffff !important;
-  background-color: #404040;
+  color: #333333 !important;
+  background-color: #ececec;
 }
 .btn-secondary:hover,
 .btn-secondary:focus {
@@ -8039,7 +8039,7 @@ section.section-content {
   margin-right: 0.25em;
 }
 .section-jumbotron {
-  height: 25em;
+  height: 15em;
   margin-bottom: 5em;
   text-align: left;
   background: url(../img/jumbotron-bg.jpg) no-repeat 50% 50%;
@@ -8254,7 +8254,7 @@ footer .container .row {
 }
 .section-color-primary a,
 .section-color-primary .btn-link {
-  color: #404040;
+  color: #ececec;
 }
 .section-color-primary a:hover,
 .section-color-primary a:focus,
@@ -8278,7 +8278,7 @@ footer .container .row {
 }
 .section-color-primarydark a,
 .section-color-primarydark .btn-link {
-  color: #404040;
+  color: #ececec;
 }
 .section-color-primarydark a:hover,
 .section-color-primarydark a:focus,
@@ -8297,8 +8297,8 @@ footer .container .row {
   color: #333333;
 }
 .section-color-secondary {
-  background-color: #404040;
-  color: #ffffff;
+  background-color: #ececec;
+  color: #000000;
 }
 .section-color-secondary a,
 .section-color-secondary .btn-link {
@@ -8308,7 +8308,7 @@ footer .container .row {
 .section-color-secondary a:focus,
 .section-color-secondary .btn-link:hover,
 .section-color-secondary .btn-link:focus {
-  color: #14314b;
+  color: #040a0f;
 }
 .section-color-secondary .table-striped tbody > tr:nth-child(odd) > td,
 .section-color-secondary .table-striped tbody > tr:nth-child(odd) > th {
@@ -8323,7 +8323,7 @@ footer .container .row {
 }
 .section-color-secondarydark a,
 .section-color-secondarydark .btn-link {
-  color: #404040;
+  color: #ececec;
 }
 .section-color-secondarydark a:hover,
 .section-color-secondarydark a:focus,
@@ -8344,7 +8344,7 @@ footer .container .row {
 }
 .section-color-black a,
 .section-color-black .btn-link {
-  color: #404040;
+  color: #ececec;
 }
 .section-color-black a:hover,
 .section-color-black a:focus,
@@ -8368,7 +8368,7 @@ footer .container .row {
 }
 .section-color-graydarker a,
 .section-color-graydarker .btn-link {
-  color: #404040;
+  color: #ececec;
 }
 .section-color-graydarker a:hover,
 .section-color-graydarker a:focus,
@@ -8392,7 +8392,7 @@ footer .container .row {
 }
 .section-color-graydark a,
 .section-color-graydark .btn-link {
-  color: #404040;
+  color: #ececec;
 }
 .section-color-graydark a:hover,
 .section-color-graydark a:focus,
@@ -8413,7 +8413,7 @@ footer .container .row {
 }
 .section-color-gray a,
 .section-color-gray .btn-link {
-  color: #404040;
+  color: #ececec;
 }
 .section-color-gray a:hover,
 .section-color-gray a:focus,
@@ -8596,8 +8596,8 @@ footer .container .row {
   .navbar .btn-navbar {
     padding: 2px 6px;
     margin: .5em 0 0 0;
-    color: #ffffff !important;
-    background-color: #404040;
+    color: #333333 !important;
+    background-color: #ececec;
     background-image: none !important;
     text-shadow: none;
   }

@@ -33,6 +33,7 @@ foreach ($posts as $post)
 	}
 
 	$image = $MM_Roots->get_post_meta($post->ID, "image", true);
+	$icon = $MM_Roots->get_post_meta($post->ID, "icon", true);
 
 	if ($image == null)
 	{
@@ -41,11 +42,11 @@ foreach ($posts as $post)
 			$thumb =  wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID), 'full');
 			$image = $thumb[0];
 		}
-		else
+		else if ($icon == "")
 		{
 			$image = $jumbotronDefault;
-		}	
-	}	
+		}
+	}
 
 ?>
 
@@ -53,7 +54,11 @@ foreach ($posts as $post)
 	<div class="container">
 		<div class="row">
 			<div class="span5 offset1 jumbotron-image">
-				<img alt="" src="<?php echo $image; ?>">
+				<?php if ($image) { ?>
+				  	<img src="<?php echo $image; ?>" />
+				  <?php } else {  ?>
+					<i class="icon-<?php echo $icon; ?> icon"></i>
+				  <?php } ?>
 			</div>
 			<div class="span5 _offset1">
 				<div class="slogan">
