@@ -52,6 +52,7 @@ h1.lead { margin: 0; }
 -------------------------------------------------- */
 body {
     padding-top: 0px !important;
+    background: url('../img/cream_pixels.png');
 }
 
 .navbar.navbar-static-top {
@@ -92,6 +93,9 @@ body {
     -moz-transition: all .2s linear;
     transition: all .2s linear;
 }
+.navbar .nav > li > a {
+  color: inherit;
+}
 .navbar-inverse .nav > li > a:hover,
 .navbar-inverse .nav > li > a.active {
     color: #fff;
@@ -128,6 +132,12 @@ body {
    margin:0;
 }
 
+section.section-content {
+  border-color: #eee;
+  box-shadow: 0 2px 5px #eee;
+}
+
+
 
 /***********************************
 * Custom Navbar Styling
@@ -138,3 +148,6 @@ body {
   padding: 15px 0;
 }
 
+.navbar .nav {
+  left: 25px;
+}

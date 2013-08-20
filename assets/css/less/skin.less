@@ -806,7 +806,6 @@ header {
 footer {
 	padding: 5em 0;
 	background-color: @footerBackgroundColor !important;
-	color: @footerTextColor !important;
 
 	.container {
 		position: relative;
@@ -831,6 +830,14 @@ footer {
 		}
 	}
 
+}
+
+footer section {
+	color: @footerTextColor;
+}
+
+footer section h5 {
+	color: @footerTitleColor;
 }
 
 // remove bg in <ie9

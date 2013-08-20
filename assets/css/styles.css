@@ -7317,7 +7317,7 @@ html[xmlns] .slides {
 .flex-control-nav {
   width: 100%;
   position: absolute;
-  bottom: -40px;
+  bottom: -70px;
   text-align: center;
 }
 .flex-control-nav li {
@@ -8088,7 +8088,6 @@ header {
 footer {
   padding: 5em 0;
   background-color: #ffffff !important;
-  color: #678e8d !important;
 }
 footer .container {
   position: relative;
@@ -8113,6 +8112,12 @@ footer .container:after {
 footer .container .row {
   position: relative;
   z-index: 2;
+}
+footer section {
+  color: #404040;
+}
+footer section h5 {
+  color: #678e8d;
 }
 .lt-ie9 footer .container:after {
   background: none;
